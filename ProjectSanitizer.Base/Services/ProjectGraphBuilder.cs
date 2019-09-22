@@ -34,6 +34,9 @@ namespace ProjectSanitizer.Base.Services
 
         private void ExpandGraphNode(SolutionGraph graph, ProjectGraphNode node)
         {
+            if (node.IsAlreadyExpanded)
+                return;
+
             foreach (var projectRef in node.Project.ProjectReferences)
                 node.ProjectRequirements.Add(CreateGraphNode(graph, projectRef));
 

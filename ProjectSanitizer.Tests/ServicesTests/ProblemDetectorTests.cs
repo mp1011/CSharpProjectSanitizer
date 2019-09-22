@@ -49,7 +49,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             Assert.AreEqual(expectedError, problem.Description);
         }
 
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 6)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 3)]
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);

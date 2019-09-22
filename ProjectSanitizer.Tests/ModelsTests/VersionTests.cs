@@ -28,17 +28,18 @@ namespace ProjectSanitizer.Tests.ModelsTests
             Assert.AreEqual(sorted[3].ToString(), "9.2");
         }
 
-        [Test]
-        public void TestVersionEquality()
+        [TestCase("1.2.3-beta5", "1.2.3-beta5", true)]
+        [TestCase("1.2.3-beta5", "1.2.3", false)]
+        [TestCase("1.2.0", "1.2", true)]
+        [TestCase("2.2.0", "1.2.0", false)]
+        public void TestVersionEquality(string v1, string v2, bool shouldBeEqual)
         {
-            var version = new VersionWithSuffix("1.2.3-beta5");
-            var sameVersion = new VersionWithSuffix("1.2.3-beta5");
-            var differentVersion = new VersionWithSuffix("1.2.2-beta5");
+            var version1 = new VersionWithSuffix(v1);
+            var version2 = new VersionWithSuffix(v2);
 
-            Assert.That(version.Equals(sameVersion));
-            Assert.That(version == sameVersion);
-            Assert.That(!version.Equals(differentVersion));
-            Assert.That(version != differentVersion);
+            Assert.AreEqual(shouldBeEqual, version1.Equals(version2));
+            Assert.AreEqual(shouldBeEqual, version1 == version2);
+            Assert.AreNotEqual(shouldBeEqual, version1 != version2);
         }
     }
 }

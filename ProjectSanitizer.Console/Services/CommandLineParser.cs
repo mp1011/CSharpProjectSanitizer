@@ -1,0 +1,29 @@
+﻿using Microsoft.Extensions.CommandLineUtils;
+using ProjectSanitizerConsole.Models;
+
+namespace ProjectSanitizerConsole.Services
+{
+    class CommandLineParser
+    {
+        public CommandLineArgs Parse(string[] args)
+        {
+            CommandLineArgs commandLineArgs = null;
+
+            var app = new CommandLineApplication();
+
+            var command = app.Argument("Command", "");
+
+            var solutionPath = app.Option("-s|--sln", "Path to sln file", CommandOptionType.SingleValue);
+
+            app.OnExecute(() =>
+            {
+                commandLineArgs = new CommandLineArgs(command: command.Value, solutionFile: solutionPath.Value());
+                return 0;
+            });
+
+            app.Execute(args);
+
+            return commandLineArgs ?? new CommandLineArgs("", "");
+        }
+    }
+}

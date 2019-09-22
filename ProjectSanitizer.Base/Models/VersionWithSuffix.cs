@@ -1,5 +1,6 @@
 ﻿using ProjectSanitizer.Base.Extensions;
 using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ProjectSanitizer.Base.Models
@@ -54,17 +55,36 @@ namespace ProjectSanitizer.Base.Models
 
         public override bool Equals(object obj)
         {
-            if(obj is VersionWithSuffix otherVersion)
-                return Version.Equals(otherVersion.Version) && Suffix == otherVersion.Suffix;
-            else 
+            if (obj is VersionWithSuffix otherVersion)
+            {
+                var numbers = GetVersionNumbers();
+                var otherNumbers = otherVersion.GetVersionNumbers();
+                foreach (var ix in Enumerable.Range(0, otherNumbers.Length))
+                {
+                    if (numbers[ix] != otherNumbers[ix])
+                        return false;
+                }
+
+                return Suffix == otherVersion.Suffix;
+            }
+            else
                 return false;
+        }
+
+        private int[] GetVersionNumbers()
+        {
+            //we count a "missing" number the same as 0
+            return new int[] { Version.Major,
+                                Math.Max(0, Version.Minor),
+                                Math.Max(0, Version.Build),
+                                Math.Max(0, Version.Revision),
+                                SuffixNumber };
         }
 
         public override int GetHashCode()
         {
             return Version.GetHashCode();
         }
-
 
         public static bool operator ==(VersionWithSuffix first, VersionWithSuffix second)
         {
