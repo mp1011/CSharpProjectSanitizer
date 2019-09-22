@@ -1,4 +1,5 @@
 ﻿using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.ProjectGraph;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services.Interfaces;
@@ -17,15 +18,21 @@ namespace ProjectSanitizer.Base.Services
             _nugetReferenceReader = nugetReferenceReader;
         }
 
-        public ProjectGraph BuildGraph(Project project)
+        public SolutionGraph BuildGraph(VerifiedFile csProjFile)
+        {
+            return BuildGraph(_projectReader.ReadProject(csProjFile));
+        }
+
+        public SolutionGraph BuildGraph(Project project)
         {
             var root = new ProjectGraphNode(project);
-            var graph = new ProjectGraph(root);
+            var graph = new SolutionGraph();
+            graph.AddNode(root, isSolutionProject: true);
             ExpandGraphNode(graph, root);
             return graph;
         }
 
-        private void ExpandGraphNode(ProjectGraph graph, ProjectGraphNode node)
+        private void ExpandGraphNode(SolutionGraph graph, ProjectGraphNode node)
         {
             foreach (var projectRef in node.Project.ProjectReferences)
                 node.ProjectRequirements.Add(CreateGraphNode(graph, projectRef));
@@ -48,16 +55,28 @@ namespace ProjectSanitizer.Base.Services
             } 
         }
 
-        private ProjectGraphNode CreateGraphNode(ProjectGraph graph, ProjectReference projectReference)
+        private ProjectGraphNode CreateGraphNode(SolutionGraph graph, ProjectReference projectReference)
         {
             var projectFile = projectReference.TryGetFile();
             if (projectFile == null)
                 throw new NotImplementedException("Missing projects are not handled yet");
 
             var project = _projectReader.ReadProject(projectFile);
-            var graphNode = graph.GetOrAdd(project);
+            var graphNode = graph.GetOrAdd(project, isSolutionProject:false);
             ExpandGraphNode(graph, graphNode);
             return graphNode;
+        }
+
+        public SolutionGraph BuildGraph(Solution solution)
+        {
+            var graph = new SolutionGraph();
+            foreach (var project in solution.Projects)
+            {
+                var projectNode = graph.GetOrAdd(project, isSolutionProject: true);
+                ExpandGraphNode(graph, projectNode);
+            }
+
+            return graph;
         }
     }
 }

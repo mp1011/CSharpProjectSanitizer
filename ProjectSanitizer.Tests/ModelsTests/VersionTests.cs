@@ -27,5 +27,18 @@ namespace ProjectSanitizer.Tests.ModelsTests
             Assert.AreEqual(sorted[2].ToString(), "9.3.2-alpha1");
             Assert.AreEqual(sorted[3].ToString(), "9.2");
         }
+
+        [Test]
+        public void TestVersionEquality()
+        {
+            var version = new VersionWithSuffix("1.2.3-beta5");
+            var sameVersion = new VersionWithSuffix("1.2.3-beta5");
+            var differentVersion = new VersionWithSuffix("1.2.2-beta5");
+
+            Assert.That(version.Equals(sameVersion));
+            Assert.That(version == sameVersion);
+            Assert.That(!version.Equals(differentVersion));
+            Assert.That(version != differentVersion);
+        }
     }
 }

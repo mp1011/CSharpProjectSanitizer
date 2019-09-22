@@ -32,7 +32,10 @@ namespace ProjectSanitizer.Base.Models
 
         public override string ToString()
         {
-            return Version.ToString() + (Suffix ?? "");
+            if (Version.Build == 0 && Version.Revision == 0)
+                return Version.ToString(2) + (Suffix ?? "");
+            else
+                return Version.ToString() + (Suffix ?? "");
         }
 
         int IComparable<VersionWithSuffix>.CompareTo(VersionWithSuffix other)
@@ -47,6 +50,30 @@ namespace ProjectSanitizer.Base.Models
                 return 1;
             else
                 return SuffixNumber - other.SuffixNumber;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is VersionWithSuffix otherVersion)
+                return Version.Equals(otherVersion.Version) && Suffix == otherVersion.Suffix;
+            else 
+                return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Version.GetHashCode();
+        }
+
+
+        public static bool operator ==(VersionWithSuffix first, VersionWithSuffix second)
+        {
+            return first.Equals(second);
+        }
+
+        public static bool operator !=(VersionWithSuffix first, VersionWithSuffix second)
+        {
+            return !first.Equals(second);
         }
     }
 }

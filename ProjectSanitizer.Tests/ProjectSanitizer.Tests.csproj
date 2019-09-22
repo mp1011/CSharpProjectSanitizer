@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Compile Remove="ExampleBrokenSolutions\AnotherProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\Program.cs" />
+    <Compile Remove="ExampleBrokenSolutions\FirstProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Program.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Properties\AssemblyInfo.cs" />
@@ -47,15 +48,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectSanitizer.Base\ProjectSanitizer.Base.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj" />
     <None Include="ExampleBrokenSolutions\AnotherProject\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ExampleBrokenSolution.sln" />
     <None Include="ExampleBrokenSolutions\FirstProject\FirstProject.csproj" />
-    <None Include="ExampleBrokenSolutions\FirstProject\Program.cs" />
+    <None Include="ExampleBrokenSolutions\FirstProject\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ThirdProject\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj" />
     <None Include="ExampleBrokenSolutions\VS2017Project\Program.cs" />
@@ -64,6 +61,10 @@
   <ItemGroup>
     <None Include="ExampleBrokenSolutions\VS2017Project\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\VS2017Project\VS2017Project.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectSanitizer.Base\ProjectSanitizer.csproj" />
   </ItemGroup>
 
 </Project>

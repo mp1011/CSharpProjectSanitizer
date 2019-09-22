@@ -6,9 +6,10 @@
 
         public VersionWithSuffix Version { get; }
 
-        public Package(string id)
+        public Package(string id, VersionWithSuffix version)
         {
             ID = id;
+            Version = version;
         }
 
         public override string ToString()

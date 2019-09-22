@@ -16,8 +16,9 @@ namespace ProjectSanitizer.Base
                 .AddSingleton<ISolutionReader, SolutionReader>()
                 .AddSingleton<IProjectGraphBuilder, ProjectGraphBuilder>()
                 .AddSingleton<INugetReferenceReader, NugetReferenceReader>()
-                .AddImplementationsOf<IProblemDetector>();
-
+                .AddImplementationsOf<IProblemDetector>()
+                .AddSingleton<ProblemDetector>();
+  
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
@@ -30,7 +31,7 @@ namespace ProjectSanitizer.Base
                     serviceCollection.AddSingleton(typeof(T), type);  
             }
 
-            return serviceCollection;
+            return serviceCollection.AddSingleton<T[]>(sp => sp.GetServices<T>().ToArray());
         }
 
         public static T GetInstance<T>() where T:class

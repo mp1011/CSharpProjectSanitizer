@@ -23,7 +23,9 @@ namespace ProjectSanitizer.Base.Services
             foreach (XmlNode packageNode in xmlDoc.SelectNodes("//package"))
             {
                 string id = packageNode.Attributes["id"].Value;
-                yield return new Package(id);
+                string version = packageNode.Attributes["version"].Value;
+
+                yield return new Package(id, new VersionWithSuffix(version));
             }
         }
     }

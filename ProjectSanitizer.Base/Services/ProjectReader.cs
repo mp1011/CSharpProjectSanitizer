@@ -45,7 +45,7 @@ namespace ProjectSanitizer.Base.Services
             var nameValues = parts
                                 .Select(text => text.Split('='))
                                 .Where(nv => nv.Length == 2)
-                                .ToDictionary(k => k[0], v => v[1]);
+                                .ToDictionary(k => k[0].Trim(), v => v[1].Trim());
 
             var version = nameValues.TryGet("Version");
 

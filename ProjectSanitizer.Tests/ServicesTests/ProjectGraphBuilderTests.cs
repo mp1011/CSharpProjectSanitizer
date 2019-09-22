@@ -16,7 +16,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var project = projectReader.ReadProject(csProjPath);
 
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var node = graphBuilder.BuildGraph(project).Root;
+            var node = graphBuilder.BuildGraph(project).SolutionProjects.Single();
 
             foreach (var expectedDependency in expectedDependencyPath.Split(','))
             {
@@ -24,6 +24,16 @@ namespace ProjectSanitizer.Tests.ServicesTests
                 Assert.IsNotNull(nextNode);
                 node = nextNode;
             }
+        }
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",4)]
+        public void CanBuildProjectGraphFromSolution(string relativeSlnPath, int expectedProjects)
+        {
+            var slnFile = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnFile);
+            var graph = DIRegistrar.GetInstance<IProjectGraphBuilder>().BuildGraph(solution);
+
+            Assert.AreEqual(expectedProjects, graph.SolutionProjects.Count);
         }
 
         [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", "Newtonsoft.Json")]

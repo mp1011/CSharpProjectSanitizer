@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSanitizer.Tests", "ProjectSanitizer.Tests\ProjectSanitizer.Tests.csproj", "{F2B5B749-62AE-4B76-BD74-BAD560C4799C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSanitizer.Base", "ProjectSanitizer.Base\ProjectSanitizer.Base.csproj", "{3AE3E3BA-9016-4D09-ADE8-FA07900E8F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSanitizer", "ProjectSanitizer.Base\ProjectSanitizer.csproj", "{3AE3E3BA-9016-4D09-ADE8-FA07900E8F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
