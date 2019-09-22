@@ -1,13 +1,19 @@
 ﻿using NUnit.Framework;
+using ProjectSanitizer.Base.Services;
+using ProjectSanitizer.Tests.MockServices;
 
 namespace ProjectSanitizer.Tests.ServicesTests
 {
     public class SolutionReaderTests
     {
-        [TestCase("...")]
-        public void CanReadSolution(string csProjPath)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",4)]
+        public void CanReadNumberOfProjectsInSolution(string relativeSlnPath, int expectedProjects)
         {
-            Assert.Fail();
+            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var service = new SolutionReader(new EmptyProjectReader());
+
+            var sln = service.ReadSolution(slnPath);
+            Assert.AreEqual(expectedProjects, sln.Projects.Length);
         }
     }
 }
