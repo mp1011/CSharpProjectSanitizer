@@ -21,7 +21,8 @@ namespace ProjectSanitizerConsole.Services
                 throw new Exception("Invalid command");
 
             var result = handler.Execute(args);
-            Console.WriteLine(result);
+            foreach (var textOutput in result.TextOutput)
+                SmartStringWriter.WriteToConsole(textOutput);
         }
     }
 }

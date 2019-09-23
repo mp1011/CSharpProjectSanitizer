@@ -21,7 +21,7 @@ namespace ProjectSanitizer.Tests.MockServices
 
         public ReferenceInclude ParseReferenceInclude(string include)
         {
-            return new ReferenceInclude("blank", new VersionWithSuffix("0.0.0"));
+            return new ReferenceInclude("blank", VersionWithSuffix.TryParse("0.0.0"));
         }
 
         public Project ReadProject(VerifiedFile file)

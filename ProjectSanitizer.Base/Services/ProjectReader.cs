@@ -49,7 +49,7 @@ namespace ProjectSanitizer.Base.Services
 
             var version = nameValues.TryGet("Version");
 
-            return new ReferenceInclude(parts[0], new VersionWithSuffix(version));
+            return new ReferenceInclude(parts[0], VersionWithSuffix.TryParse(version));
         }
     }
 }

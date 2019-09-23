@@ -1,6 +1,7 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Services;
 using ProjectSanitizerConsole.Models;
 using System;
 using System.Linq;
@@ -22,15 +23,24 @@ namespace ProjectSanitizerConsole.Services.Commands
 
         public CommandOutput Execute(CommandLineArgs arg)
         {
+            var output = new CommandOutput();
+
             var slnFile = VerifiedFile.GetFileIfExisting(arg.SolutionFile);
             if (slnFile == null)
-                return new CommandOutput($"Unable to find solution {arg.SolutionFile}");
+            {
+                output.TextOutput.Add(new SmartStringBuilder()
+                                            .AppendFatal("Unable to find solution ")
+                                            .AppendHighlighted(arg.SolutionFile));
+                return output;
+            }
 
             var solution = _solutionReader.ReadSolution(slnFile);
             var problems = _problemDetector.DetectAllSolutionProblems(solution);
 
-            var text = string.Join(Environment.NewLine, problems.Select(p => p.Description).ToArray());
-            return new CommandOutput(text);
+            foreach (var problem in problems)
+                output.TextOutput.Add(problem.Description);
+
+            return output;
         }
     }
 }

@@ -4,7 +4,9 @@ using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
 using ProjectSanitizer.Base.Services.ProblemDetectors;
+using ProjectSanitizer.Models.Problems;
 using ProjectSanitizer.Tests.MockServices;
+using System;
 using System.Linq;
 
 namespace ProjectSanitizer.Tests.ServicesTests
@@ -21,12 +23,12 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             var missingProjectDetector = new MissingProjectDetector();
 
-            var problem = missingProjectDetector.DetectProblems(sln).FirstOrDefault();
-            Assert.AreEqual($"Project \"{missingProjectName}\" was not found", problem.Description);
+            var problem = missingProjectDetector.DetectProblems(sln).FirstOrDefault() as MissingProject;
+            Assert.AreEqual(missingProjectName, problem.Project.Name);
         }
 
-        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", "Package Newtonsoft.Json should have version 12.0.1, but version 12.0 is referenced")]
-        public void CanIdentifyNugetVersionMismatch(string projectFile, string expectedError)
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj")]
+        public void CanIdentifyNugetVersionMismatch(string projectFile)
         {
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(TestPaths.GetFileRelativeToProjectDir(projectFile));
@@ -34,22 +36,22 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             var nugetMismatchDetector = new NugetVersionMismatchDetector();
             var problem = nugetMismatchDetector.DetectProblems(node.NugetPackageRequirements[0]).First();
-            Assert.AreEqual(expectedError, problem.Description);
+            Assert.AreEqual(typeof(NugetVersionMismatch), problem.GetType());
         }
 
 
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", "Multiple versions of Newtonsoft.Json found")]
-        public void CanIdentifyInconsistentNugetPackageVersions(string projectFile, string expectedError)
+        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj")]
+        public void CanIdentifyInconsistentNugetPackageVersions(string projectFile)
         {
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(TestPaths.GetFileRelativeToProjectDir(projectFile));
 
             var nugetMismatchDetector = new DifferentNugetVersionsDetector();
             var problem = nugetMismatchDetector.DetectProblems(graph).First();
-            Assert.AreEqual(expectedError, problem.Description);
+            Assert.AreEqual(typeof(MultipleNugetVersions), problem.GetType());
         }
 
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 3)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 2)]
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);

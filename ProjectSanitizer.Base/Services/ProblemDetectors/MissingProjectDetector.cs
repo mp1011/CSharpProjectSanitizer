@@ -2,6 +2,7 @@
 using ProjectSanitizer.Base.Models.ProjectGraph;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.Problems;
 using System.Collections.Generic;
 
 namespace ProjectSanitizer.Base.Services.ProblemDetectors
@@ -13,8 +14,8 @@ namespace ProjectSanitizer.Base.Services.ProblemDetectors
             foreach(var project in solution.ProjectLines)
             {
                 var file = solution.SolutionDirectory.GetRelativeFileOrDefault(project.RelativePath);
-                if(file == null)
-                    yield return new Problem($"Project {project.Name} was not found");
+                if (file == null)
+                    yield return new MissingProject(solution, project);
             }
         }
     }

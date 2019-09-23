@@ -26,7 +26,7 @@ namespace ProjectSanitizer.Base.Services
         public SolutionGraph BuildGraph(Project project)
         {
             var root = new ProjectGraphNode(project);
-            var graph = new SolutionGraph();
+            var graph = new SolutionGraph(null); 
             graph.AddNode(root, isSolutionProject: true);
             ExpandGraphNode(graph, root);
             return graph;
@@ -47,7 +47,7 @@ namespace ProjectSanitizer.Base.Services
                 var nugetPackage = nugetPackages?.FindPackage(fileReference.Include.ID);
                 if (nugetPackage != null)
                 {
-                    var nugetReference = new NugetReference(nugetPackage, fileReference.TryGetFile(), fileReference.Include.Version);
+                    var nugetReference = new NugetReference(nugetPackage, fileReference.TryGetFile(), fileReference.VersionFromPath);
                     node.NugetPackageRequirements.Add(nugetReference);
                 }
                 else
@@ -72,7 +72,7 @@ namespace ProjectSanitizer.Base.Services
 
         public SolutionGraph BuildGraph(Solution solution)
         {
-            var graph = new SolutionGraph();
+            var graph = new SolutionGraph(solution);
             foreach (var project in solution.Projects)
             {
                 var projectNode = graph.GetOrAdd(project, isSolutionProject: true);

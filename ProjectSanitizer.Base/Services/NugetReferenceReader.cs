@@ -25,7 +25,7 @@ namespace ProjectSanitizer.Base.Services
                 string id = packageNode.Attributes["id"].Value;
                 string version = packageNode.Attributes["version"].Value;
 
-                yield return new Package(id, new VersionWithSuffix(version));
+                yield return new Package(id, VersionWithSuffix.TryParse(version));
             }
         }
     }

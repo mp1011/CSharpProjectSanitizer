@@ -10,6 +10,13 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
 
         public List<ProjectGraphNode> SolutionProjects { get; } = new List<ProjectGraphNode>();
 
+        public Solution Solution { get; }
+
+        public SolutionGraph(Solution solution)
+        {
+            Solution = solution;
+        }
+
         public ProjectGraphNode AddNode(ProjectGraphNode node, bool isSolutionProject)
         {
             AllNodes[node.ToString()] = node;

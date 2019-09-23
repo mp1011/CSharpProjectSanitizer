@@ -30,5 +30,16 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var dependency = proj.FileReferences.FirstOrDefault(fr => fr.RelativePath.EndsWith(expectedReference));
             Assert.IsNotNull(dependency);
         }
+
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", "Newtonsoft.Json", "12.0.2")]
+        public void CanDetectVersionOfFileReferenceFromPath(string relativeCsProjPath, string reference, string expectedFileVersion)
+        {
+            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var service = DIRegistrar.GetInstance<IProjectReader>();
+            var proj = service.ReadProject(csProjPath);
+
+            var fileRef = proj.FileReferences.FirstOrDefault(r => r.Include.ID == reference);
+            Assert.AreEqual(fileRef.VersionFromPath.ToString(), expectedFileVersion);
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace ProjectSanitizer.Base.Services
                 return null;
 
             var relativePath = commaSplit[1].Trim().Trim('"');
-            return new ProjectLine(commaSplit[0].Trim(), relativePath);
+            return new ProjectLine(commaSplit[0].Trim().Trim('"'), relativePath);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using ProjectSanitizer.Base.Models;
 using ProjectSanitizer.Base.Models.ProjectGraph;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.Problems;
 
 namespace ProjectSanitizer.Base.Services.ProblemDetectors
 {
@@ -16,7 +17,7 @@ namespace ProjectSanitizer.Base.Services.ProblemDetectors
             {
                 var versions = packageGroup.Select(g => g.Version).Distinct().ToArray();
                 if (versions.Length > 1)
-                    yield return new Problem($"Multiple versions of {packageGroup.Key} found");
+                    yield return new MultipleNugetVersions(item, packageGroup.First().Package.ID, versions);
             }
         }
     }

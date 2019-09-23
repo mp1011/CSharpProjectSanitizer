@@ -14,21 +14,48 @@ namespace ProjectSanitizer.Base.Models
 
         public bool HasSuffix => !string.IsNullOrEmpty(Suffix);
 
-        public VersionWithSuffix(string versionNumber)
+        public static VersionWithSuffix TryParseFromPath(string path)
         {
+            foreach(var part in path.Split('\\'))
+            {
+                var maybeVersion = Regex.Match(part, @"[\d\.]+\d");
+                if (maybeVersion.Success)
+                {
+                    var version = TryParse(maybeVersion.Value.TrimStart('.'));
+                    if (version != null && version.Version.Major > 0)
+                        return version;
+                }
+            }
+
+            return null;
+        }
+
+        public static VersionWithSuffix TryParse(string versionNumber)
+        {
+            Version version;
+            string suffix = null;
+
             if (string.IsNullOrEmpty(versionNumber))
-                Version = new Version(0, 0);
+                return null;
             else
             {
                 var split = versionNumber.Split('-');
-                Version = Version.Parse(split[0]);
+                if (!Version.TryParse(split[0], out version))
+                    return null;
 
                 if (split.Length == 2)
-                {
-                    Suffix = "-" + split[1];
-                    SuffixNumber = Regex.Replace(Suffix, @"[\D]*", "").TryParseInt();
-                }
+                    suffix = "-" + split[1];
             }
+
+            return new VersionWithSuffix(version, suffix);
+        }
+
+        private VersionWithSuffix(Version version, string suffix)
+        {
+            Version = version;
+            Suffix = suffix;
+            if(!string.IsNullOrEmpty(Suffix))
+                SuffixNumber = Regex.Replace(Suffix, @"[\D]*", "").TryParseInt();
         }
 
         public override string ToString()
@@ -88,12 +115,26 @@ namespace ProjectSanitizer.Base.Models
 
         public static bool operator ==(VersionWithSuffix first, VersionWithSuffix second)
         {
-            return first.Equals(second);
+            bool firstNull = Equals(first, null);
+            bool secondNull = Equals(second, null);
+            if (firstNull && secondNull)
+                return true;
+            else if (firstNull != secondNull)
+                return false;
+            else 
+                return first.Equals(second);
         }
 
         public static bool operator !=(VersionWithSuffix first, VersionWithSuffix second)
         {
-            return !first.Equals(second);
+            bool firstNull = Equals(first, null);
+            bool secondNull = Equals(second, null);
+            if (firstNull && secondNull)
+                return false;
+            else if (firstNull != secondNull)
+                return true;
+            else
+                return !first.Equals(second);
         }
     }
 }
