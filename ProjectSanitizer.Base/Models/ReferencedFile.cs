@@ -1,11 +1,15 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
+using ProjectSanitizer.Base.Models.SolutionStructure;
 
 namespace ProjectSanitizer.Base.Models
 {
     public class ReferencedFile
     {
-        public ReferencedFile(VerifiedFile file, VersionWithSuffix version)
+        public Project Project { get; }
+
+        public ReferencedFile(Project project, VerifiedFile file, VersionWithSuffix version)
         {
+            Project = project;
             File = file;
             Version = version;
         }

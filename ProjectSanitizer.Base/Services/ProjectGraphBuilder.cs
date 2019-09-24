@@ -51,12 +51,12 @@ namespace ProjectSanitizer.Base.Services
                 var nugetPackage = nugetPackages?.FindPackage(fileReference.Include.ID);
                 if (nugetPackage != null)
                 {
-                    var nugetReference = new NugetReference(nugetPackage, fileReference.TryGetFile(), fileReference.VersionFromPath);
+                    var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.TryGetFile(), fileReference.VersionFromPath);
                     node.NugetPackageRequirements.Add(nugetReference);
                 }
                 else
                 {
-                    var reference = new ReferencedFile(fileReference.TryGetFile(), fileReference.Include.Version);
+                    var reference = new ReferencedFile(node.Project, fileReference.TryGetFile(), fileReference.Include.Version);
                     node.FileRequirements.Add(reference);
                 }
             } 

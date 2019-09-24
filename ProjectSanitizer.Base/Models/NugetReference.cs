@@ -7,8 +7,8 @@ namespace ProjectSanitizer.Base.Models
     {
         public Package Package { get; }
 
-        public NugetReference(Package package, VerifiedFile file, VersionWithSuffix version) 
-            : base(file,version)
+        public NugetReference(Project project, Package package, VerifiedFile file, VersionWithSuffix version) 
+            : base(project, file,version)
         {
             Package = package;
         }

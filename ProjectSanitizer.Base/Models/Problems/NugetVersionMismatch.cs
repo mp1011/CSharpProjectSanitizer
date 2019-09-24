@@ -10,6 +10,7 @@ namespace ProjectSanitizer.Models.Problems
     {
         public override SmartStringBuilder Description => new SmartStringBuilder()
             .AppendError("Package ").AppendHighlighted(Item.Package)
+            .AppendError(" of project ").AppendHighlighted(Item.Project)
             .AppendError(" should have version ").AppendHighlighted(Item.Package.Version)
             .AppendError(", but version ").AppendHighlighted(Item.Version).AppendError(" is referenced");
 
