@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -9,6 +9,7 @@
     <Compile Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\obj\**" />
+    <Compile Remove="ExampleBrokenSolutions\OlderDotNet\obj\**" />
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\bin\**" />
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\obj\**" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\bin\**" />
@@ -17,6 +18,7 @@
     <EmbeddedResource Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\FirstProject\obj\**" />
+    <EmbeddedResource Remove="ExampleBrokenSolutions\OlderDotNet\obj\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\ThirdProject\bin\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\ThirdProject\obj\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\VS2017Project\bin\**" />
@@ -25,6 +27,7 @@
     <None Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <None Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
     <None Remove="ExampleBrokenSolutions\FirstProject\obj\**" />
+    <None Remove="ExampleBrokenSolutions\OlderDotNet\obj\**" />
     <None Remove="ExampleBrokenSolutions\ThirdProject\bin\**" />
     <None Remove="ExampleBrokenSolutions\ThirdProject\obj\**" />
     <None Remove="ExampleBrokenSolutions\VS2017Project\bin\**" />
@@ -35,6 +38,7 @@
     <Compile Remove="ExampleBrokenSolutions\AnotherProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\Program.cs" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\Properties\AssemblyInfo.cs" />
+    <Compile Remove="ExampleBrokenSolutions\OlderDotNet\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Program.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Properties\AssemblyInfo.cs" />
@@ -53,6 +57,8 @@
     <None Include="ExampleBrokenSolutions\ExampleBrokenSolution.sln" />
     <None Include="ExampleBrokenSolutions\FirstProject\FirstProject.csproj" />
     <None Include="ExampleBrokenSolutions\FirstProject\Properties\AssemblyInfo.cs" />
+    <None Include="ExampleBrokenSolutions\OlderDotNet\OlderDotNet.csproj" />
+    <None Include="ExampleBrokenSolutions\OlderDotNet\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ThirdProject\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj" />
     <None Include="ExampleBrokenSolutions\VS2017Project\Program.cs" />

@@ -2,6 +2,8 @@
 using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.SolutionStructure;
+using System;
 using System.Collections.Generic;
 using System.Xml;
 
@@ -9,6 +11,11 @@ namespace ProjectSanitizer.Tests.MockServices
 {
     public class EmptyProjectReader : IProjectReader
     {
+        public DotNetVersion ExtractDotNetVersion(DotNetXMLDoc csProjXML)
+        {
+            return new DotNetVersion(DotNetType.Framework, new Version(1, 0));
+        }
+
         public IEnumerable<Reference> ExtractFileReferences(DotNetXMLDoc csProjXML)
         {
             return new Reference[] { };

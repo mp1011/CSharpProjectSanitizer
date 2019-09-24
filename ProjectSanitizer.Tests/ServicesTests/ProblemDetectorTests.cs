@@ -5,6 +5,7 @@ using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
 using ProjectSanitizer.Base.Services.ProblemDetectors;
 using ProjectSanitizer.Models.Problems;
+using ProjectSanitizer.Services.ProblemDetectors;
 using ProjectSanitizer.Tests.MockServices;
 using System;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             Assert.AreEqual(typeof(MultipleNugetVersions), problem.GetType());
         }
 
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 2)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 4)]
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
@@ -60,6 +61,21 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
             var problems = problemDetector.DetectAllSolutionProblems(solution);
             Assert.AreEqual(expectedNumberOfProblems, problems.Length);
+        }
+
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "OlderDotNet")]
+        public void CanDetectProjectDependingOnHigherDotNetVersion(string relativeSlnPath, string project)
+        {
+            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
+            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
+            var graph = graphBuilder.BuildGraph(solution);
+            var projectNode = graph.AllNodes.Values.Single(p => p.Project.Name == project);
+
+            var dependsOnHigherFrameworkDetector = new DependsOnIncompatibleFrameworkDetector();
+            var problem = dependsOnHigherFrameworkDetector.DetectProblems(projectNode).First();
+            Assert.AreEqual(typeof(DependsOnIncompatibleFramework), problem.GetType());
         }
     }
 }

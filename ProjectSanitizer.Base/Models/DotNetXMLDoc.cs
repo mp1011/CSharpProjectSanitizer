@@ -11,6 +11,8 @@ namespace ProjectSanitizer.Base.Models
 
         public VerifiedFile File { get; }
 
+        public XmlElement DocumentElement => _document.DocumentElement;
+
         public DotNetXMLDoc(VerifiedFile csProjFile)
         {
             File = csProjFile;
@@ -30,17 +32,20 @@ namespace ProjectSanitizer.Base.Models
             return SelectNodes(_document.DocumentElement, xPath);
         }
 
+        public XmlNode SelectSingleNode(string xPath)
+        {
+            return SelectSingleNode(_document.DocumentElement, xPath);
+        }
+
         public XmlNodeList SelectNodes(XmlNode from, string xPath)
         {
             if (_namespaceManager == null)
                 return from.SelectNodes(xPath);
             else
             {
-                if (xPath.StartsWith("//"))
-                    xPath = $"//tu:" + xPath.Substring(2);
-                else
-                    xPath = $"tu:{xPath}";
-
+                xPath = xPath.Replace("//", $"//tu:");
+                if (!xPath.StartsWith("//tu:"))
+                    xPath = "tu:" + xPath;
                 return from.SelectNodes(xPath, _namespaceManager);
             }
         }

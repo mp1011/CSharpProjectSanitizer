@@ -39,7 +39,18 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var proj = service.ReadProject(csProjPath);
 
             var fileRef = proj.FileReferences.FirstOrDefault(r => r.Include.ID == reference);
-            Assert.AreEqual(fileRef.VersionFromPath.ToString(), expectedFileVersion);
+            Assert.AreEqual(fileRef.Version.ToString(), expectedFileVersion);
+        }
+
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj",".NET Framework v4.7.2")]
+        [TestCase(@"ExampleBrokenSolutions\OlderDotNet\OlderDotNet.csproj", ".NET Framework v4.5")]
+        public void CanReadDotNetVersionOfProject(string relativeCsProjPath, string expectedVersion)
+        {
+            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var service = DIRegistrar.GetInstance<IProjectReader>();
+            var proj = service.ReadProject(csProjPath);
+
+            Assert.AreEqual(expectedVersion, proj.DotNetVersion.ToString());
         }
     }
 }

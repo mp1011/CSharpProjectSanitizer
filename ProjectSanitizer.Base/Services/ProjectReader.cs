@@ -3,9 +3,11 @@ using ProjectSanitizer.Base.Models;
 using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.SolutionStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace ProjectSanitizer.Base.Services
@@ -50,6 +52,30 @@ namespace ProjectSanitizer.Base.Services
             var version = nameValues.TryGet("Version");
 
             return new ReferenceInclude(parts[0], VersionWithSuffix.TryParse(version));
+        }
+
+        public DotNetVersion ExtractDotNetVersion(DotNetXMLDoc csProjXML)
+        {
+            var versionNode = csProjXML.SelectSingleNode(csProjXML.DocumentElement, "//TargetFrameworkVersion | //TargetFramework");
+
+            if(versionNode != null)
+            {
+                var prefixAndVersion = Regex.Match(versionNode.InnerText, @"(\D+)([\d|\.]+)");
+                if(prefixAndVersion.Groups.Count == 3)
+                {
+                    var prefix = prefixAndVersion.Groups[1].Value;
+                    var version = prefixAndVersion.Groups[2].Value;
+
+                    if(prefix.StartsWith("netstandard"))
+                        return new DotNetVersion(DotNetType.Standard, Version.Parse(version));
+                    else if (prefix.StartsWith("netcore"))
+                        return new DotNetVersion(DotNetType.Core, Version.Parse(version));
+                    else
+                        return new DotNetVersion(DotNetType.Framework, Version.Parse(version));
+                }
+            }
+
+            return new DotNetVersion(DotNetType.Unknown, new Version(0,0));
         }
     }
 }

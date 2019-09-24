@@ -26,7 +26,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             }
         }
 
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",4)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",5)]
         public void CanBuildProjectGraphFromSolution(string relativeSlnPath, int expectedProjects)
         {
             var slnFile = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);

@@ -1,5 +1,6 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.SolutionStructure;
 using System.Linq;
 using System.Xml;
 
@@ -10,6 +11,7 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
         private readonly VerifiedFile _csProjFile;
         private DotNetXMLDoc _xml;
 
+        public DotNetVersion DotNetVersion { get; }
         public ProjectReference[] ProjectReferences { get; }
 
         public Reference[] FileReferences { get; }
@@ -19,6 +21,7 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
             _csProjFile = csProjFile;
             _xml = new DotNetXMLDoc(csProjFile);
 
+            DotNetVersion = projectReader.ExtractDotNetVersion(_xml);
             ProjectReferences = projectReader.ExtractProjectReferences(_xml).ToArray();
             FileReferences = projectReader.ExtractFileReferences(_xml).ToArray();
         }
