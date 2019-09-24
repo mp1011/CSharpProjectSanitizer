@@ -32,6 +32,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         }
 
         [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", "Newtonsoft.Json", "12.0.2")]
+        [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj", "Newtonsoft.Json", "12.0.3-beta1")]
         public void CanDetectVersionOfFileReferenceFromPath(string relativeCsProjPath, string reference, string expectedFileVersion)
         {
             var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
@@ -39,7 +40,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var proj = service.ReadProject(csProjPath);
 
             var fileRef = proj.FileReferences.FirstOrDefault(r => r.Include.ID == reference);
-            Assert.AreEqual(fileRef.Version.ToString(), expectedFileVersion);
+            Assert.AreEqual(expectedFileVersion,fileRef.Version.ToString());
         }
 
         [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj",".NET Framework v4.7.2")]

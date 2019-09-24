@@ -30,6 +30,9 @@ namespace ProjectSanitizer.Tests.ModelsTests
 
         [TestCase(@"\packages\Newtonsoft.Json.12.0.1\lib","12.0.1")]
         [TestCase(@"\packages\Newtonsoft.Json.12\lib", null)]
+        [TestCase(@"\packages\Newtonsoft.Json.12.0-beta2\lib", "12.0-beta2")]
+        [TestCase(@"\packages\Newtonsoft.Json.12.0.5-alpha64\lib", "12.0.5-alpha64")]
+
         public void CanParseVersionWithinPath(string path, string expectedVersion)
         {
             var version = VersionWithSuffix.TryParseFromPath(path);

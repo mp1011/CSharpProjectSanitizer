@@ -18,7 +18,7 @@ namespace ProjectSanitizer.Base.Models
         {
             foreach(var part in path.Split('\\'))
             {
-                var maybeVersion = Regex.Match(part, @"[\d\.]+\d");
+                var maybeVersion = Regex.Match(part, @"[\d\.]+\d-?.*");
                 if (maybeVersion.Success)
                 {
                     var version = TryParse(maybeVersion.Value.TrimStart('.'));
@@ -42,7 +42,7 @@ namespace ProjectSanitizer.Base.Models
                 var split = versionNumber.Split('-');
                 if (!Version.TryParse(split[0], out version))
                     return null;
-
+                
                 if (split.Length == 2)
                     suffix = "-" + split[1];
             }
