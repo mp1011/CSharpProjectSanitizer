@@ -38,7 +38,11 @@ namespace ProjectSanitizer.Base.Services
                 return;
 
             foreach (var projectRef in node.Project.ProjectReferences)
-                node.ProjectRequirements.Add(CreateGraphNode(graph, projectRef));
+            {
+                var projectRefNode = TryCreateGraphNode(graph, projectRef);
+                if(projectRefNode != null)
+                    node.ProjectRequirements.Add(projectRefNode);
+            }
 
             var nugetPackages = _nugetReferenceReader.TryReadPackagesConfig(node.Project.ProjectDirectory);
 
@@ -58,11 +62,11 @@ namespace ProjectSanitizer.Base.Services
             } 
         }
 
-        private ProjectGraphNode CreateGraphNode(SolutionGraph graph, ProjectReference projectReference)
+        private ProjectGraphNode TryCreateGraphNode(SolutionGraph graph, ProjectReference projectReference)
         {
             var projectFile = projectReference.TryGetFile();
             if (projectFile == null)
-                throw new NotImplementedException("Missing projects are not handled yet");
+                return null;
 
             var project = _projectReader.ReadProject(projectFile);
             var graphNode = graph.GetOrAdd(project, isSolutionProject:false);

@@ -15,9 +15,9 @@ namespace ProjectSanitizer.Services.ProblemDetectors
             {
                 var otherVersion = projectRef.Project.DotNetVersion;
                 if (thisVersion.DotNetType != otherVersion.DotNetType)
-                    yield return new DependsOnIncompatibleFramework(thisVersion, otherVersion);
+                    yield return new DependsOnIncompatibleFramework(item.Project, projectRef.Project, thisVersion, otherVersion);
                 else if(otherVersion.Version > thisVersion.Version)
-                    yield return new DependsOnIncompatibleFramework(thisVersion, otherVersion);
+                    yield return new DependsOnIncompatibleFramework(item.Project, projectRef.Project, thisVersion, otherVersion);
             }
         }
     }
