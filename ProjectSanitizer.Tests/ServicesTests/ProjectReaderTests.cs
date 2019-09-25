@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using ProjectSanitizer.Base;
+using ProjectSanitizer.Base.Models;
 using ProjectSanitizer.Base.Services.Interfaces;
 using System.Linq;
 
@@ -8,9 +9,9 @@ namespace ProjectSanitizer.Tests.ServicesTests
     [TestFixture]
     public class ProjectReaderTests
     {
-
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", @"..\AnotherProject\AnotherProject.csproj")]
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", @"..\ThirdProject\ThirdProject.csproj")]
         [TestCase(@"ExampleBrokenSolutions\VS2017Project\VS2017Project.csproj", @"..\AnotherProject\AnotherProject.csproj")]
+
         public void CanReadProjectReferences(string relativeCsProjPath, string expectedReference)
         {
             var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
@@ -52,6 +53,16 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var proj = service.ReadProject(csProjPath);
 
             Assert.AreEqual(expectedVersion, proj.DotNetVersion.ToString());
+        }
+
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", "AnotherProject")]
+        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", "FirstProject")]
+        [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj", "ThirdProject")]
+        public void CanReadProjectAssemblyFilename(string relativeCsProjPath, string assemblyName)
+        {
+            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var service = DIRegistrar.GetInstance<IProjectReader>();
+            Assert.AreEqual(assemblyName, service.ExtractAssemblyName(new DotNetXMLDoc(csProjPath)));
         }
     }
 }

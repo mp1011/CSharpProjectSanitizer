@@ -77,5 +77,11 @@ namespace ProjectSanitizer.Base.Services
 
             return new DotNetVersion(DotNetType.Unknown, new Version(0,0));
         }
+
+        public string ExtractAssemblyName(DotNetXMLDoc csProjXML)
+        {
+            var assemblyNode = csProjXML.SelectSingleNode(csProjXML.DocumentElement, "//AssemblyName");
+            return assemblyNode.InnerText;
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace ProjectSanitizer.Base.Models
 
         public VerifiedFile File { get; }
         public VersionWithSuffix Version { get; }
+
+        public override string ToString()
+        {
+            return File.ToString();
+        }
     }
 }

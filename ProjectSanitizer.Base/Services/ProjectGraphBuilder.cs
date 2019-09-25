@@ -3,7 +3,6 @@ using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.ProjectGraph;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services.Interfaces;
-using System;
 
 namespace ProjectSanitizer.Base.Services
 {
@@ -25,8 +24,8 @@ namespace ProjectSanitizer.Base.Services
 
         public SolutionGraph BuildGraph(Project project)
         {
-            var root = new ProjectGraphNode(project);
-            var graph = new SolutionGraph(null); 
+            var graph = new SolutionGraph(null);
+            var root = new ProjectGraphNode(project,graph);
             graph.AddNode(root, isSolutionProject: true);
             ExpandGraphNode(graph, root);
             return graph;

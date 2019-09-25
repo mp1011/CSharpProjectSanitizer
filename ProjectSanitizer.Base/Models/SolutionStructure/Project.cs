@@ -11,6 +11,8 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
         private readonly VerifiedFile _csProjFile;
         private DotNetXMLDoc _xml;
 
+        public string AssemblyName { get; }
+
         public DotNetVersion DotNetVersion { get; }
         public ProjectReference[] ProjectReferences { get; }
 
@@ -24,6 +26,7 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
             DotNetVersion = projectReader.ExtractDotNetVersion(_xml);
             ProjectReferences = projectReader.ExtractProjectReferences(_xml).ToArray();
             FileReferences = projectReader.ExtractFileReferences(_xml).ToArray();
+            AssemblyName = projectReader.ExtractAssemblyName(_xml);
         }
 
         public string FullPath => _csProjFile.FullName;

@@ -1,6 +1,8 @@
 ﻿using ProjectSanitizer.Base.Extensions;
 using ProjectSanitizer.Base.Models.SolutionStructure;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectSanitizer.Base.Models.ProjectGraph
 {
@@ -17,6 +19,12 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
             Solution = solution;
         }
 
+
+        public IEnumerable<ProjectGraphNode> FindProject(Func<ProjectGraphNode,bool> condition)
+        {
+            return AllNodes.Values.Where(condition);
+        }
+
         public ProjectGraphNode AddNode(ProjectGraphNode node, bool isSolutionProject)
         {
             AllNodes[node.ToString()] = node;
@@ -29,7 +37,7 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
         public ProjectGraphNode GetOrAdd(Project project, bool isSolutionProject)
         {
             var node = AllNodes.TryGet(project.FullPath) ??
-                AddNode(new ProjectGraphNode(project),isSolutionProject);
+                AddNode(new ProjectGraphNode(project,this),isSolutionProject);
 
             if (isSolutionProject && !SolutionProjects.Contains(node))
                 SolutionProjects.Add(node);

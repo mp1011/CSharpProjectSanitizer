@@ -1,4 +1,5 @@
 ﻿using ProjectSanitizer.Base.Models.SolutionStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,7 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
 {
     public class ProjectGraphNode
     {
+        public SolutionGraph SolutionGraph { get; }
         public Project Project { get; }
 
         public List<ProjectGraphNode> ProjectRequirements { get; } = new List<ProjectGraphNode>();
@@ -19,9 +21,10 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
             return Project.FullPath;
         }
 
-        public ProjectGraphNode(Project project)
+        public ProjectGraphNode(Project project, SolutionGraph graph)
         {
             Project = project;
+            SolutionGraph = graph;
         }
     }
 }

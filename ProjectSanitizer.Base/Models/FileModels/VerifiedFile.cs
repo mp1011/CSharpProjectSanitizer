@@ -43,5 +43,52 @@ namespace ProjectSanitizer.Base.Models.FileModels
             var path = Path.Combine(_file.Directory.FullName, relativePath);
             return GetFileIfExisting(path);
         }
+
+        public override string ToString()
+        {
+            return _file.Name;
+        }
+
+        private string GetStandardizedName()
+        {
+            return _file.FullName.ToLower();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is VerifiedFile otherFile)
+                return GetStandardizedName() == otherFile.GetStandardizedName();
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return GetStandardizedName().GetHashCode();
+        }
+
+        public static bool operator ==(VerifiedFile first, VerifiedFile second)
+        {
+            bool firstNull = Equals(first, null);
+            bool secondNull = Equals(second, null);
+            if (firstNull && secondNull)
+                return true;
+            else if (firstNull != secondNull)
+                return false;
+            else
+                return first.Equals(second);
+        }
+
+        public static bool operator !=(VerifiedFile first, VerifiedFile second)
+        {
+            bool firstNull = Equals(first, null);
+            bool secondNull = Equals(second, null);
+            if (firstNull && secondNull)
+                return false;
+            else if (firstNull != secondNull)
+                return true;
+            else
+                return !first.Equals(second);
+        }
     }
 }

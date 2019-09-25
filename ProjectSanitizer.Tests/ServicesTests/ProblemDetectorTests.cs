@@ -52,7 +52,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             Assert.AreEqual(typeof(MultipleNugetVersions), problem.GetType());
         }
 
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 4)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 7)]
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
@@ -76,6 +76,48 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var dependsOnHigherFrameworkDetector = new DependsOnIncompatibleFrameworkDetector();
             var problem = dependsOnHigherFrameworkDetector.DetectProblems(projectNode).First();
             Assert.AreEqual(typeof(DependsOnIncompatibleFramework), problem.GetType());
+        }
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln","FirstProject")]
+        public void CanDetectFileReferenceWhereProjectReferenceIsMoreAppropriate(string relativeSlnPath, string project)
+        {
+            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
+            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
+            var graph = graphBuilder.BuildGraph(solution);
+            var projectNode = graph.AllNodes.Values.Single(p => p.Project.Name == project);
+
+            var detector = new FileReferenceInsteadOfProjectReferenceDetector();
+            var problem = detector.DetectProblems(projectNode).First();
+            Assert.AreEqual("Project FirstProject has a file reference instead of a project reference to AnotherProject", problem.Description.ToString());
+        }
+
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "VS2017Project")]
+        public void CanDetectFileReferenceWhereNugetReferenceIsMoreAppropriate(string relativeSlnPath, string project)
+        {
+            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
+            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
+            var graph = graphBuilder.BuildGraph(solution);
+            var projectNode = graph.AllNodes.Values.Single(p => p.Project.Name == project);
+
+            var detector = new FileReferenceInsteadOfNugetReferenceDetector();
+            var problem = detector.DetectProblems(projectNode).First();
+            Assert.AreEqual("Project VS2017Project has a file reference instead of a nuget reference to Newtonsoft.Json", problem.Description.ToString());
+        }
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
+        public void CanDetectSameDLLReferencedInDifferentPaths(string relativeSlnPath)
+        {
+            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
+            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
+            var graph = graphBuilder.BuildGraph(solution);
+
+            var detector = new FileReferencedInMultipleWaysDetector();
+            var problem = detector.DetectProblems(graph).First();
+            Assert.AreEqual("The file Newtonsoft.Json is referenced in multiple paths", problem.Description.ToString());
         }
     }
 }

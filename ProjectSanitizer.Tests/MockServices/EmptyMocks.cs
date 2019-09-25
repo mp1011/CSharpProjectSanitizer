@@ -35,5 +35,10 @@ namespace ProjectSanitizer.Tests.MockServices
         {
             return new Project(file, this);
         }
+
+        public string ExtractAssemblyName(DotNetXMLDoc csProjXML)
+        {
+            return string.Empty;
+        }
     }
 }

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AnotherProject">
+      <HintPath>..\AnotherProject\bin\Debug\AnotherProject.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -47,10 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AnotherProject\AnotherProject.csproj">
-      <Project>{468b6c54-65f0-4955-b480-7c38c0c0f4c6}</Project>
-      <Name>AnotherProject</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VS2017Project\VS2017Project.csproj">
       <Project>{4cf93aaf-14ef-4f45-9aff-5333c1ef0384}</Project>
       <Name>VS2017Project</Name>

@@ -13,5 +13,6 @@ namespace ProjectSanitizer.Base.Services.Interfaces
         IEnumerable<Reference> ExtractFileReferences(DotNetXMLDoc csProjXML);
         ReferenceInclude ParseReferenceInclude(string include);
         DotNetVersion ExtractDotNetVersion(DotNetXMLDoc csProjXML);
+        string ExtractAssemblyName(DotNetXMLDoc csProjXML);
     }
 }
