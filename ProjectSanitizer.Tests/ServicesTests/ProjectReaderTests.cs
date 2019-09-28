@@ -76,6 +76,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             foreach(var file in proj.FileReferences)
             {
+                Assert.IsNotNull(file.GetFile());
             }
         }
 
