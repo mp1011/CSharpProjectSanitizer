@@ -50,12 +50,12 @@ namespace ProjectSanitizer.Base.Services
                 var nugetPackage = nugetPackages?.FindPackage(fileReference.Include.ID);
                 if (nugetPackage != null)
                 {
-                    var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.TryGetFile(), fileReference.VersionFromPath);
+                    var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.GetFile(), fileReference.VersionFromPath);
                     node.NugetPackageRequirements.Add(nugetReference);
                 }
                 else
                 {
-                    var reference = new ReferencedFile(node.Project, fileReference.TryGetFile(), fileReference.Include.Version);
+                    var reference = new ReferencedFile(node.Project, fileReference.GetFile(), fileReference.Include.Version);
                     node.FileRequirements.Add(reference);
                 }
             } 
@@ -63,11 +63,15 @@ namespace ProjectSanitizer.Base.Services
 
         private ProjectGraphNode TryCreateGraphNode(SolutionGraph graph, ProjectReference projectReference)
         {
-            var projectFile = projectReference.TryGetFile();
+            var projectFile = projectReference.GetFile();
             if (projectFile == null)
                 return null;
 
-            var project = _projectReader.ReadProject(projectFile);
+            var file = projectFile.TryVerify();
+            if (file == null)
+                return null;
+
+            var project = _projectReader.ReadProject(file);
             var graphNode = graph.GetOrAdd(project, isSolutionProject:false);
             ExpandGraphNode(graph, graphNode);
             return graphNode;

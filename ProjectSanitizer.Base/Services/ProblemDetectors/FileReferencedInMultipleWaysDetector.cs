@@ -6,6 +6,7 @@ using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.ProjectGraph;
 using ProjectSanitizer.Base.Services.Interfaces;
 using ProjectSanitizer.Models;
+using ProjectSanitizer.Models.FileModels;
 using ProjectSanitizer.Models.Problems;
 
 namespace ProjectSanitizer.Services.ProblemDetectors
@@ -14,7 +15,7 @@ namespace ProjectSanitizer.Services.ProblemDetectors
     {
         public IEnumerable<Problem> DetectProblems(SolutionGraph item)
         {
-            Dictionary<string, List<VerifiedFile>> referencesByName = new Dictionary<string, List<VerifiedFile>>();
+            Dictionary<string, List<IFile>> referencesByName = new Dictionary<string, List<IFile>>();
             foreach(var project in item.AllNodes.Values)
             {
                 foreach (var fileRef in project.FileRequirements)
@@ -30,7 +31,7 @@ namespace ProjectSanitizer.Services.ProblemDetectors
             }
         }
 
-        private void AddReferenceType(VerifiedFile file, Dictionary<string, List<VerifiedFile>> referencesByName)
+        private void AddReferenceType(IFile file, Dictionary<string, List<IFile>> referencesByName)
         {
             if (file == null)
                 return;
@@ -38,7 +39,7 @@ namespace ProjectSanitizer.Services.ProblemDetectors
             var list = referencesByName.TryGet(file.Name);
             if(list == null)
             {
-                list = new List<VerifiedFile>();
+                list = new List<IFile>();
                 referencesByName[file.Name] = list;
             }
 

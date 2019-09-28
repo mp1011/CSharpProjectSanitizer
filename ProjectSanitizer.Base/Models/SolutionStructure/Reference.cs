@@ -1,4 +1,5 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
+using ProjectSanitizer.Models.FileModels;
 
 namespace ProjectSanitizer.Base.Models.SolutionStructure
 {
@@ -26,9 +27,9 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
 
         public string RelativePath { get; }
 
-        public VerifiedFile TryGetFile()
+        public RelativeFile GetFile()
         {
-            return BaseDirectory.GetRelativeFileOrDefault(RelativePath);
+            return new RelativeFile(BaseDirectory, RelativePath); 
         }
     }
 }

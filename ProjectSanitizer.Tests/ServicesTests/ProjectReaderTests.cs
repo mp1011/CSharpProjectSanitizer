@@ -41,10 +41,10 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var proj = service.ReadProject(csProjPath);
 
             var fileRef = proj.FileReferences.FirstOrDefault(r => r.Include.ID == reference);
-            Assert.AreEqual(expectedFileVersion,fileRef.Version.ToString());
+            Assert.AreEqual(expectedFileVersion, fileRef.Version.ToString());
         }
 
-        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj",".NET Framework v4.7.2")]
+        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", ".NET Framework v4.7.2")]
         [TestCase(@"ExampleBrokenSolutions\OlderDotNet\OlderDotNet.csproj", ".NET Framework v4.5")]
         public void CanReadDotNetVersionOfProject(string relativeCsProjPath, string expectedVersion)
         {
@@ -64,5 +64,21 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var service = DIRegistrar.GetInstance<IProjectReader>();
             Assert.AreEqual(assemblyName, service.ExtractAssemblyName(new DotNetXMLDoc(csProjPath)));
         }
+
+        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj")]
+        [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj")]
+        public void AllFileReferencesHavePaths(string relativeCsProjPath)
+        {
+            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var service = DIRegistrar.GetInstance<IProjectReader>();
+            var proj = service.ReadProject(csProjPath);
+
+
+            foreach(var file in proj.FileReferences)
+            {
+            }
+        }
+
+
     }
 }

@@ -7,6 +7,8 @@ namespace ProjectSanitizer.Base.Models.FileModels
         private DirectoryInfo _directory;
         public VerifiedFolder Parent { get; }
 
+        public string FullName => _directory.FullName;
+
         public VerifiedFolder(string path) : this(new DirectoryInfo(path)) { }
 
         public VerifiedFolder(DirectoryInfo path)

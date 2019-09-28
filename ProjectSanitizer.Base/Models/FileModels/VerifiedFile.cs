@@ -1,8 +1,9 @@
-﻿using System.IO;
+﻿using ProjectSanitizer.Models.FileModels;
+using System.IO;
 
 namespace ProjectSanitizer.Base.Models.FileModels
 {
-    public class VerifiedFile
+    public class VerifiedFile : IFile
     {
         private readonly FileInfo _file;
 
@@ -49,22 +50,17 @@ namespace ProjectSanitizer.Base.Models.FileModels
             return _file.Name;
         }
 
-        private string GetStandardizedName()
-        {
-            return _file.FullName.ToLower();
-        }
-
         public override bool Equals(object obj)
         {
-            if (obj is VerifiedFile otherFile)
-                return GetStandardizedName() == otherFile.GetStandardizedName();
+            if (obj is IFile otherFile)
+                return _file.FullName.ToLower() == otherFile.FullName.ToLower();
 
             return false;
         }
 
         public override int GetHashCode()
         {
-            return GetStandardizedName().GetHashCode();
+            return _file.FullName.GetHashCode();
         }
 
         public static bool operator ==(VerifiedFile first, VerifiedFile second)

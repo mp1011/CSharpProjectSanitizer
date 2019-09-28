@@ -1,5 +1,5 @@
-﻿using ProjectSanitizer.Base.Models.FileModels;
-using ProjectSanitizer.Base.Models.SolutionStructure;
+﻿using ProjectSanitizer.Base.Models.SolutionStructure;
+using ProjectSanitizer.Models.FileModels;
 
 namespace ProjectSanitizer.Base.Models
 {
@@ -7,7 +7,7 @@ namespace ProjectSanitizer.Base.Models
     {
         public Package Package { get; }
 
-        public NugetReference(Project project, Package package, VerifiedFile file, VersionWithSuffix version) 
+        public NugetReference(Project project, Package package, RelativeFile file, VersionWithSuffix version) 
             : base(project, file,version)
         {
             Package = package;

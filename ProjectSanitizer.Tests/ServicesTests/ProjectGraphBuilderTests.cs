@@ -53,5 +53,23 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             Assert.IsNotNull(reference);
         }
+
+        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj")]
+        [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj")]
+        public void AllNugetReferencesHavePaths(string relativeCsProjPath)
+        {
+            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var service = DIRegistrar.GetInstance<IProjectReader>();
+            var proj = service.ReadProject(csProjPath);
+
+            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
+            var graph = graphBuilder.BuildGraph(proj).AllNodes[proj.FullPath];
+
+            foreach (var req in graph.NugetPackageRequirements)
+            {
+                Assert.IsNotNull(req.File);
+            }
+        }
+
     }
 }

@@ -36,7 +36,8 @@ namespace ProjectSanitizer.Base.Services
                 var include = refNode.Attributes["Include"].Value;
                 var hintPath = csProjXML.SelectSingleNode(refNode, "HintPath");
                 
-                yield return new Reference(csProjXML.File.Directory, ParseReferenceInclude(include), hintPath?.InnerText ?? "");
+                if(hintPath != null)
+                    yield return new Reference(csProjXML.File.Directory, ParseReferenceInclude(include), hintPath?.InnerText ?? "");
             }
         }
 

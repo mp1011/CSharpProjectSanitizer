@@ -53,6 +53,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         }
 
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", 7)]
+
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);

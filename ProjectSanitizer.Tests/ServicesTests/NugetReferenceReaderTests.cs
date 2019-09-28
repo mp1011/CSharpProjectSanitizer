@@ -18,5 +18,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var dependency = packagesConfigFile.Packages.FirstOrDefault(pk=>pk.ID == expectedReference);
             Assert.IsNotNull(dependency);
         }
+
+
     }
 }
