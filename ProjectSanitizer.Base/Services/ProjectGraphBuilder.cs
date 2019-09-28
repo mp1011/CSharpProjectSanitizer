@@ -44,18 +44,20 @@ namespace ProjectSanitizer.Base.Services
             }
 
             var nugetPackages = _nugetReferenceReader.TryReadPackagesConfig(node.Project.ProjectDirectory);
-            var packagesFolder = graph.Solution.PackagesDirectory;
-
+         
             foreach (var fileReference in node.Project.FileReferences)
             {
                 var nugetPackage = nugetPackages?.FindPackage(fileReference.Include.ID);
-                if (nugetPackage != null && fileReference.GetFile().PathBeginsWith(packagesFolder))
+                if (nugetPackage != null)
                 {
-                    var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.GetFile(), fileReference.VersionFromPath);
+                    var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.GetFile(), fileReference.VersionFromPath ?? VersionWithSuffix.Empty());
                     node.NugetPackageRequirements.Add(nugetReference);
                 }
                 else
                 {
+                    if (fileReference.GetFile().FullName.Contains("packages"))
+                        throw new System.Exception("yolo");
+
                     var reference = new ReferencedFile(node.Project, fileReference.GetFile(), fileReference.Include.Version);
                     node.FileRequirements.Add(reference);
                 }

@@ -1,10 +1,16 @@
-﻿using ProjectSanitizer.Models.SmartString;
+﻿using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Models.SmartString;
 using System;
 
 namespace ProjectSanitizer.Services.ProblemRenderers
 {
     public class ConsoleProblemRenderer : ProblemRenderer
     {
+        protected override void EndRenderProblem(Problem problem)
+        {
+            Console.WriteLine();
+        }
+
         protected override void Render(StringSection text)
         {
             switch (text.SectionType)

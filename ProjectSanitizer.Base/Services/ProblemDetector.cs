@@ -25,7 +25,11 @@ namespace ProjectSanitizer.Base.Services
             List<Problem> problems = new List<Problem>();
             foreach(var detector in _problemDetectors.OfType<IProblemDetector<T>>())
                 problems.AddRange(detector.DetectProblems(item));
-            return problems.ToArray();
+
+            return problems
+                    .GroupBy(p => p.GetType().Name)
+                    .SelectMany(g => g.ToArray())
+                    .ToArray();
         }
 
         public Problem[] DetectAllSolutionProblems(Solution solution)

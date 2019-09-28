@@ -57,6 +57,11 @@ namespace ProjectSanitizer.Base.Models
             return new VersionWithSuffix(version, suffix);
         }
 
+        public static VersionWithSuffix Empty()
+        {
+            return new VersionWithSuffix(new Version(0, 0), null);
+        }
+
         private VersionWithSuffix(Version version, string suffix)
         {
             Version = version;
