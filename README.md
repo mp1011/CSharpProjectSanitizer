@@ -1,16 +1,16 @@
 # CSharpProjectSanitizer
 Tool to straighten out the references within the csproj files in a solution.
 
-#Usage
+## Usage
 dotnet [Action] \-\-sln \* \-\-html \*
 - \-\-sln Path to a *.sln file to inspect
 - \-\-html Optional, path to write an HTML report to
 
-#Actions
+## Actions
 - detect - Inspects the given solution file and returns a report of problems found
 - future versions will include the ability to correct some of these problems
 
-#Types of Problems Detected
+## Types of Problems Detected
 
 - Projects which depend on other projects with a higher .NET version
 - Multiple versions of the same nuget package in the same solution
