@@ -55,9 +55,6 @@ namespace ProjectSanitizer.Base.Services
                 }
                 else
                 {
-                    if (fileReference.GetFile().FullName.Contains("packages"))
-                        throw new System.Exception("yolo");
-
                     var reference = new ReferencedFile(node.Project, fileReference.GetFile(), fileReference.Include.Version);
                     node.FileRequirements.Add(reference);
                 }
