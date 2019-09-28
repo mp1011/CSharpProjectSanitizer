@@ -42,6 +42,7 @@
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Program.cs" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\Properties\AssemblyInfo.cs" />
+    <Compile Remove="ServicesTests\SuperTest.cs" />
   </ItemGroup>
 
   <ItemGroup>

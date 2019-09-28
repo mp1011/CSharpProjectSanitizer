@@ -33,6 +33,15 @@ namespace ProjectSanitizer.Services
             return this;
         }
 
+        public SmartStringBuilder AppendIndentedList(string[] listItems)
+        {
+            Append(Environment.NewLine);
+            foreach (var item in listItems)
+                AppendHighlighted("\t" + item + Environment.NewLine);
+            Append(Environment.NewLine);
+            return this;
+        }
+
         public SmartStringBuilder AppendHighlighted(object text)
         {
             _text.Add(new StringSection(text, StringSectionType.Highlighted));

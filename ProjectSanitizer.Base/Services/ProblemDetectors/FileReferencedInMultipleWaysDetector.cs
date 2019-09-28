@@ -27,7 +27,7 @@ namespace ProjectSanitizer.Services.ProblemDetectors
 
             foreach(var multiRef in referencesByName.Where(r=>r.Value.Count() > 1))
             {
-                yield return new FileReferencedInMultipleWays(multiRef.Key);
+                yield return new FileReferencedInMultipleWays(multiRef.Key, multiRef.Value.ToArray());
             }
         }
 
@@ -43,7 +43,7 @@ namespace ProjectSanitizer.Services.ProblemDetectors
                 referencesByName[file.Name] = list;
             }
 
-            if (!list.Contains(file))
+            if(!list.Any(l=>l.FullName == file.FullName))
                 list.Add(file);
         }
     }

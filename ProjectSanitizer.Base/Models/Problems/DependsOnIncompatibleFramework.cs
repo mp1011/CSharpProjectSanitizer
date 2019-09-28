@@ -20,6 +20,8 @@ namespace ProjectSanitizer.Models.Problems
 
         public DependsOnIncompatibleFramework(Project project, Project dependsOnProject, DotNetVersion projectVersion, DotNetVersion dependsOnVersion)
         {
+            Project = project;
+            DependsOnProject = dependsOnProject;
             ProjectVersion = projectVersion;
             DependsOnVersion = dependsOnVersion;
         }
