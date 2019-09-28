@@ -28,7 +28,7 @@ namespace ProjectSanitizerConsole.Services.Commands
             var slnFile = VerifiedFile.GetFileIfExisting(arg.SolutionFile);
             if (slnFile == null)
             {
-                output.TextOutput.Add(new SmartStringBuilder()
+                output.ErrorMessages.Add(new SmartStringBuilder()
                                             .AppendFatal("Unable to find solution ")
                                             .AppendHighlighted(arg.SolutionFile));
                 return output;
@@ -38,7 +38,7 @@ namespace ProjectSanitizerConsole.Services.Commands
             var problems = _problemDetector.DetectAllSolutionProblems(solution);
 
             foreach (var problem in problems)
-                output.TextOutput.Add(problem.Description);
+                output.DetectedProblems.Add(problem);
 
             return output;
         }

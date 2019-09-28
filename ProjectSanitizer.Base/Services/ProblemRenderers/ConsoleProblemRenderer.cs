@@ -1,24 +1,13 @@
 ﻿using ProjectSanitizer.Models.SmartString;
-using ProjectSanitizer.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ProjectSanitizerConsole.Services
+namespace ProjectSanitizer.Services.ProblemRenderers
 {
-    public class SmartStringWriter
+    public class ConsoleProblemRenderer : ProblemRenderer
     {
-        public static void WriteToConsole(SmartStringBuilder stringBuilder)
+        protected override void Render(StringSection text)
         {
-            foreach(var textPart in stringBuilder)
-                WriteToConsole(textPart);
-
-            Console.WriteLine();
-        }
-
-        public static void WriteToConsole(StringSection text)
-        {
-            switch(text.SectionType)
+            switch (text.SectionType)
             {
                 case StringSectionType.Normal:
                     Console.ForegroundColor = ConsoleColor.White;
@@ -38,10 +27,23 @@ namespace ProjectSanitizerConsole.Services
                     break;
             }
 
-            Console.Write(text);
+            if(text.IsMultiLine)
+            {
+                Console.WriteLine();
+                foreach (var item in text.Lines)
+                {
+                    Console.Write("\t");
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine();
+            }
+            else 
+                Console.Write(text.Text);
+
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
         }
+
     }
 }

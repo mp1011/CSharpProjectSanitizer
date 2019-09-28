@@ -10,7 +10,7 @@ namespace ProjectSanitizer.Models.Problems
         public override SmartStringBuilder Description => new SmartStringBuilder()
             .AppendError("The file ").AppendHighlighted(Name)
             .AppendError(" is referenced in multiple paths")
-            .AppendIndentedList(Paths);
+            .AppendHighlighted(Paths);
 
         public string Name { get; }
 

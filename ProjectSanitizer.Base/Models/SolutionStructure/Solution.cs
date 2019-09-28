@@ -9,11 +9,15 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
 
         public VerifiedFolder SolutionDirectory => _slnFile.Directory;
 
+        public VerifiedFolder PackagesDirectory { get; }
+
         public Solution(VerifiedFile slnFile, Project[] projects, ProjectLine[] projectLines)
         {
             _slnFile = slnFile;
             Projects = projects;
             ProjectLines = projectLines;
+
+            PackagesDirectory = slnFile.Directory.GetRelativeFolder("packages");
         }
 
         public Project[] Projects { get; }

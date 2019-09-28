@@ -22,7 +22,14 @@ namespace ProjectSanitizer.Base.Models
                 if (maybeVersion.Success)
                 {
                     var version = TryParse(maybeVersion.Value.TrimStart('.'));
-                    if (version != null && version.Version.Major > 0)
+                    if(version == null)
+                    {
+                        //some things have a wierd five part version...not sure what the reason is
+                        var parts = maybeVersion.Value.TrimStart('.').Split('.');
+                        if(parts.Length == 5)
+                            version = TryParse(string.Join(".", parts.Skip(2).ToArray()));
+                    }
+                    if (version != null) //todo, what was the point of checking if Major>0
                         return version;
                 }
             }

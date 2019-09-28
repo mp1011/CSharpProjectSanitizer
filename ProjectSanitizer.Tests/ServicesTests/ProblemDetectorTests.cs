@@ -28,12 +28,13 @@ namespace ProjectSanitizer.Tests.ServicesTests
             Assert.AreEqual(missingProjectName, problem.Project.Name);
         }
 
-        [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj")]
-        public void CanIdentifyNugetVersionMismatch(string projectFile)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "AnotherProject")]
+        public void CanIdentifyNugetVersionMismatch(string slnPath, string project)
         {
+            var sln = TestHelpers.GetSolution(slnPath); 
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var graph = graphBuilder.BuildGraph(TestPaths.GetFileRelativeToProjectDir(projectFile));
-            var node = graph.SolutionProjects.Single();
+            var graph = graphBuilder.BuildGraph(sln);
+            var node = graph.SolutionProjects.First(p => p.Project.Name == project);
 
             var nugetMismatchDetector = new NugetVersionMismatchDetector();
             var problem = nugetMismatchDetector.DetectProblems(node.NugetPackageRequirements[0]).First();
@@ -41,11 +42,12 @@ namespace ProjectSanitizer.Tests.ServicesTests
         }
 
 
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj")]
-        public void CanIdentifyInconsistentNugetPackageVersions(string projectFile)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
+        public void CanIdentifyInconsistentNugetPackageVersions(string slnPath)
         {
+            var sln = TestHelpers.GetSolution(slnPath);
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var graph = graphBuilder.BuildGraph(TestPaths.GetFileRelativeToProjectDir(projectFile));
+            var graph = graphBuilder.BuildGraph(sln);
 
             var nugetMismatchDetector = new DifferentNugetVersionsDetector();
             var problem = nugetMismatchDetector.DetectProblems(graph).First();
@@ -118,7 +120,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             var detector = new FileReferencedInMultipleWaysDetector();
             var problem = detector.DetectProblems(graph).First();
-            Assert.AreEqual("The file Newtonsoft.Json is referenced in multiple paths", problem.Description.ToString());
+            Assert.That(problem.Description.ToString().StartsWith("The file Newtonsoft.Json is referenced in multiple paths"));
         }
     }
 }

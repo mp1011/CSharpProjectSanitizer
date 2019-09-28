@@ -6,8 +6,6 @@ namespace ProjectSanitizer.Base.Services.Interfaces
 {
     public interface IProjectGraphBuilder
     {
-        SolutionGraph BuildGraph(Project project);
         SolutionGraph BuildGraph(Solution solution);
-        SolutionGraph BuildGraph(VerifiedFile csProjFile);
     }
 }

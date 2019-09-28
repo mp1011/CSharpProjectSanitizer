@@ -48,5 +48,14 @@ namespace ProjectSanitizer.Base.Models.FileModels
             var path = Path.Combine(_directory.FullName, relativePath);
             return new VerifiedFolder(path);
         }
+
+        public VerifiedFolder GetRelativeFolderOrDefault(string relativePath)
+        {
+            var path = Path.Combine(_directory.FullName, relativePath);
+            if (Directory.Exists(path))
+                return new VerifiedFolder(path);
+            else
+                return null;
+        }
     }
 }

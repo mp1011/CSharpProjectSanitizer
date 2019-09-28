@@ -1,17 +1,20 @@
 ﻿using ProjectSanitizerConsole.Models;
 using ProjectSanitizerConsole.Services.Commands;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace ProjectSanitizerConsole.Services
 {
     class CommandLineHandler
     {
-        public ICommandHandler[] _handlers;
+        private ICommandHandler[] _handlers;
+        private ProblemRendererService _problemRendererService;
 
-        public CommandLineHandler(ICommandHandler[] handlers)
+        public CommandLineHandler(ICommandHandler[] handlers, ProblemRendererService problemRendererFactory)
         {
             _handlers = handlers;
+            _problemRendererService = problemRendererFactory;
         }
 
         public void ExecuteCommand(CommandLineArgs args)
@@ -21,8 +24,7 @@ namespace ProjectSanitizerConsole.Services
                 throw new Exception("Invalid command");
 
             var result = handler.Execute(args);
-            foreach (var textOutput in result.TextOutput)
-                SmartStringWriter.WriteToConsole(textOutput);
+            _problemRendererService.RenderResults(result, args);
         }
     }
 }

@@ -10,41 +10,47 @@ namespace ProjectSanitizer.Services
     {
         private List<StringSection> _text = new List<StringSection>();
 
-        public SmartStringBuilder Append(object text)
+        public SmartStringBuilder Append(params string[] text)
         {
-            _text.Add(new StringSection(text, StringSectionType.Normal));
+            _text.Add(new StringSection(StringSectionType.Normal,text));
             return this;
         }
 
-        public SmartStringBuilder AppendLine(object text)
+        public SmartStringBuilder AppendLine(params string[] text)
         {
             return Append(text).Append(Environment.NewLine);
         }
 
-        public SmartStringBuilder AppendFatal(object text)
+        public SmartStringBuilder AppendFatal(params string[] text)
         {
-            _text.Add(new StringSection(text, StringSectionType.Fatal));
+            _text.Add(new StringSection(StringSectionType.Fatal,text));
             return this;
         }
 
-        public SmartStringBuilder AppendError(object text)
+        public SmartStringBuilder AppendError(params string[] text)
         {
-            _text.Add(new StringSection(text, StringSectionType.Error));
+            _text.Add(new StringSection(StringSectionType.Error,text));
             return this;
         }
 
-        public SmartStringBuilder AppendIndentedList(string[] listItems)
+        public SmartStringBuilder AppendHighlighted(params string[] text)
         {
-            Append(Environment.NewLine);
-            foreach (var item in listItems)
-                AppendHighlighted("\t" + item + Environment.NewLine);
-            Append(Environment.NewLine);
+            _text.Add(new StringSection(StringSectionType.Highlighted, text));
             return this;
         }
 
         public SmartStringBuilder AppendHighlighted(object text)
         {
-            _text.Add(new StringSection(text, StringSectionType.Highlighted));
+            if(text is IEnumerable enumerable)
+            {
+                List<string> strings = new List<string>();
+                foreach (object item in enumerable)
+                    strings.Add(item.ToString());
+
+                AppendHighlighted(strings.ToArray());
+            }
+            else    
+                _text.Add(new StringSection(StringSectionType.Highlighted, text.ToString()));
             return this;
         }
 

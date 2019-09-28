@@ -21,7 +21,10 @@ namespace ProjectSanitizer.Tests
 
         public static VerifiedFolder GetFolderRelativeToProjectDir(string relativePath)
         {
-            return ProjectDirectory.GetRelativeFolder(relativePath);
+            if (Directory.Exists(relativePath))
+                return new VerifiedFolder(relativePath);
+            else
+                return ProjectDirectory.GetRelativeFolder(relativePath);
         }
     }
 }

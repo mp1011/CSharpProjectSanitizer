@@ -32,7 +32,8 @@ namespace ProjectSanitizer.Tests.ModelsTests
         [TestCase(@"\packages\Newtonsoft.Json.12\lib", null)]
         [TestCase(@"\packages\Newtonsoft.Json.12.0-beta2\lib", "12.0-beta2")]
         [TestCase(@"\packages\Newtonsoft.Json.12.0.5-alpha64\lib", "12.0.5-alpha64")]
-
+        [TestCase(@"..\packages\PInvoke.BCrypt.0.5.155\lib\net45\PInvoke.BCrypt.dll", "0.5.155")]
+        [TestCase(@"..\packages\Microsoft.VisualStudio.TextTemplating.14.0.14.3.25407\lib\net45","14.3.25407")]
         public void CanParseVersionWithinPath(string path, string expectedVersion)
         {
             var version = VersionWithSuffix.TryParseFromPath(path);

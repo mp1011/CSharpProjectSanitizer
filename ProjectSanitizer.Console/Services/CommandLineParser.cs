@@ -14,16 +14,22 @@ namespace ProjectSanitizerConsole.Services
             var command = app.Argument("Command", "");
 
             var solutionPath = app.Option("-s|--sln", "Path to sln file", CommandOptionType.SingleValue);
+            var htmlOutput = app.Option("--html", "HTML Output file", CommandOptionType.SingleValue);
 
             app.OnExecute(() =>
             {
-                commandLineArgs = new CommandLineArgs(command: command.Value, solutionFile: solutionPath.Value());
+                commandLineArgs = new CommandLineArgs(
+                    command: command.Value, 
+                    solutionFile: solutionPath.Value(),
+                    outputPath: htmlOutput.Value()
+                    );
+
                 return 0;
             });
 
             app.Execute(args);
 
-            return commandLineArgs ?? new CommandLineArgs("", "");
+            return commandLineArgs ?? new CommandLineArgs("", "","");
         }
     }
 }

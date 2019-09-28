@@ -1,6 +1,7 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Models.FileModels;
+using System;
 
 namespace ProjectSanitizer.Base.Models
 {

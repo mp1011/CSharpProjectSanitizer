@@ -16,7 +16,7 @@ namespace ProjectSanitizer.Base.Models.ProjectGraph
 
         public SolutionGraph(Solution solution)
         {
-            Solution = solution;
+            Solution = solution ?? throw new ArgumentNullException();
         }
 
 

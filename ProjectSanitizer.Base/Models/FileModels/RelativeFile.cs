@@ -20,6 +20,15 @@ namespace ProjectSanitizer.Models.FileModels
         {
             return VerifiedFile.GetFileIfExisting(_file.FullName);
         }
-       
+
+        public bool PathBeginsWith(VerifiedFolder folder)
+        {
+            if (folder == null)
+                return false;
+
+            var thisPath = FullName.ToLower();
+            var folderPath = folder.FullName.ToLower();
+            return thisPath.StartsWith(folderPath);
+        }
     }
 }

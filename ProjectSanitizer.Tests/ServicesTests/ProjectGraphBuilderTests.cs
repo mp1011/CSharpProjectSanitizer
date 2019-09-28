@@ -8,16 +8,10 @@ namespace ProjectSanitizer.Tests.ServicesTests
     [TestFixture]
     class ProjectGraphBuilderTests
     {
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", "VS2017Project,AnotherProject")]
-        public void CanBuildProjectGraph(string relativeCsProjPath, string expectedDependencyPath)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "FirstProject", "VS2017Project,AnotherProject")]
+        public void CanBuildProjectGraph(string sln, string project, string expectedDependencyPath)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
-            var projectReader = DIRegistrar.GetInstance<IProjectReader>();
-            var project = projectReader.ReadProject(csProjPath);
-
-            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var node = graphBuilder.BuildGraph(project).SolutionProjects.Single();
-
+            var node = TestHelpers.GetProjectNode(sln, project);
             foreach (var expectedDependency in expectedDependencyPath.Split(','))
             {
                 var nextNode = node.ProjectRequirements.FirstOrDefault(proj => proj.Project.Name == expectedDependency);
@@ -36,38 +30,28 @@ namespace ProjectSanitizer.Tests.ServicesTests
             Assert.AreEqual(expectedProjects, graph.SolutionProjects.Count);
         }
 
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj", "Newtonsoft.Json")]
-        public void CanFindNugetReferencesInProjectGraph(string relativeCsProjPath, string expectedPackage)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "FirstProject", "Newtonsoft.Json")]
+        public void CanFindNugetReferencesInProjectGraph(string slnPath, string project, string expectedPackage)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
-            var projectReader = DIRegistrar.GetInstance<IProjectReader>();
-            var project = projectReader.ReadProject(csProjPath);
+            var graphNode = TestHelpers.GetProjectNode(slnPath, project); 
 
-            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var graphNode = graphBuilder.BuildGraph(project);
-
-            var reference = graphNode.AllNodes
-                .Values
-                .SelectMany(node => node.NugetPackageRequirements)
+            var reference = graphNode.NugetPackageRequirements
                 .FirstOrDefault(p => p.Package.ID == expectedPackage);
 
             Assert.IsNotNull(reference);
         }
 
-        [TestCase(@"ExampleBrokenSolutions\FirstProject\FirstProject.csproj")]
-        [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj")]
-        public void AllNugetReferencesHavePaths(string relativeCsProjPath)
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
+        public void AllNugetReferencesHavePaths(string sln)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
-            var service = DIRegistrar.GetInstance<IProjectReader>();
-            var proj = service.ReadProject(csProjPath);
+            var graph = TestHelpers.GetSolutionGraph(sln);
 
-            var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
-            var graph = graphBuilder.BuildGraph(proj).AllNodes[proj.FullPath];
-
-            foreach (var req in graph.NugetPackageRequirements)
+            foreach (var project in graph.AllNodes.Values)
             {
-                Assert.IsNotNull(req.File);
+                foreach (var req in project.NugetPackageRequirements)
+                {
+                    Assert.IsNotNull(req.File);
+                }
             }
         }
 

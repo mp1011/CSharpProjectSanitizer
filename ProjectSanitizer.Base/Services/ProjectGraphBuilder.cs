@@ -23,10 +23,10 @@ namespace ProjectSanitizer.Base.Services
         }
 
         public SolutionGraph BuildGraph(Project project)
-        {
+        { 
             var graph = new SolutionGraph(null);
             var root = new ProjectGraphNode(project,graph);
-            graph.AddNode(root, isSolutionProject: true);
+            graph.AddNode(root,true);
             ExpandGraphNode(graph, root);
             return graph;
         }
@@ -44,11 +44,12 @@ namespace ProjectSanitizer.Base.Services
             }
 
             var nugetPackages = _nugetReferenceReader.TryReadPackagesConfig(node.Project.ProjectDirectory);
+            var packagesFolder = graph.Solution.PackagesDirectory;
 
             foreach (var fileReference in node.Project.FileReferences)
             {
                 var nugetPackage = nugetPackages?.FindPackage(fileReference.Include.ID);
-                if (nugetPackage != null)
+                if (nugetPackage != null && fileReference.GetFile().PathBeginsWith(packagesFolder))
                 {
                     var nugetReference = new NugetReference(node.Project, nugetPackage, fileReference.GetFile(), fileReference.VersionFromPath);
                     node.NugetPackageRequirements.Add(nugetReference);

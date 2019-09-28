@@ -12,6 +12,7 @@ namespace ProjectSanitizerConsole
         {
             DIRegistrar.RegisterTypes += (services => services
                 .AddImplementationsOf<ICommandHandler>()
+                .AddSingleton<ProblemRendererService>()
                 .AddSingleton<CommandLineHandler>());
 
             var consoleArgs = new CommandLineParser().Parse(args);
