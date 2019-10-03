@@ -34,7 +34,7 @@ namespace ProjectSanitizer.Base.Models.FileModels
         public VerifiedFile GetRelativeFile(string relativePath)
         {
             var path = Path.Combine(_directory.FullName, relativePath);
-            return new VerifiedFile(path);
+            return VerifiedFile.GetFileIfExisting(path);
         }
 
         public VerifiedFile GetRelativeFileOrDefault(string relativePath)

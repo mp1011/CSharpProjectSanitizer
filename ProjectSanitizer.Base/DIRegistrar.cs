@@ -4,6 +4,7 @@ using ProjectSanitizer.Base.Services;
 using System.Linq;
 using System;
 using ProjectSanitizer.Services.Interfaces;
+using ProjectSanitizer.Services;
 
 namespace ProjectSanitizer.Base
 {
@@ -33,6 +34,7 @@ namespace ProjectSanitizer.Base
                .AddSingleton<ISolutionReader, SolutionReader>()
                .AddSingleton<IProjectGraphBuilder, ProjectGraphBuilder>()
                .AddSingleton<INugetReferenceReader, NugetReferenceReader>()
+               .AddSingleton<NugetPackageModifier, NugetPackageModifier>()
                .AddImplementationsOf<IProblemDetector>()
                .AddSingleton<ProblemDetector>();
         }

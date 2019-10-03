@@ -1,6 +1,7 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Services.Interfaces;
 using System.Linq;
+using System.Xml;
 
 namespace ProjectSanitizer.Base.Models.SolutionStructure
 {
@@ -17,6 +18,21 @@ namespace ProjectSanitizer.Base.Models.SolutionStructure
             _xml = new DotNetXMLDoc(_packagesConfigFile);
 
             Packages = nugetReader.ExtractPackages(_xml).ToArray();
+        }
+
+        public XmlNode GetPackageNode(string id)
+        {
+            return _xml.SelectSingleNode("//package[@id=\"" + id + "\"]");
+        }
+
+        public XmlNode GetPackagesNodes()
+        {
+            return _xml.SelectSingleNode("//packages");
+        }
+
+        public void SaveChanges()
+        {
+            _xml.SaveChanges();
         }
 
         public override string ToString()

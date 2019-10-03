@@ -1,5 +1,6 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using System;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace ProjectSanitizer.Base.Models
@@ -27,6 +28,11 @@ namespace ProjectSanitizer.Base.Models
             }
         }
 
+        public void SaveChanges()
+        {
+            _document.Save(File.FullName);
+        }
+
         public XmlNodeList SelectNodes(string xPath)
         {
             return SelectNodes(_document.DocumentElement, xPath);
@@ -43,7 +49,8 @@ namespace ProjectSanitizer.Base.Models
                 return from.SelectNodes(xPath);
             else
             {
-                xPath = xPath.Replace("//", $"//tu:");
+                xPath = Regex.Replace(xPath, @"(/)([^/])", "$1tu:$2");
+                    
                 if (!xPath.StartsWith("//tu:"))
                     xPath = "tu:" + xPath;
                 return from.SelectNodes(xPath, _namespaceManager);

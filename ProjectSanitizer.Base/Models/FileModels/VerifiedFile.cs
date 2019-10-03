@@ -45,6 +45,23 @@ namespace ProjectSanitizer.Base.Models.FileModels
             return GetFileIfExisting(path);
         }
 
+        public VerifiedFile CopyTo(FileInfo destination)
+        {
+            _file.CopyTo(destination.FullName, overwrite: true);
+            return new VerifiedFile(destination);
+        }
+
+        public VerifiedFile CopyFrom(FileInfo source)
+        {
+            source.CopyTo(_file.FullName, overwrite:true);
+            return this;
+        }
+
+        public void Delete()
+        {
+            _file.Delete();
+        }
+
         public override string ToString()
         {
             return _file.Name;
