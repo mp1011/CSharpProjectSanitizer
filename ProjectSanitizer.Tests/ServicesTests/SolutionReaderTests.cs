@@ -9,7 +9,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",6)]
         public void CanReadNumberOfProjectsInSolution(string relativeSlnPath, int expectedProjects)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var service = new SolutionReader(new EmptyProjectReader());
 
             var sln = service.ReadSolution(slnPath);

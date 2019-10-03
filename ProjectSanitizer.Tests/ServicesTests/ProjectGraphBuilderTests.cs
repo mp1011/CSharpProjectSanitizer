@@ -23,7 +23,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",6)]
         public void CanBuildProjectGraphFromSolution(string relativeSlnPath, int expectedProjects)
         {
-            var slnFile = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnFile = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnFile);
             var graph = DIRegistrar.GetInstance<IProjectGraphBuilder>().BuildGraph(solution);
 

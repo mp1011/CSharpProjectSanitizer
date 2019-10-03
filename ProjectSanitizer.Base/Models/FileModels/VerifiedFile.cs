@@ -9,6 +9,8 @@ namespace ProjectSanitizer.Base.Models.FileModels
 
         public VerifiedFolder Directory { get; }
 
+        public bool Exists => _file.Exists;
+
         public static VerifiedFile GetFileIfExisting(string path)
         {
             var file = new FileInfo(path);

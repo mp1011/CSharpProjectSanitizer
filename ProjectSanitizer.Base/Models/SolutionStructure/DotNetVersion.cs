@@ -43,7 +43,10 @@ namespace ProjectSanitizer.Models.SolutionStructure
             switch(DotNetType)
             {
                 case DotNetType.Framework:
-                    return $"net{Version.Major}{Version.Minor}{Version.Build}";
+                    if(Version.Build >= 0)
+                        return $"net{Version.Major}{Version.Minor}{Version.Build}";
+                    else
+                        return $"net{Version.Major}{Version.Minor}";
                 default:
                     throw new System.NotImplementedException("Package handling for common and core not available yet");
             }

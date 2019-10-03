@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using ProjectSanitizer.Base.Models.FileModels;
+using ProjectSanitizer.Models.FileModels;
+using System;
 using System.IO;
 
 namespace ProjectSanitizer.Tests
@@ -14,24 +16,42 @@ namespace ProjectSanitizer.Tests
                 .GetFirstAncestor("ProjectSanitizer.Tests");
         }
 
-        public static VerifiedFile BackupOrRestore(string relativePath)
+        public static VerifiedFile RevertFileState(string relativePath)
         {
             var file = GetFileRelativeToProjectDir(relativePath);
-            if (file == null)
+            if (!file.Exists)
+            { 
+                File.WriteAllText($"{file.FullName}.delete", "...");
                 return null;
-
-            var backupFile = new FileInfo(file.FullName + ".backup");
-            if (!backupFile.Exists)
-                file.CopyTo(backupFile);
+            }
+            else if (File.Exists($"{file.FullName}.delete"))
+            {
+                file.Delete();
+                return null;
+            }
             else
-                file.CopyFrom(backupFile);
+            {
+                var backupFile = new FileInfo($"{file.FullName}.backup");
+                if (!backupFile.Exists)
+                    Assert.Fail($"Expected backup file {file.FullName}.backup does not exist");
 
-            return file;
+                backupFile.CopyTo(file.FullName, overwrite: true);
+            }
+
+            return file as VerifiedFile;
         }
 
-        public static VerifiedFile GetFileRelativeToProjectDir(string relativePath)
+        public static IFile GetFileRelativeToProjectDir(string relativePath)
         {
             return ProjectDirectory.GetRelativeFile(relativePath);
+        }
+
+        public static VerifiedFile GetVerifiedFileRelativeToProjectDir(string relativePath)
+        {
+            if (ProjectDirectory.GetRelativeFile(relativePath) is VerifiedFile v)
+                return v;
+            else
+                throw new Exception($"Expected file {relativePath} does not exist"); 
         }
 
         public static VerifiedFolder GetFolderRelativeToProjectDir(string relativePath)

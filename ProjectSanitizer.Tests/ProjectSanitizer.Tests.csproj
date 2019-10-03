@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\obj\**" />
     <Compile Remove="ExampleBrokenSolutions\AnotherProject\obj\**" />
     <Compile Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
@@ -14,6 +15,7 @@
     <Compile Remove="ExampleBrokenSolutions\ThirdProject\obj\**" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\bin\**" />
     <Compile Remove="ExampleBrokenSolutions\VS2017Project\obj\**" />
+    <EmbeddedResource Remove="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\obj\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\AnotherProject\obj\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
@@ -23,6 +25,7 @@
     <EmbeddedResource Remove="ExampleBrokenSolutions\ThirdProject\obj\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\VS2017Project\bin\**" />
     <EmbeddedResource Remove="ExampleBrokenSolutions\VS2017Project\obj\**" />
+    <None Remove="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\obj\**" />
     <None Remove="ExampleBrokenSolutions\AnotherProject\obj\**" />
     <None Remove="ExampleBrokenSolutions\ExampleBrokenSolution\**" />
     <None Remove="ExampleBrokenSolutions\FirstProject\bin\**" />
@@ -35,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\AnotherProject\Properties\AssemblyInfo.cs" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\Program.cs" />
     <Compile Remove="ExampleBrokenSolutions\FirstProject\Properties\AssemblyInfo.cs" />
@@ -53,6 +57,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\ProjectInAnotherFolder.csproj" />
+    <None Include="ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj" />
     <None Include="ExampleBrokenSolutions\AnotherProject\Properties\AssemblyInfo.cs" />
     <None Include="ExampleBrokenSolutions\ExampleBrokenSolution.sln" />

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using ProjectSanitizer.Models.FileModels;
+using System.IO;
 
 namespace ProjectSanitizer.Base.Models.FileModels
 {
@@ -31,17 +32,17 @@ namespace ProjectSanitizer.Base.Models.FileModels
                 return Parent.GetFirstAncestor(name);
         }
 
-        public VerifiedFile GetRelativeFile(string relativePath)
+        public IFile GetRelativeFile(string relativePath)
         {
             var path = Path.Combine(_directory.FullName, relativePath);
-            return VerifiedFile.GetFileIfExisting(path);
+            var file = VerifiedFile.GetFileIfExisting(path);
+            if (file == null)
+                return new MissingFile(this, relativePath);
+            else
+                return file;
         }
 
-        public VerifiedFile GetRelativeFileOrDefault(string relativePath)
-        {
-            var path = Path.Combine(_directory.FullName, relativePath);
-            return VerifiedFile.GetFileIfExisting(path);
-        }
+       
 
         public VerifiedFolder GetRelativeFolder(string relativePath)
         {

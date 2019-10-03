@@ -40,6 +40,7 @@ namespace ProjectSanitizer.Tests.ModelsTests
             Assert.AreEqual(expectedVersion, version?.ToString());
         }
 
+      
         [TestCase("1.2.3-beta5", "1.2.3-beta5", true)]
         [TestCase("1.2.3-beta5", "1.2.3", false)]
         [TestCase("1.2.0", "1.2", true)]

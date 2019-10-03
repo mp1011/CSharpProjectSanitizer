@@ -10,8 +10,8 @@ namespace ProjectSanitizer.Tests.ModelsTests
         [TestCase(@"ModelsTests\..\TestPaths.cs", @"TestPaths.cs", true)]
         public void CheckFileEquality(string filePath1, string filePath2, bool shouldBeEqual)
         {
-            var file1 = TestPaths.GetFileRelativeToProjectDir(filePath1);
-            var file2 = TestPaths.GetFileRelativeToProjectDir(filePath2);
+            var file1 = TestPaths.GetVerifiedFileRelativeToProjectDir(filePath1);
+            var file2 = TestPaths.GetVerifiedFileRelativeToProjectDir(filePath2);
 
             if(shouldBeEqual)
             {

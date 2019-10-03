@@ -13,8 +13,8 @@ namespace ProjectSanitizer.Base.Services.ProblemDetectors
         {
             foreach(var project in solution.ProjectLines)
             {
-                var file = solution.SolutionDirectory.GetRelativeFileOrDefault(project.RelativePath);
-                if (file == null)
+                var file = solution.SolutionDirectory.GetRelativeFile(project.RelativePath);
+                if (!file.Exists)
                     yield return new MissingProject(solution, project);
             }
         }

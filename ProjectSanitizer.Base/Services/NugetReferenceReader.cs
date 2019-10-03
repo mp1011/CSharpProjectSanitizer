@@ -12,11 +12,11 @@ namespace ProjectSanitizer.Base.Services
     {
         public PackagesConfig TryReadPackagesConfig(VerifiedFolder folder)
         {
-            var file = folder.GetRelativeFileOrDefault("packages.config");
-            if (file == null)
+            var file = folder.GetRelativeFile("packages.config");
+            if (file is VerifiedFile verifiedFile)
+                return new PackagesConfig(verifiedFile, this);
+            else
                 return null;
-
-            return new PackagesConfig(file, this);
         }
 
 

@@ -10,7 +10,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
     public class NugetPackageModifierTests
     {
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln","Newtonsoft.Json", true, "12.0.3-beta1")]
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "Newtonsoft.Json", false, "8.0.2")]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "Newtonsoft.Json", false, "12.0.1")]
         public void CanGetLatestNugetPackageFromSolution(string slnPath, string nugetPackage, bool includePrerelease, string expectedVersion)
         {
             var solution = TestHelpers.GetSolutionGraph(slnPath);
@@ -29,38 +29,22 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
         public void CanModifyNugetPackage(string slnPath, string projectPath, string packagesConfigPath, string nugetPackage, string expectedVersion)
         {
-            TestPaths.BackupOrRestore(projectPath);
-            var packagesConfigFile = TestPaths.BackupOrRestore(packagesConfigPath);
+            TestPaths.RevertFileState(projectPath);
+            var packagesConfigFile = TestPaths.RevertFileState(packagesConfigPath);
 
-            try
-            {
-                var sln = TestHelpers.GetSolutionGraph(slnPath);
+            var sln = TestHelpers.GetSolutionGraph(slnPath);
 
-                var nugetService = DIRegistrar.GetInstance<NugetPackageModifier>();
-                var package = nugetService.GetLatestNugetReference(nugetPackage, false, sln);
+            var nugetService = DIRegistrar.GetInstance<NugetPackageModifier>();
+            var package = nugetService.GetLatestNugetReference(nugetPackage, false, sln);
 
-                var project = sln.FindProject(p => p.Project.FullPath.EndsWith(projectPath)).First().Project;
-                nugetService.AddOrModifyNugetReference(package, project, sln.Solution.PackagesDirectory);
+            var project = sln.FindProject(p => p.Project.FullPath.EndsWith(projectPath)).First().Project;
+            nugetService.AddOrModifyNugetReference(package, project, sln.Solution.PackagesDirectory);
 
 
-                sln = TestHelpers.GetSolutionGraph(slnPath);
-                var reloadedProject = sln.FindProject(p => p.Project.FullPath.EndsWith(projectPath)).First();
-                package = reloadedProject.NugetPackageRequirements.FirstOrDefault(p => p.Package.ID == nugetPackage);
-                Assert.AreEqual(expectedVersion, package.Version.ToString());
-            }
-            finally
-            {
-                TestPaths.BackupOrRestore(projectPath);
-
-                if(packagesConfigFile != null)
-                    TestPaths.BackupOrRestore(packagesConfigPath);
-                else
-                {
-                    packagesConfigFile = TestPaths.GetFileRelativeToProjectDir(packagesConfigPath);
-                    if (packagesConfigFile != null)
-                        packagesConfigFile.Delete();
-                }
-            }
+            sln = TestHelpers.GetSolutionGraph(slnPath);
+            var reloadedProject = sln.FindProject(p => p.Project.FullPath.EndsWith(projectPath)).First();
+            package = reloadedProject.NugetPackageRequirements.FirstOrDefault(p => p.Package.ID == nugetPackage);
+            Assert.AreEqual(expectedVersion, package.Version.ToString());
         }
 
         [TestCase(@"ExampleBrokenSolutions\packages", @"ExampleBrokenSolutions\AnotherFolder\ProjectInAnotherFolder", 

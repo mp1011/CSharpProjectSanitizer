@@ -10,7 +10,7 @@ namespace ProjectSanitizer.Tests
     {
         public static Solution GetSolution(string relativeSlnPath)
         {
-            var path = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var path = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             return DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(path);
         }
 

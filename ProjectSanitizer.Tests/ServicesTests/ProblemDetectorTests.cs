@@ -18,7 +18,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "MissingProject")]
         public void CanIdentifyMissingProjectFiles(string relativeSlnPath, string missingProjectName)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var service = new SolutionReader(new EmptyProjectReader());
             var sln = service.ReadSolution(slnPath);
 
@@ -58,7 +58,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
         public void CanFindAllProblemsWithSolution(string relativeSlnPath, int expectedNumberOfProblems)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
             var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
@@ -70,7 +70,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "OlderDotNet")]
         public void CanDetectProjectDependingOnHigherDotNetVersion(string relativeSlnPath, string project)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(solution);
@@ -84,7 +84,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln","FirstProject")]
         public void CanDetectFileReferenceWhereProjectReferenceIsMoreAppropriate(string relativeSlnPath, string project)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(solution);
@@ -99,7 +99,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "VS2017Project")]
         public void CanDetectFileReferenceWhereNugetReferenceIsMoreAppropriate(string relativeSlnPath, string project)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(solution);
@@ -113,7 +113,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
         public void CanDetectSameDLLReferencedInDifferentPaths(string relativeSlnPath)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
             var graphBuilder = DIRegistrar.GetInstance<IProjectGraphBuilder>();
             var graph = graphBuilder.BuildGraph(solution);

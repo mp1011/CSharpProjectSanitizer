@@ -17,7 +17,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
         public void CanRenderProblemsToConsole(string relativeSlnPath)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
             var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
@@ -39,7 +39,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
         public void CanRenderProblemsToHTMLFile(string relativeSlnPath)
         {
-            var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);
+            var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
             var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();

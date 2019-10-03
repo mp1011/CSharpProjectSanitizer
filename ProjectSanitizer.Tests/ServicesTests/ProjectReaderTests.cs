@@ -14,7 +14,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
         public void CanReadProjectReferences(string relativeCsProjPath, string expectedReference)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             var proj = service.ReadProject(csProjPath);
             var reference = proj.ProjectReferences.FirstOrDefault(rf => rf.RelativePath == expectedReference);
@@ -24,7 +24,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", "Newtonsoft.Json.dll")]
         public void CanReadFileReferences(string relativeCsProjPath, string expectedReference)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             var proj = service.ReadProject(csProjPath);
 
@@ -36,7 +36,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj", "Newtonsoft.Json", "12.0.3-beta1")]
         public void CanDetectVersionOfFileReferenceFromPath(string relativeCsProjPath, string reference, string expectedFileVersion)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             var proj = service.ReadProject(csProjPath);
 
@@ -48,7 +48,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\OlderDotNet\OlderDotNet.csproj", ".NET Framework v4.5")]
         public void CanReadDotNetVersionOfProject(string relativeCsProjPath, string expectedVersion)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             var proj = service.ReadProject(csProjPath);
 
@@ -60,7 +60,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj", "ThirdProject")]
         public void CanReadProjectAssemblyFilename(string relativeCsProjPath, string assemblyName)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             Assert.AreEqual(assemblyName, service.ExtractAssemblyName(new DotNetXMLDoc(csProjPath)));
         }
@@ -69,7 +69,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
         [TestCase(@"ExampleBrokenSolutions\ThirdProject\ThirdProject.csproj")]
         public void AllFileReferencesHavePaths(string relativeCsProjPath)
         {
-            var csProjPath = TestPaths.GetFileRelativeToProjectDir(relativeCsProjPath);
+            var csProjPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeCsProjPath);
             var service = DIRegistrar.GetInstance<IProjectReader>();
             var proj = service.ReadProject(csProjPath);
 

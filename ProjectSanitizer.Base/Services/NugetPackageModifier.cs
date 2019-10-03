@@ -68,7 +68,7 @@ namespace ProjectSanitizer.Services
             }
 
             xmlNode.Attributes["version"].Value = referenceToCopy.Package.Version.ToString();
-            xmlNode.Attributes["targetFramework"].Value = referenceToCopy.Package.TargetFramework.ToPackagesConfigString();
+            xmlNode.Attributes["targetFramework"].Value = project.DotNetVersion.ToPackagesConfigString();
             
 
             packagesConfig.SaveChanges();

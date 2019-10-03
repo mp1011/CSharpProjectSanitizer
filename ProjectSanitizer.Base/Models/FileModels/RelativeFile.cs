@@ -3,27 +3,11 @@ using System.IO;
 
 namespace ProjectSanitizer.Models.FileModels
 {
-    public class RelativeFile : IFile
+    public class MissingFile : RelativeFile
     {
-        private FileInfo _file;
-
-        public string Name => Path.GetFileNameWithoutExtension(_file.Name);
-
-        public string FullName => _file.FullName;
-
-        public RelativeFile(VerifiedFolder projectDirectory, string relativePath)
+        public MissingFile(VerifiedFolder projectDirectory, string relativePath) : 
+            base(projectDirectory,relativePath)
         {
-            _file = new FileInfo(Path.Combine(projectDirectory.FullName, relativePath));
-        }
-
-        public VerifiedFile TryVerify()
-        {
-            return VerifiedFile.GetFileIfExisting(_file.FullName);
-        }
-
-        public override string ToString()
-        {
-            return FullName;
-        }
+        }   
     }
 }
