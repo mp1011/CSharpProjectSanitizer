@@ -6,7 +6,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
 {
     public class SolutionReaderTests
     {
-        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",5)]
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln",6)]
         public void CanReadNumberOfProjectsInSolution(string relativeSlnPath, int expectedProjects)
         {
             var slnPath = TestPaths.GetFileRelativeToProjectDir(relativeSlnPath);

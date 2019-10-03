@@ -14,6 +14,21 @@ namespace ProjectSanitizer.Tests
                 .GetFirstAncestor("ProjectSanitizer.Tests");
         }
 
+        public static VerifiedFile BackupOrRestore(string relativePath)
+        {
+            var file = GetFileRelativeToProjectDir(relativePath);
+            if (file == null)
+                return null;
+
+            var backupFile = new FileInfo(file.FullName + ".backup");
+            if (!backupFile.Exists)
+                file.CopyTo(backupFile);
+            else
+                file.CopyFrom(backupFile);
+
+            return file;
+        }
+
         public static VerifiedFile GetFileRelativeToProjectDir(string relativePath)
         {
             return ProjectDirectory.GetRelativeFile(relativePath);
