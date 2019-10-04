@@ -61,7 +61,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
-            var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
+            var problemDetector = DIRegistrar.GetInstance<ProblemDetectorService>();
             var problems = problemDetector.DetectAllSolutionProblems(solution);
             Assert.AreEqual(expectedNumberOfProblems, problems.Length);
         }

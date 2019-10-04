@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectSanitizer.Base\ProjectSanitizer.csproj" />
+    <ProjectReference Include="..\ProjectSanitizer.Console\ProjectSanitizer.Console.csproj" />
+  </ItemGroup>
+
+</Project>

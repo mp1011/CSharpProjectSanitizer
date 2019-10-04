@@ -35,8 +35,10 @@ namespace ProjectSanitizer.Base
                .AddSingleton<IProjectGraphBuilder, ProjectGraphBuilder>()
                .AddSingleton<INugetReferenceReader, NugetReferenceReader>()
                .AddSingleton<NugetPackageModifier, NugetPackageModifier>()
+               .AddSingleton<ProblemCorrectorService,ProblemCorrectorService>()
                .AddImplementationsOf<IProblemDetector>()
-               .AddSingleton<ProblemDetector>();
+               .AddImplementationsOf<IProblemCorrector>()
+               .AddSingleton<ProblemDetectorService>();
         }
 
         public static IServiceCollection AddImplementationsOf<T>(this IServiceCollection serviceCollection)

@@ -20,7 +20,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
-            var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
+            var problemDetector = DIRegistrar.GetInstance<ProblemDetectorService>();
             var problems = problemDetector.DetectAllSolutionProblems(solution);
 
             var renderer = new ConsoleProblemRenderer();
@@ -42,7 +42,7 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var slnPath = TestPaths.GetVerifiedFileRelativeToProjectDir(relativeSlnPath);
             var solution = DIRegistrar.GetInstance<ISolutionReader>().ReadSolution(slnPath);
 
-            var problemDetector = DIRegistrar.GetInstance<ProblemDetector>();
+            var problemDetector = DIRegistrar.GetInstance<ProblemDetectorService>();
             var problems = problemDetector.DetectAllSolutionProblems(solution);
 
             var outFile = new FileInfo("testout.html");

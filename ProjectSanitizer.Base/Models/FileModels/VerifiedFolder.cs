@@ -1,4 +1,5 @@
 ﻿using ProjectSanitizer.Models.FileModels;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ProjectSanitizer.Base.Models.FileModels
@@ -42,7 +43,17 @@ namespace ProjectSanitizer.Base.Models.FileModels
                 return file;
         }
 
-       
+        public IEnumerable<VerifiedFile> GetFiles()
+        {
+            foreach (var file in _directory.GetFiles())
+                yield return new VerifiedFile(file);
+        }
+
+        public IEnumerable<VerifiedFolder> GetDirectories()
+        {
+            foreach (var folder in _directory.GetDirectories())
+                yield return new VerifiedFolder(folder);
+        }
 
         public VerifiedFolder GetRelativeFolder(string relativePath)
         {

@@ -6,13 +6,13 @@ using System.Linq;
 
 namespace ProjectSanitizer.Base.Services
 {
-    public class ProblemDetector
+    public class ProblemDetectorService
     {
         private IProblemDetector[] _problemDetectors;
         private IProjectGraphBuilder _graphBuilder;
         private INugetReferenceReader _nugetReferenceReader;
 
-        public ProblemDetector(IProblemDetector[] problemDetectors, IProjectGraphBuilder graphBuilder,
+        public ProblemDetectorService(IProblemDetector[] problemDetectors, IProjectGraphBuilder graphBuilder,
             INugetReferenceReader nugetReferenceReader)
         {
             _problemDetectors = problemDetectors;

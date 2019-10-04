@@ -12,10 +12,10 @@ namespace ProjectSanitizerConsole.Services.Commands
     {
         public string CommandName => "detect";
 
-        private ProblemDetector _problemDetector;
+        private ProblemDetectorService _problemDetector;
         private ISolutionReader _solutionReader;
 
-        public DetectCommandHandler(ProblemDetector problemDetector, ISolutionReader solutionReader)
+        public DetectCommandHandler(ProblemDetectorService problemDetector, ISolutionReader solutionReader)
         {
             _problemDetector = problemDetector;
             _solutionReader = solutionReader;

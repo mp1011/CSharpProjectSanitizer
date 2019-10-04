@@ -3,6 +3,7 @@ using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Models.FileModels;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace ProjectSanitizer.Tests
 {
@@ -16,9 +17,37 @@ namespace ProjectSanitizer.Tests
                 .GetFirstAncestor("ProjectSanitizer.Tests");
         }
 
+        public static void RevertAllCsProjAndPackagesConfigFiles(string relativePath)
+        {
+            var file = GetVerifiedFileRelativeToProjectDir(relativePath);
+            RevertAllCsProjAndPackagesConfigFiles(file.Directory);
+        }
+
+        public static void RevertAllCsProjAndPackagesConfigFiles(VerifiedFolder directory)
+        {
+            var csprojFile = directory.GetFiles()
+                .FirstOrDefault(f=>f.FullName.EndsWith("csproj"));
+
+            if (csprojFile != null)
+            {
+                RevertFileState(csprojFile);
+
+                var packagesConfigFile = directory.GetRelativeFile("packages.config");
+                RevertFileState(packagesConfigFile);
+            }
+
+            foreach (var folder in directory.GetDirectories())
+                RevertAllCsProjAndPackagesConfigFiles(folder);
+        }
+
         public static VerifiedFile RevertFileState(string relativePath)
         {
             var file = GetFileRelativeToProjectDir(relativePath);
+            return RevertFileState(file);
+        }
+
+        public static VerifiedFile RevertFileState(IFile file)
+        { 
             if (!file.Exists)
             { 
                 File.WriteAllText($"{file.FullName}.delete", "...");
