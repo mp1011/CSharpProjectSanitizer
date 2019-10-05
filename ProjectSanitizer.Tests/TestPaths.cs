@@ -17,13 +17,13 @@ namespace ProjectSanitizer.Tests
                 .GetFirstAncestor("ProjectSanitizer.Tests");
         }
 
-        public static void RevertAllCsProjAndPackagesConfigFiles(string relativePath)
+        public static void RevertAllCsProjAndPackagesConfigFiles()
         {
-            var file = GetVerifiedFileRelativeToProjectDir(relativePath);
-            RevertAllCsProjAndPackagesConfigFiles(file.Directory);
+            var folder = TestPaths.GetFolderRelativeToProjectDir("ExampleBrokenSolutions");
+            RevertAllCsProjAndPackagesConfigFiles(folder);
         }
 
-        public static void RevertAllCsProjAndPackagesConfigFiles(VerifiedFolder directory)
+        private static void RevertAllCsProjAndPackagesConfigFiles(VerifiedFolder directory)
         {
             var csprojFile = directory.GetFiles()
                 .FirstOrDefault(f=>f.FullName.EndsWith("csproj"));
@@ -40,13 +40,7 @@ namespace ProjectSanitizer.Tests
                 RevertAllCsProjAndPackagesConfigFiles(folder);
         }
 
-        public static VerifiedFile RevertFileState(string relativePath)
-        {
-            var file = GetFileRelativeToProjectDir(relativePath);
-            return RevertFileState(file);
-        }
-
-        public static VerifiedFile RevertFileState(IFile file)
+        private static VerifiedFile RevertFileState(IFile file)
         { 
             if (!file.Exists)
             { 

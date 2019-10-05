@@ -5,6 +5,7 @@ using ProjectSanitizer.Base.Models.SolutionStructure;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
 using ProjectSanitizer.Extensions;
+using ProjectSanitizer.Models.SolutionStructure;
 using System;
 using System.IO;
 using System.Linq;
@@ -49,6 +50,29 @@ namespace ProjectSanitizer.Services
             var filePath = projectDirectory.FullName + @"\packages.config"; 
             File.WriteAllLines(path: filePath, lines);
             return _nugetReader.TryReadPackagesConfig(projectDirectory);
+        }
+
+        public void ChangeNugetPackageVersionInPackagesConfig(Project project, string packageID, DotNetVersion dotNetVersion, VersionWithSuffix newVersion)
+        {
+            var packagesConfig = _nugetReader.TryReadPackagesConfig(project.ProjectDirectory) ??
+               CreateNewPackagesConfig(project.ProjectDirectory);
+
+            var xmlNode = packagesConfig.GetPackageNode(packageID);
+            if (xmlNode == null)
+            {
+                var packagesNode = packagesConfig.GetPackagesNodes();
+                xmlNode = packagesNode.OwnerDocument.CreateElement("package");
+                packagesNode.AppendChild(xmlNode);
+                xmlNode.AddAttribute("id", packageID);
+                xmlNode.AddAttribute("version");
+                xmlNode.AddAttribute("targetFramework");
+            }
+
+            xmlNode.Attributes["version"].Value = newVersion.ToString();
+            xmlNode.Attributes["targetFramework"].Value = project.DotNetVersion.ToPackagesConfigString();
+
+
+            packagesConfig.SaveChanges();
         }
 
         public void AddOrModifyReferencePackagesConfig(NugetReference referenceToCopy, Project project)

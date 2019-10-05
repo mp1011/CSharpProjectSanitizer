@@ -13,7 +13,7 @@ using System.Linq;
 namespace ProjectSanitizer.Tests.ServicesTests
 {
     [TestFixture]
-    public class ProblemDetectorTests
+    public class ProblemDetectorTests :TestBase
     {
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "MissingProject")]
         public void CanIdentifyMissingProjectFiles(string relativeSlnPath, string missingProjectName)

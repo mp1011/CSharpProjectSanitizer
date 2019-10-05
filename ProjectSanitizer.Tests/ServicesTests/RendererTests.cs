@@ -2,17 +2,15 @@
 using ProjectSanitizer.Base;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
-using ProjectSanitizer.Services.Interfaces;
 using ProjectSanitizer.Services.ProblemRenderers;
 using System;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace ProjectSanitizer.Tests.ServicesTests
 {
     [TestFixture]
-    public class RendererTests
+    public class RendererTests :TestBase
     {
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln")]
         public void CanRenderProblemsToConsole(string relativeSlnPath)

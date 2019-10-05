@@ -1,13 +1,15 @@
 ﻿using NUnit.Framework;
 using ProjectSanitizer.Base;
-using ProjectSanitizer.Base.Models.FileModels;
+using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Base.Services;
+using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models.SolutionStructure;
 using ProjectSanitizer.Services;
 using System.Linq;
 
 namespace ProjectSanitizer.Tests.ServicesTests
 {
-    [TestFixture]
-    public class NugetPackageModifierTests
+    public class NugetPackageModifierTests :TestBase
     {
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln","Newtonsoft.Json", true, "12.0.3-beta1")]
         [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln", "Newtonsoft.Json", false, "12.0.1")]
@@ -29,8 +31,8 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
         public void CanModifyNugetPackage(string slnPath, string projectPath, string packagesConfigPath, string nugetPackage, string expectedVersion)
         {
-            TestPaths.RevertFileState(projectPath);
-            var packagesConfigFile = TestPaths.RevertFileState(packagesConfigPath);
+       
+            var packagesConfigFile = TestPaths.GetFileRelativeToProjectDir(packagesConfigPath);
 
             var sln = TestHelpers.GetSolutionGraph(slnPath);
 
@@ -58,5 +60,25 @@ namespace ProjectSanitizer.Tests.ServicesTests
             var modifiedText = modifier.CorrectPackagesPath(projectDir, packagesDir, text);
             Assert.AreEqual(expectedModifiedText, modifiedText);
         }
+
+        [TestCase(@"ExampleBrokenSolutions\ExampleBrokenSolution.sln","AnotherProject", "Newtonsoft.Json", "net472", "12.0.3-beta1")]
+        public void CanChangeVersionInPackagesConfig(string solutionPath, string projectName, string packageName, string dotNetVersion, string newVersion)
+        {
+            var solution = TestHelpers.GetSolution(solutionPath);
+            var project = solution.Projects.FirstOrDefault(p => p.Name == projectName);
+            var modifier = DIRegistrar.GetInstance<NugetPackageModifier>();
+
+            modifier.ChangeNugetPackageVersionInPackagesConfig(
+                project, 
+                packageName, 
+                DotNetVersion.TryParse(dotNetVersion), 
+                VersionWithSuffix.TryParse(newVersion));
+
+            var reader = DIRegistrar.GetInstance<INugetReferenceReader>();
+            var packagesConfig = reader.TryReadPackagesConfig(project.ProjectDirectory);
+            var package = packagesConfig.Packages.FirstOrDefault(p => p.ID == packageName);
+            Assert.AreEqual(newVersion, package.Version.ToString());
+        }
     }
+
 }

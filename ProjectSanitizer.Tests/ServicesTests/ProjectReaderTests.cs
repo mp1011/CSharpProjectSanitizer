@@ -7,7 +7,7 @@ using System.Linq;
 namespace ProjectSanitizer.Tests.ServicesTests
 {
     [TestFixture]
-    public class ProjectReaderTests
+    public class ProjectReaderTests :TestBase
     {
         [TestCase(@"ExampleBrokenSolutions\AnotherProject\AnotherProject.csproj", @"..\ThirdProject\ThirdProject.csproj")]
         [TestCase(@"ExampleBrokenSolutions\VS2017Project\VS2017Project.csproj", @"..\AnotherProject\AnotherProject.csproj")]
