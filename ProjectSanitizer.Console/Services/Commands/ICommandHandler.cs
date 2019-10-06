@@ -1,4 +1,5 @@
-﻿using ProjectSanitizerConsole.Models;
+﻿using ProjectSanitizer.Models;
+using ProjectSanitizerConsole.Models;
 
 namespace ProjectSanitizerConsole.Services.Commands
 {

@@ -3,7 +3,7 @@ using ProjectSanitizerConsole.Models;
 
 namespace ProjectSanitizerConsole.Services
 {
-    class CommandLineParser
+    public class CommandLineParser
     {
         public CommandLineArgs Parse(string[] args)
         {
@@ -27,9 +27,16 @@ namespace ProjectSanitizerConsole.Services
                 return 0;
             });
 
-            app.Execute(args);
+            try
+            {
+                app.Execute(args);
 
-            return commandLineArgs ?? new CommandLineArgs("", "","");
+                return commandLineArgs ?? new CommandLineArgs("", "", "");
+            }
+            catch
+            {
+                return new CommandLineArgs("help", null, null);
+            }
         }
     }
 }

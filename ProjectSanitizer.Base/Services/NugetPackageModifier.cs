@@ -48,7 +48,7 @@ namespace ProjectSanitizer.Services
             };
 
             var filePath = projectDirectory.FullName + @"\packages.config"; 
-            File.WriteAllLines(path: filePath, lines);
+            File.WriteAllLines(filePath, lines);
             return _nugetReader.TryReadPackagesConfig(projectDirectory);
         }
 

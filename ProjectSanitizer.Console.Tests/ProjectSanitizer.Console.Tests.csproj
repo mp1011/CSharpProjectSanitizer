@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ProjectSanitizer.Base\ProjectSanitizer.csproj" />
     <ProjectReference Include="..\ProjectSanitizer.Console\ProjectSanitizer.Console.csproj" />
+    <ProjectReference Include="..\ProjectSanitizer.Tests\ProjectSanitizer.Tests.csproj" />
   </ItemGroup>
 
 </Project>

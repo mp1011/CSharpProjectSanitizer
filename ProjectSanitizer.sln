@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSanitizer.Console", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{999275D7-DCC7-4A2B-B831-11496223474E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSanitizer.Console.Tests", "ProjectSanitizer.Console.Tests\ProjectSanitizer.Console.Tests.csproj", "{71028566-7758-4ACA-B473-BB55F64A0172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSanitizer.Console.Tests", "ProjectSanitizer.Console.Tests\ProjectSanitizer.Console.Tests.csproj", "{71028566-7758-4ACA-B473-BB55F64A0172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

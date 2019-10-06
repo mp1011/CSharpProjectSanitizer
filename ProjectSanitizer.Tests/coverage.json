@@ -1,0 +1,5907 @@
+{
+  "ProjectSanitizer.dll": {
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\NugetPackageModifier.cs": {
+      "ProjectSanitizer.Services.NugetPackageModifier": {
+        "ProjectSanitizer.Base.Models.NugetReference ProjectSanitizer.Services.NugetPackageModifier::GetLatestNugetReference(System.String,System.Boolean,ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph)": {
+          "Lines": {
+            "26": 4,
+            "27": 4,
+            "28": 28,
+            "29": 20,
+            "30": 17,
+            "31": 13,
+            "32": 4,
+            "33": 4
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 38,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 38,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 27,
+              "Offset": 91,
+              "EndOffset": 93,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 91,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 27,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 127,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.NugetPackageModifier::AddOrModifyNugetReference(ProjectSanitizer.Base.Models.NugetReference,ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Base.Models.FileModels.VerifiedFolder)": {
+          "Lines": {
+            "36": 6,
+            "37": 6,
+            "38": 6,
+            "39": 6
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig ProjectSanitizer.Services.NugetPackageModifier::CreateNewPackagesConfig(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder)": {
+          "Lines": {
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.NugetPackageModifier::ChangeNugetPackageVersionInPackagesConfig(ProjectSanitizer.Base.Models.SolutionStructure.Project,System.String,ProjectSanitizer.Models.SolutionStructure.DotNetVersion,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "60": 1,
+            "61": 1,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "71": 1,
+            "72": 1,
+            "75": 1,
+            "76": 1
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 19,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 49,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.NugetPackageModifier::AddOrModifyReferencePackagesConfig(ProjectSanitizer.Base.Models.NugetReference,ProjectSanitizer.Base.Models.SolutionStructure.Project)": {
+          "Lines": {
+            "79": 6,
+            "80": 6,
+            "81": 6,
+            "83": 6,
+            "84": 6,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "94": 6,
+            "95": 6,
+            "98": 6,
+            "99": 6
+          },
+          "Branches": [
+            {
+              "Line": 80,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 80,
+              "Offset": 19,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            },
+            {
+              "Line": 84,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 59,
+              "EndOffset": 144,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.NugetPackageModifier::AddOrModifyReferenceInProjectFile(ProjectSanitizer.Base.Models.NugetReference,ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Base.Models.FileModels.VerifiedFolder)": {
+          "Lines": {
+            "102": 6,
+            "103": 6,
+            "104": 6,
+            "106": 6,
+            "107": 6,
+            "108": 5,
+            "109": 5,
+            "110": 5,
+            "111": 5,
+            "112": 5,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "120": 6,
+            "121": 6,
+            "122": 6,
+            "124": 6,
+            "125": 6
+          },
+          "Branches": [
+            {
+              "Line": 103,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 103,
+              "Offset": 24,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            },
+            {
+              "Line": 107,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 107,
+              "Offset": 79,
+              "EndOffset": 122,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 121,
+              "Offset": 184,
+              "EndOffset": 186,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
+              "Line": 121,
+              "Offset": 184,
+              "EndOffset": 212,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 6
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Services.NugetPackageModifier::CorrectPackagesPath(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,System.String)": {
+          "Lines": {
+            "128": 7,
+            "129": 7,
+            "130": 0,
+            "132": 7,
+            "134": 7,
+            "135": 16,
+            "136": 9,
+            "137": 9,
+            "138": 9,
+            "139": 9,
+            "141": 7,
+            "143": 7
+          },
+          "Branches": [
+            {
+              "Line": 129,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 129,
+              "Offset": 22,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 135,
+              "Offset": 95,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 9
+            },
+            {
+              "Line": 135,
+              "Offset": 74,
+              "EndOffset": 76,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 16
+            },
+            {
+              "Line": 135,
+              "Offset": 74,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 135,
+              "Offset": 95,
+              "EndOffset": 97,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 7
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.NugetPackageModifier::.ctor(ProjectSanitizer.Base.Services.Interfaces.INugetReferenceReader)": {
+          "Lines": {
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.NugetPackageModifier/<>c__DisplayClass2_0": {
+        "System.Boolean ProjectSanitizer.Services.NugetPackageModifier/<>c__DisplayClass2_0::<GetLatestNugetReference>b__1(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 16
+            },
+            {
+              "Line": 29,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 12
+            },
+            {
+              "Line": 29,
+              "Offset": 30,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 29,
+              "Offset": 22,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemCorrectorService.cs": {
+      "ProjectSanitizer.Services.ProblemCorrectorService": {
+        "ProjectSanitizer.Models.CorrectionResult ProjectSanitizer.Services.ProblemCorrectorService::TryCorrectProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "18": 7,
+            "19": 46,
+            "20": 13,
+            "21": 13,
+            "22": 13,
+            "23": 1,
+            "24": 12,
+            "26": 6,
+            "27": 7
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 55,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 13
+            },
+            {
+              "Line": 22,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 39,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 12
+            },
+            {
+              "Line": 19,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 6
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.ProblemCorrectorService::.ctor(ProjectSanitizer.Services.Interfaces.IProblemCorrector[])": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\SmartStringBuilder.cs": {
+      "ProjectSanitizer.Services.SmartStringBuilder": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::Append(System.String[])": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::AppendLine(System.String[])": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::AppendFatal(System.String[])": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::AppendError(System.String[])": {
+          "Lines": {
+            "31": 40,
+            "32": 40,
+            "33": 40,
+            "34": 40
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::AppendHighlighted(System.String[])": {
+          "Lines": {
+            "37": 21,
+            "38": 21,
+            "39": 21,
+            "40": 21
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Services.SmartStringBuilder::AppendHighlighted(System.Object)": {
+          "Lines": {
+            "43": 21,
+            "44": 21,
+            "45": 2,
+            "46": 2,
+            "47": 22,
+            "48": 8,
+            "50": 2,
+            "51": 2,
+            "53": 19,
+            "54": 21,
+            "55": 21
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 47,
+              "Offset": 61,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 8
+            },
+            {
+              "Line": 47,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 44,
+              "Offset": 14,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 19
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Services.SmartStringBuilder::ToString()": {
+          "Lines": {
+            "58": 3,
+            "59": 15,
+            "60": 3
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 18,
+              "EndOffset": 43,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Collections.Generic.IEnumerator`1<ProjectSanitizer.Models.SmartString.StringSection> ProjectSanitizer.Services.SmartStringBuilder::GetEnumerator()": {
+          "Lines": {
+            "63": 14,
+            "64": 14,
+            "65": 14
+          },
+          "Branches": []
+        },
+        "System.Collections.IEnumerator ProjectSanitizer.Services.SmartStringBuilder::System.Collections.IEnumerable.GetEnumerator()": {
+          "Lines": {
+            "68": 0,
+            "69": 0,
+            "70": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.SmartStringBuilder::.ctor()": {
+          "Lines": {
+            "11": 17
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemRenderers\\ConsoleProblemRenderer.cs": {
+      "ProjectSanitizer.Services.ProblemRenderers.ConsoleProblemRenderer": {
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ConsoleProblemRenderer::EndRenderProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "10": 7,
+            "11": 7,
+            "12": 7
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ConsoleProblemRenderer::Render(ProjectSanitizer.Models.SmartString.StringSection)": {
+          "Lines": {
+            "15": 34,
+            "16": 34,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 17,
+            "24": 17,
+            "25": 17,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 17,
+            "32": 17,
+            "33": 17,
+            "36": 34,
+            "37": 2,
+            "38": 2,
+            "39": 24,
+            "40": 9,
+            "41": 9,
+            "42": 9,
+            "43": 9,
+            "44": 2,
+            "45": 2,
+            "47": 32,
+            "50": 34,
+            "51": 34,
+            "52": 34
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 9,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 9,
+              "EndOffset": 49,
+              "Path": 3,
+              "Ordinal": 3,
+              "Hits": 17
+            },
+            {
+              "Line": 16,
+              "Offset": 9,
+              "EndOffset": 66,
+              "Path": 2,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 9,
+              "EndOffset": 84,
+              "Path": 4,
+              "Ordinal": 4,
+              "Hits": 17
+            },
+            {
+              "Line": 16,
+              "Offset": 9,
+              "EndOffset": 101,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 34
+            },
+            {
+              "Line": 36,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 39,
+              "Offset": 164,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 8,
+              "Hits": 9
+            },
+            {
+              "Line": 39,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 109,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 6,
+              "Hits": 32
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemRenderers\\HTMLProblemRenderer.cs": {
+      "ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer": {
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::Render(ProjectSanitizer.Models.SmartString.StringSection)": {
+          "Lines": {
+            "18": 34,
+            "19": 34,
+            "20": 2,
+            "21": 2,
+            "22": 24,
+            "23": 9,
+            "24": 9,
+            "25": 9,
+            "26": 9,
+            "27": 9,
+            "28": 2,
+            "29": 2,
+            "31": 32,
+            "32": 32,
+            "33": 32,
+            "34": 34
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 9,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 126,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 9
+            },
+            {
+              "Line": 22,
+              "Offset": 126,
+              "EndOffset": 128,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 19,
+              "Offset": 9,
+              "EndOffset": 148,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 32
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::BeginRenderProblems()": {
+          "Lines": {
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::EndRenderProblems()": {
+          "Lines": {
+            "44": 1,
+            "45": 1,
+            "46": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::BeginRenderProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "49": 7,
+            "50": 7,
+            "51": 7
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::EndRenderProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "53": 7,
+            "54": 7,
+            "55": 7
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::WriteCSSRules()": {
+          "Lines": {
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "64": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.HTMLProblemRenderer::.ctor(System.IO.TextWriter)": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemRenderers\\ProblemRenderer.cs": {
+      "ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer": {
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::Render(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "11": 14,
+            "12": 14,
+            "14": 178,
+            "15": 68,
+            "17": 14,
+            "18": 14
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 45,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 68
+            },
+            {
+              "Line": 14,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::RenderProblems(System.Collections.Generic.IEnumerable`1<ProjectSanitizer.Base.Models.Problem>)": {
+          "Lines": {
+            "23": 2,
+            "24": 2,
+            "26": 34,
+            "27": 14,
+            "29": 2,
+            "30": 2
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 39,
+              "EndOffset": 18,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 14
+            },
+            {
+              "Line": 26,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::EndRenderProblems()": {
+          "Lines": {
+            "33": 1,
+            "34": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::BeginRenderProblems()": {
+          "Lines": {
+            "37": 1,
+            "38": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::EndRenderProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "41": 0,
+            "42": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::BeginRenderProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "44": 7,
+            "45": 7
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemRenderers.ProblemRenderer::RenderErrors(System.Collections.Generic.IEnumerable`1<ProjectSanitizer.Services.SmartStringBuilder>)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 72,
+              "EndOffset": 11,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 50,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\DependsOnIncompatibleFrameworkDetector.cs": {
+      "ProjectSanitizer.Services.ProblemDetectors.DependsOnIncompatibleFrameworkDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.DependsOnIncompatibleFrameworkDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "12": 31,
+            "13": 31,
+            "14": 134,
+            "15": 21,
+            "16": 21,
+            "17": 21,
+            "18": 0,
+            "19": 21,
+            "20": 11,
+            "21": 20,
+            "22": 30
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 373,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 21
+            },
+            {
+              "Line": 17,
+              "Offset": 181,
+              "EndOffset": 183,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 181,
+              "EndOffset": 252,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            },
+            {
+              "Line": 19,
+              "Offset": 281,
+              "EndOffset": 283,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 11
+            },
+            {
+              "Line": 19,
+              "Offset": 281,
+              "EndOffset": 347,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 20
+            },
+            {
+              "Line": 14,
+              "Offset": 373,
+              "EndOffset": 378,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 30
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\FileReferencedInMultipleWaysDetector.cs": {
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector": {
+        "System.Void ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector::AddReferenceType(ProjectSanitizer.Models.FileModels.IFile,System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.List`1<ProjectSanitizer.Models.FileModels.IFile>>)": {
+          "Lines": {
+            "35": 36,
+            "36": 36,
+            "37": 0,
+            "39": 36,
+            "40": 36,
+            "41": 12,
+            "42": 12,
+            "43": 12,
+            "44": 12,
+            "46": 90,
+            "47": 33,
+            "48": 36
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 25,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 36
+            },
+            {
+              "Line": 40,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 12
+            },
+            {
+              "Line": 40,
+              "Offset": 53,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 36
+            },
+            {
+              "Line": 46,
+              "Offset": 107,
+              "EndOffset": 109,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 33
+            },
+            {
+              "Line": 36,
+              "Offset": 25,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 36
+            },
+            {
+              "Line": 46,
+              "Offset": 107,
+              "EndOffset": 122,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 36
+            }
+          ]
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector/<>c": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector/<>c::<DetectProblems>b__0_0(System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ProjectSanitizer.Models.FileModels.IFile>>)": {
+          "Lines": {
+            "28": 40
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferencedInMultipleWaysDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "17": 6,
+            "18": 6,
+            "19": 90,
+            "20": 36,
+            "21": 132,
+            "22": 12,
+            "24": 156,
+            "25": 24,
+            "26": 36,
+            "29": 6,
+            "30": 6,
+            "31": 5,
+            "32": 5
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 369,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 36
+            },
+            {
+              "Line": 21,
+              "Offset": 191,
+              "EndOffset": 127,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 12
+            },
+            {
+              "Line": 21,
+              "Offset": 191,
+              "EndOffset": 193,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 36
+            },
+            {
+              "Line": 24,
+              "Offset": 315,
+              "EndOffset": 251,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 24
+            },
+            {
+              "Line": 24,
+              "Offset": 315,
+              "EndOffset": 317,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 36
+            },
+            {
+              "Line": 19,
+              "Offset": 369,
+              "EndOffset": 374,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 6
+            },
+            {
+              "Line": 28,
+              "Offset": 421,
+              "EndOffset": 423,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 421,
+              "EndOffset": 446,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 6
+            },
+            {
+              "Line": 28,
+              "Offset": 570,
+              "EndOffset": 471,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 6
+            },
+            {
+              "Line": 17,
+              "Offset": 14,
+              "EndOffset": 538,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 28,
+              "Offset": 570,
+              "EndOffset": 572,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 5
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\FileReferenceInsteadOfNugetReferenceDetector.cs": {
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<>c__DisplayClass0_0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<>c__DisplayClass0_0::<DetectProblems>b__2(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {
+            "19": 37
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<>c": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<>c::<DetectProblems>b__0_0(ProjectSanitizer.Base.Models.ReferencedFile)": {
+          "Lines": {
+            "14": 125
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<ProjectSanitizer.Base.Models.NugetReference> ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<>c::<DetectProblems>b__0_1(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode)": {
+          "Lines": {
+            "18": 47
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfNugetReferenceDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "13": 31,
+            "15": 11,
+            "17": 11,
+            "21": 11,
+            "22": 6,
+            "23": 10,
+            "24": 30
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 59,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 31
+            },
+            {
+              "Line": 14,
+              "Offset": 312,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 11
+            },
+            {
+              "Line": 17,
+              "Offset": 174,
+              "EndOffset": 176,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 17,
+              "Offset": 174,
+              "EndOffset": 199,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 11
+            },
+            {
+              "Line": 21,
+              "Offset": 242,
+              "EndOffset": 244,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 6
+            },
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 278,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 21,
+              "Offset": 242,
+              "EndOffset": 286,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 10
+            },
+            {
+              "Line": 14,
+              "Offset": 312,
+              "EndOffset": 317,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 30
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\FileReferenceInsteadOfProjectReferenceDetector.cs": {
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<>c__DisplayClass0_0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<>c__DisplayClass0_0::<DetectProblems>b__1(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode)": {
+          "Lines": {
+            "17": 47
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<>c": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<>c::<DetectProblems>b__0_0(ProjectSanitizer.Base.Models.ReferencedFile)": {
+          "Lines": {
+            "14": 125
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.FileReferenceInsteadOfProjectReferenceDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "13": 31,
+            "15": 11,
+            "16": 11,
+            "18": 11,
+            "20": 11,
+            "21": 6,
+            "22": 10,
+            "24": 30
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 59,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 31
+            },
+            {
+              "Line": 14,
+              "Offset": 276,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 11
+            },
+            {
+              "Line": 20,
+              "Offset": 201,
+              "EndOffset": 203,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 242,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 20,
+              "Offset": 201,
+              "EndOffset": 250,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 10
+            },
+            {
+              "Line": 14,
+              "Offset": 276,
+              "EndOffset": 281,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 30
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\NugetReferenceNotInPackagesFolderDetector.cs": {
+      "ProjectSanitizer.Services.ProblemDetectors.NugetReferenceNotInPackagesFolderDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemDetectors.NugetReferenceNotInPackagesFolderDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "13": 30,
+            "14": 30,
+            "16": 130,
+            "17": 20,
+            "18": 20,
+            "19": 0,
+            "20": 20,
+            "21": 30
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 213,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 20
+            },
+            {
+              "Line": 18,
+              "Offset": 145,
+              "EndOffset": 147,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 186,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 145,
+              "EndOffset": 194,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 20
+            },
+            {
+              "Line": 16,
+              "Offset": 213,
+              "EndOffset": 215,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 30
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemCorrectors\\InconsistentPackageVersionsCorrector.cs": {
+      "ProjectSanitizer.Services.ProblemCorrectors.DifferentNugetVersionsCorrector": {
+        "ProjectSanitizer.Models.CorrectionResult ProjectSanitizer.Services.ProblemCorrectors.DifferentNugetVersionsCorrector::TryCorrectProblem(ProjectSanitizer.Models.Problems.MultipleNugetVersions)": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "21": 1,
+            "22": 4,
+            "23": 3,
+            "24": 1,
+            "26": 15,
+            "27": 6,
+            "28": 10,
+            "29": 4,
+            "30": 6,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 60,
+              "EndOffset": 62,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 60,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 228,
+              "EndOffset": 128,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 6
+            },
+            {
+              "Line": 28,
+              "Offset": 152,
+              "EndOffset": 154,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 152,
+              "EndOffset": 178,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 28,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 28,
+              "Offset": 187,
+              "EndOffset": 220,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 6
+            },
+            {
+              "Line": 26,
+              "Offset": 228,
+              "EndOffset": 230,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Services.ProblemCorrectors.DifferentNugetVersionsCorrector::.ctor(ProjectSanitizer.Services.NugetPackageModifier)": {
+          "Lines": {
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Services.ProblemCorrectors.DifferentNugetVersionsCorrector/<>c__DisplayClass2_0": {
+        "System.Boolean ProjectSanitizer.Services.ProblemCorrectors.DifferentNugetVersionsCorrector/<>c__DisplayClass2_0::<TryCorrectProblem>b__1(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 23,
+              "Offset": 27,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemCorrectors\\NugetVersionMismatchCorrector.cs": {
+      "ProjectSanitizer.Services.ProblemCorrectors.NugetVersionMismatchCorrector": {
+        "ProjectSanitizer.Models.CorrectionResult ProjectSanitizer.Services.ProblemCorrectors.NugetVersionMismatchCorrector::TryCorrectProblem(ProjectSanitizer.Models.Problems.NugetVersionMismatch)": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Services.ProblemCorrectors.NugetVersionMismatchCorrector::.ctor(ProjectSanitizer.Services.NugetPackageModifier)": {
+          "Lines": {
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemCorrectors\\ProblemCorrector.cs": {
+      "ProjectSanitizer.Services.ProblemCorrectors.ProblemCorrector`1": {
+        "ProjectSanitizer.Models.CorrectionResult ProjectSanitizer.Services.ProblemCorrectors.ProblemCorrector`1::TryCorrectProblem(ProjectSanitizer.Base.Models.Problem)": {
+          "Lines": {
+            "11": 13,
+            "12": 13,
+            "13": 1,
+            "15": 1,
+            "16": 1,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "24": 12,
+            "25": 13
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 12,
+              "Offset": 24,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 12
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\CorrectionResult.cs": {
+      "ProjectSanitizer.Models.CorrectionResult": {
+        "ProjectSanitizer.Base.Models.Problem ProjectSanitizer.Models.CorrectionResult::get_Problem()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.Resolution ProjectSanitizer.Models.CorrectionResult::get_Resolution()": {
+          "Lines": {
+            "8": 21
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.CorrectionResult::ToString()": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.CorrectionResult::.ctor(ProjectSanitizer.Base.Models.Problem,ProjectSanitizer.Models.Resolution)": {
+          "Lines": {
+            "10": 19,
+            "11": 19,
+            "12": 19,
+            "13": 19,
+            "14": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\DotNetVersion.cs": {
+      "ProjectSanitizer.Models.SolutionStructure.DotNetVersion": {
+        "ProjectSanitizer.Models.SolutionStructure.DotNetType ProjectSanitizer.Models.SolutionStructure.DotNetVersion::get_DotNetType()": {
+          "Lines": {
+            "16": 59
+          },
+          "Branches": []
+        },
+        "System.Version ProjectSanitizer.Models.SolutionStructure.DotNetVersion::get_Version()": {
+          "Lines": {
+            "17": 78
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Models.SolutionStructure.DotNetVersion::TryParse(System.String)": {
+          "Lines": {
+            "26": 114,
+            "27": 114,
+            "28": 114,
+            "29": 114,
+            "30": 114,
+            "31": 428,
+            "32": 114,
+            "34": 114,
+            "35": 114,
+            "38": 0,
+            "39": 114
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 114
+            },
+            {
+              "Line": 29,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 114
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 91,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Models.SolutionStructure.DotNetVersion::ToPackagesConfigString()": {
+          "Lines": {
+            "42": 7,
+            "43": 7,
+            "46": 7,
+            "47": 5,
+            "49": 2,
+            "51": 0,
+            "53": 7
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 10,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 46,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 46,
+              "Offset": 33,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 10,
+              "EndOffset": 141,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Models.SolutionStructure.DotNetVersion::ToString()": {
+          "Lines": {
+            "56": 10,
+            "57": 10,
+            "58": 10
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.SolutionStructure.DotNetVersion::.ctor(ProjectSanitizer.Models.SolutionStructure.DotNetType,System.Version)": {
+          "Lines": {
+            "19": 351,
+            "20": 351,
+            "21": 351,
+            "22": 351,
+            "23": 351
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SmartString\\StringSection.cs": {
+      "ProjectSanitizer.Models.SmartString.StringSection": {
+        "System.Boolean ProjectSanitizer.Models.SmartString.StringSection::get_IsMultiLine()": {
+          "Lines": {
+            "13": 68
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.SmartString.StringSection::get_Text()": {
+          "Lines": {
+            "16": 76
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 12,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 76
+            }
+          ]
+        },
+        "ProjectSanitizer.Models.SmartString.StringSectionType ProjectSanitizer.Models.SmartString.StringSection::get_SectionType()": {
+          "Lines": {
+            "17": 68
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.SmartString.StringSection::ToString()": {
+          "Lines": {
+            "20": 12,
+            "21": 12,
+            "22": 12
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.SmartString.StringSection::.ctor(ProjectSanitizer.Models.SmartString.StringSectionType,System.String[])": {
+          "Lines": {
+            "7": 80,
+            "8": 80,
+            "9": 80,
+            "10": 80,
+            "11": 80
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\DependsOnIncompatibleFramework.cs": {
+      "ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework": {
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::get_ProjectVersion()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::get_DependsOnVersion()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::get_Project()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::get_DependsOnProject()": {
+          "Lines": {
+            "15": 4
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::get_Description()": {
+          "Lines": {
+            "17": 4,
+            "18": 4,
+            "19": 4
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.DependsOnIncompatibleFramework::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Models.SolutionStructure.DotNetVersion,ProjectSanitizer.Models.SolutionStructure.DotNetVersion)": {
+          "Lines": {
+            "21": 11,
+            "22": 11,
+            "23": 11,
+            "24": 11,
+            "25": 11,
+            "26": 11,
+            "27": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\FileReferencedInMultipleWays.cs": {
+      "ProjectSanitizer.Models.Problems.FileReferencedInMultipleWays": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.FileReferencedInMultipleWays::get_Description()": {
+          "Lines": {
+            "10": 3,
+            "11": 3,
+            "12": 3,
+            "13": 3
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.Problems.FileReferencedInMultipleWays::get_Name()": {
+          "Lines": {
+            "15": 3
+          },
+          "Branches": []
+        },
+        "System.String[] ProjectSanitizer.Models.Problems.FileReferencedInMultipleWays::get_Paths()": {
+          "Lines": {
+            "17": 3
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.FileReferencedInMultipleWays::.ctor(System.String,ProjectSanitizer.Models.FileModels.IFile[])": {
+          "Lines": {
+            "19": 6,
+            "20": 6,
+            "21": 6,
+            "22": 33,
+            "23": 6,
+            "24": 6,
+            "25": 6
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 23,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\FileReferenceInsteadOfNugetReference.cs": {
+      "ProjectSanitizer.Models.Problems.FileReferenceInsteadOfNugetReference": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.FileReferenceInsteadOfNugetReference::get_Description()": {
+          "Lines": {
+            "10": 3,
+            "11": 3,
+            "12": 3,
+            "13": 3
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.NugetReference ProjectSanitizer.Models.Problems.FileReferenceInsteadOfNugetReference::get_MissingReference()": {
+          "Lines": {
+            "15": 3
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.FileReferenceInsteadOfNugetReference::.ctor(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode,ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {
+            "18": 6,
+            "19": 6,
+            "20": 6,
+            "21": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\FileReferenceInsteadOfProjectReference.cs": {
+      "ProjectSanitizer.Models.Problems.FileReferenceInsteadOfProjectReference": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.FileReferenceInsteadOfProjectReference::get_Description()": {
+          "Lines": {
+            "11": 3,
+            "12": 3,
+            "13": 3,
+            "14": 3
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Models.Problems.FileReferenceInsteadOfProjectReference::get_MissingProject()": {
+          "Lines": {
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.FileReferenceInsteadOfProjectReference::.ctor(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode,ProjectSanitizer.Base.Models.SolutionStructure.Project)": {
+          "Lines": {
+            "19": 6,
+            "20": 6,
+            "21": 6,
+            "22": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\MissingProject.cs": {
+      "ProjectSanitizer.Models.Problems.MissingProject": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.MissingProject::get_Description()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine ProjectSanitizer.Models.Problems.MissingProject::get_Project()": {
+          "Lines": {
+            "13": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.MissingProject::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Solution,ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\MultipleNugetVersions.cs": {
+      "ProjectSanitizer.Models.Problems.MultipleNugetVersions": {
+        "ProjectSanitizer.Base.Models.VersionWithSuffix[] ProjectSanitizer.Models.Problems.MultipleNugetVersions::get_DistinctVersions()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.Problems.MultipleNugetVersions::get_PackageID()": {
+          "Lines": {
+            "13": 8
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.MultipleNugetVersions::get_Description()": {
+          "Lines": {
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.MultipleNugetVersions::.ctor(ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph,System.String,ProjectSanitizer.Base.Models.VersionWithSuffix[])": {
+          "Lines": {
+            "16": 5,
+            "17": 5,
+            "18": 25,
+            "19": 0,
+            "21": 5,
+            "22": 5,
+            "23": 5
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 18,
+              "Offset": 16,
+              "EndOffset": 41,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 18,
+              "Offset": 48,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 48,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\NugetReferenceNotInPackagesFolder.cs": {
+      "ProjectSanitizer.Models.Problems.NugetReferenceNotInPackagesFolder": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.NugetReferenceNotInPackagesFolder::get_Description()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.NugetReference ProjectSanitizer.Models.Problems.NugetReferenceNotInPackagesFolder::get_NugetReference()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Models.Problems.NugetReferenceNotInPackagesFolder::get_Project()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.NugetReferenceNotInPackagesFolder::.ctor(ProjectSanitizer.Base.Models.NugetReference,ProjectSanitizer.Base.Models.SolutionStructure.Project)": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\NugetVersionMismatch.cs": {
+      "ProjectSanitizer.Models.Problems.NugetVersionMismatch": {
+        "ProjectSanitizer.Services.SmartStringBuilder ProjectSanitizer.Models.Problems.NugetVersionMismatch::get_Description()": {
+          "Lines": {
+            "11": 2,
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.Problems.NugetVersionMismatch::.ctor(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {
+            "17": 5,
+            "18": 5,
+            "20": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\FileModels\\MissingFile.cs": {
+      "ProjectSanitizer.Models.FileModels.RelativeFile": {
+        "System.String ProjectSanitizer.Models.FileModels.RelativeFile::get_Name()": {
+          "Lines": {
+            "10": 136
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.FileModels.RelativeFile::get_FullName()": {
+          "Lines": {
+            "12": 212
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Models.FileModels.RelativeFile::get_Exists()": {
+          "Lines": {
+            "14": 58
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Models.FileModels.RelativeFile::TryVerify()": {
+          "Lines": {
+            "22": 84,
+            "23": 84,
+            "24": 84
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Models.FileModels.RelativeFile::ToString()": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.FileModels.RelativeFile::Delete()": {
+          "Lines": {
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Models.FileModels.RelativeFile::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,System.String)": {
+          "Lines": {
+            "16": 325,
+            "17": 325,
+            "18": 325,
+            "19": 325
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\FileModels\\RelativeFile.cs": {
+      "ProjectSanitizer.Models.FileModels.MissingFile": {
+        "System.Void ProjectSanitizer.Models.FileModels.MissingFile::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,System.String)": {
+          "Lines": {
+            "9": 111,
+            "10": 111,
+            "11": 111
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Extensions\\FileExtensions.cs": {
+      "ProjectSanitizer.Extensions.IFileExtensions": {
+        "System.Boolean ProjectSanitizer.Extensions.IFileExtensions::PathBeginsWith(ProjectSanitizer.Models.FileModels.IFile,ProjectSanitizer.Base.Models.FileModels.VerifiedFolder)": {
+          "Lines": {
+            "9": 20,
+            "10": 20,
+            "11": 0,
+            "13": 20,
+            "14": 20,
+            "15": 20,
+            "16": 20
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 20
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Extensions\\XMLExtensions.cs": {
+      "ProjectSanitizer.Extensions.XMLExtensions": {
+        "System.Void ProjectSanitizer.Extensions.XMLExtensions::AddAttribute(System.Xml.XmlNode,System.String,System.String)": {
+          "Lines": {
+            "8": 3,
+            "9": 3,
+            "10": 3,
+            "11": 3,
+            "12": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\DIRegistrar.cs": {
+      "ProjectSanitizer.Base.DIRegistrar": {
+        "Microsoft.Extensions.DependencyInjection.ServiceProvider ProjectSanitizer.Base.DIRegistrar::GetOrCreateServiceProvider()": {
+          "Lines": {
+            "19": 63,
+            "20": 63,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "27": 63,
+            "28": 63
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 20,
+              "Offset": 11,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 63
+            }
+          ]
+        },
+        "Microsoft.Extensions.DependencyInjection.IServiceCollection ProjectSanitizer.Base.DIRegistrar::RegisterStandardServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1
+          },
+          "Branches": []
+        },
+        "Microsoft.Extensions.DependencyInjection.IServiceCollection ProjectSanitizer.Base.DIRegistrar::AddImplementationsOf(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "45": 2,
+            "46": 2,
+            "47": 434,
+            "48": 214,
+            "49": 214,
+            "50": 10,
+            "51": 214,
+            "53": 4,
+            "54": 2
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 105,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 214
+            },
+            {
+              "Line": 49,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            },
+            {
+              "Line": 49,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 11
+            },
+            {
+              "Line": 49,
+              "Offset": 50,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 203
+            },
+            {
+              "Line": 49,
+              "Offset": 58,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 203
+            },
+            {
+              "Line": 49,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 10
+            },
+            {
+              "Line": 49,
+              "Offset": 76,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 214
+            },
+            {
+              "Line": 47,
+              "Offset": 105,
+              "EndOffset": 107,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 53,
+              "Offset": 114,
+              "EndOffset": 116,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 53,
+              "Offset": 114,
+              "EndOffset": 139,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            }
+          ]
+        },
+        "T ProjectSanitizer.Base.DIRegistrar::GetInstance()": {
+          "Lines": {
+            "57": 63,
+            "58": 63,
+            "59": 63,
+            "60": 0,
+            "61": 63,
+            "62": 63
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 23,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 63
+            }
+          ]
+        },
+        "T[] ProjectSanitizer.Base.DIRegistrar::GetImplementations()": {
+          "Lines": {
+            "65": 0,
+            "66": 0,
+            "67": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.DIRegistrar::.cctor()": {
+          "Lines": {
+            "14": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\NugetReferenceReader.cs": {
+      "ProjectSanitizer.Base.Services.NugetReferenceReader": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig ProjectSanitizer.Base.Services.NugetReferenceReader::TryReadPackagesConfig(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder)": {
+          "Lines": {
+            "14": 166,
+            "15": 166,
+            "16": 166,
+            "17": 114,
+            "19": 52,
+            "20": 166
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 114
+            },
+            {
+              "Line": 16,
+              "Offset": 26,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 52
+            }
+          ]
+        }
+      },
+      "ProjectSanitizer.Base.Services.NugetReferenceReader/<ExtractPackages>d__1": {
+        "System.Boolean ProjectSanitizer.Base.Services.NugetReferenceReader/<ExtractPackages>d__1::MoveNext()": {
+          "Lines": {
+            "24": 114,
+            "25": 568,
+            "26": 113,
+            "27": 113,
+            "28": 113,
+            "29": 113,
+            "31": 113,
+            "32": 113,
+            "33": 114
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 298,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 113
+            },
+            {
+              "Line": 24,
+              "Offset": 14,
+              "EndOffset": 250,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 113
+            },
+            {
+              "Line": 25,
+              "Offset": 298,
+              "EndOffset": 303,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 114
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectorService.cs": {
+      "ProjectSanitizer.Base.Services.ProblemDetectorService": {
+        "ProjectSanitizer.Base.Models.Problem[] ProjectSanitizer.Base.Services.ProblemDetectorService::DetectProblems(T)": {
+          "Lines": {
+            "24": 175,
+            "25": 175,
+            "26": 825,
+            "27": 150,
+            "29": 175,
+            "30": 208,
+            "31": 208,
+            "32": 175,
+            "33": 175
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 54,
+              "EndOffset": 27,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 150
+            },
+            {
+              "Line": 26,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 175
+            },
+            {
+              "Line": 29,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 8
+            },
+            {
+              "Line": 29,
+              "Offset": 76,
+              "EndOffset": 101,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 175
+            },
+            {
+              "Line": 29,
+              "Offset": 112,
+              "EndOffset": 114,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 8
+            },
+            {
+              "Line": 29,
+              "Offset": 112,
+              "EndOffset": 137,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 175
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.Problem[] ProjectSanitizer.Base.Services.ProblemDetectorService::DetectAllSolutionProblems(ProjectSanitizer.Base.Models.SolutionStructure.Solution)": {
+          "Lines": {
+            "36": 5,
+            "37": 5,
+            "38": 5,
+            "40": 5,
+            "41": 75,
+            "42": 30,
+            "43": 30,
+            "44": 130,
+            "45": 20,
+            "46": 30,
+            "48": 75,
+            "49": 30,
+            "50": 30,
+            "52": 150,
+            "53": 30,
+            "55": 130,
+            "56": 20,
+            "58": 30,
+            "59": 30,
+            "60": 20,
+            "61": 20,
+            "62": 100,
+            "63": 20,
+            "64": 20,
+            "65": 30,
+            "69": 5,
+            "70": 5
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 151,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 30
+            },
+            {
+              "Line": 44,
+              "Offset": 124,
+              "EndOffset": 93,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 20
+            },
+            {
+              "Line": 44,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 30
+            },
+            {
+              "Line": 41,
+              "Offset": 151,
+              "EndOffset": 153,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 48,
+              "Offset": 424,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 30
+            },
+            {
+              "Line": 52,
+              "Offset": 259,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 30
+            },
+            {
+              "Line": 52,
+              "Offset": 259,
+              "EndOffset": 261,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 30
+            },
+            {
+              "Line": 55,
+              "Offset": 310,
+              "EndOffset": 276,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 20
+            },
+            {
+              "Line": 55,
+              "Offset": 310,
+              "EndOffset": 312,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 30
+            },
+            {
+              "Line": 59,
+              "Offset": 341,
+              "EndOffset": 343,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 20
+            },
+            {
+              "Line": 62,
+              "Offset": 408,
+              "EndOffset": 374,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 20
+            },
+            {
+              "Line": 62,
+              "Offset": 408,
+              "EndOffset": 410,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 20
+            },
+            {
+              "Line": 59,
+              "Offset": 341,
+              "EndOffset": 411,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 30
+            },
+            {
+              "Line": 48,
+              "Offset": 424,
+              "EndOffset": 429,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 5
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Services.ProblemDetectorService::.ctor(ProjectSanitizer.Base.Services.Interfaces.IProblemDetector[],ProjectSanitizer.Base.Services.Interfaces.IProjectGraphBuilder,ProjectSanitizer.Base.Services.Interfaces.INugetReferenceReader)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProjectGraphBuilder.cs": {
+      "ProjectSanitizer.Base.Services.ProjectGraphBuilder": {
+        "ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph ProjectSanitizer.Base.Services.ProjectGraphBuilder::BuildGraph(ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph ProjectSanitizer.Base.Services.ProjectGraphBuilder::BuildGraph(ProjectSanitizer.Base.Models.SolutionStructure.Project)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Services.ProjectGraphBuilder::ExpandGraphNode(ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph,ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode)": {
+          "Lines": {
+            "35": 210,
+            "36": 210,
+            "37": 84,
+            "39": 546,
+            "40": 84,
+            "41": 84,
+            "42": 84,
+            "43": 84,
+            "44": 84,
+            "46": 126,
+            "48": 632,
+            "49": 127,
+            "50": 127,
+            "51": 127,
+            "52": 85,
+            "53": 85,
+            "54": 85,
+            "55": 85,
+            "57": 42,
+            "58": 42,
+            "59": 42,
+            "60": 42,
+            "61": 127,
+            "62": 210
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 9,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 126
+            },
+            {
+              "Line": 39,
+              "Offset": 84,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 84
+            },
+            {
+              "Line": 42,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 84
+            },
+            {
+              "Line": 42,
+              "Offset": 59,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 84
+            },
+            {
+              "Line": 39,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 126
+            },
+            {
+              "Line": 48,
+              "Offset": 293,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 127
+            },
+            {
+              "Line": 50,
+              "Offset": 140,
+              "EndOffset": 142,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 21
+            },
+            {
+              "Line": 50,
+              "Offset": 140,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 106
+            },
+            {
+              "Line": 51,
+              "Offset": 174,
+              "EndOffset": 176,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 85
+            },
+            {
+              "Line": 53,
+              "Offset": 200,
+              "EndOffset": 202,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 200,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 85
+            },
+            {
+              "Line": 51,
+              "Offset": 174,
+              "EndOffset": 232,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 42
+            },
+            {
+              "Line": 36,
+              "Offset": 9,
+              "EndOffset": 298,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 210
+            },
+            {
+              "Line": 48,
+              "Offset": 293,
+              "EndOffset": 298,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 210
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode ProjectSanitizer.Base.Services.ProjectGraphBuilder::TryCreateGraphNode(ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph,ProjectSanitizer.Base.Models.SolutionStructure.ProjectReference)": {
+          "Lines": {
+            "65": 84,
+            "66": 84,
+            "67": 84,
+            "68": 0,
+            "70": 84,
+            "71": 84,
+            "72": 0,
+            "74": 84,
+            "75": 84,
+            "76": 84,
+            "77": 84,
+            "78": 84
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 16,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 84
+            },
+            {
+              "Line": 71,
+              "Offset": 41,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 41,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 84
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph ProjectSanitizer.Base.Services.ProjectGraphBuilder::BuildGraph(ProjectSanitizer.Base.Models.SolutionStructure.Solution)": {
+          "Lines": {
+            "81": 21,
+            "82": 21,
+            "83": 315,
+            "84": 126,
+            "85": 126,
+            "86": 126,
+            "87": 126,
+            "89": 21,
+            "90": 21
+          },
+          "Branches": [
+            {
+              "Line": 83,
+              "Offset": 54,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 126
+            },
+            {
+              "Line": 83,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 21
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Services.ProjectGraphBuilder::.ctor(ProjectSanitizer.Base.Services.Interfaces.IProjectReader,ProjectSanitizer.Base.Services.Interfaces.INugetReferenceReader)": {
+          "Lines": {
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProjectReader.cs": {
+      "ProjectSanitizer.Base.Services.ProjectReader": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Base.Services.ProjectReader::ReadProject(ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "18": 225,
+            "19": 225,
+            "20": 225,
+            "21": 225
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude ProjectSanitizer.Base.Services.ProjectReader::ParseReferenceInclude(System.String)": {
+          "Lines": {
+            "45": 385,
+            "46": 385,
+            "48": 385,
+            "49": 1586,
+            "50": 1586,
+            "51": 2017,
+            "53": 385,
+            "55": 385,
+            "56": 385
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 26,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 385
+            },
+            {
+              "Line": 48,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 62,
+              "EndOffset": 87,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 385
+            },
+            {
+              "Line": 48,
+              "Offset": 98,
+              "EndOffset": 100,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 98,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 385
+            },
+            {
+              "Line": 48,
+              "Offset": 129,
+              "EndOffset": 131,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 129,
+              "EndOffset": 154,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 385
+            }
+          ]
+        },
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Base.Services.ProjectReader::ExtractDotNetVersion(ProjectSanitizer.Base.Models.DotNetXMLDoc)": {
+          "Lines": {
+            "59": 225,
+            "60": 225,
+            "62": 225,
+            "63": 225,
+            "64": 225,
+            "65": 225,
+            "66": 225,
+            "67": 225,
+            "68": 225,
+            "70": 225,
+            "71": 0,
+            "72": 225,
+            "73": 0,
+            "75": 225,
+            "77": 0,
+            "79": 0,
+            "80": 225
+          },
+          "Branches": [
+            {
+              "Line": 62,
+              "Offset": 25,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 225
+            },
+            {
+              "Line": 65,
+              "Offset": 64,
+              "EndOffset": 66,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 225
+            },
+            {
+              "Line": 70,
+              "Offset": 121,
+              "EndOffset": 123,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 70,
+              "Offset": 121,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 225
+            },
+            {
+              "Line": 72,
+              "Offset": 156,
+              "EndOffset": 158,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 156,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 225
+            },
+            {
+              "Line": 65,
+              "Offset": 64,
+              "EndOffset": 192,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 25,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Base.Services.ProjectReader::ExtractAssemblyName(ProjectSanitizer.Base.Models.DotNetXMLDoc)": {
+          "Lines": {
+            "83": 228,
+            "84": 228,
+            "85": 228,
+            "86": 228
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Base.Services.ProjectReader/<ExtractProjectReferences>d__1": {
+        "System.Boolean ProjectSanitizer.Base.Services.ProjectReader/<ExtractProjectReferences>d__1::MoveNext()": {
+          "Lines": {
+            "24": 225,
+            "25": 991,
+            "26": 158,
+            "27": 158,
+            "28": 158,
+            "29": 158,
+            "30": 225
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 231,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 158
+            },
+            {
+              "Line": 24,
+              "Offset": 14,
+              "EndOffset": 197,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 158
+            },
+            {
+              "Line": 25,
+              "Offset": 231,
+              "EndOffset": 236,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 225
+            }
+          ]
+        }
+      },
+      "ProjectSanitizer.Base.Services.ProjectReader/<ExtractFileReferences>d__2": {
+        "System.Boolean ProjectSanitizer.Base.Services.ProjectReader/<ExtractFileReferences>d__2::MoveNext()": {
+          "Lines": {
+            "33": 225,
+            "34": 4729,
+            "35": 2027,
+            "36": 2027,
+            "37": 2027,
+            "39": 2027,
+            "40": 227,
+            "41": 2027,
+            "42": 225
+          },
+          "Branches": [
+            {
+              "Line": 33,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 300,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2027
+            },
+            {
+              "Line": 39,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 227
+            },
+            {
+              "Line": 40,
+              "Offset": 218,
+              "EndOffset": 220,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 218,
+              "EndOffset": 224,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 227
+            },
+            {
+              "Line": 40,
+              "Offset": 230,
+              "EndOffset": 232,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 230,
+              "EndOffset": 238,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 227
+            },
+            {
+              "Line": 33,
+              "Offset": 14,
+              "EndOffset": 259,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 227
+            },
+            {
+              "Line": 39,
+              "Offset": 175,
+              "EndOffset": 267,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2027
+            },
+            {
+              "Line": 34,
+              "Offset": 300,
+              "EndOffset": 305,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 225
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\SolutionReader.cs": {
+      "ProjectSanitizer.Base.Services.SolutionReader": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Solution ProjectSanitizer.Base.Services.SolutionReader::ReadSolution(ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "19": 24,
+            "20": 24,
+            "21": 1488,
+            "22": 1488,
+            "23": 24,
+            "25": 24,
+            "26": 192,
+            "27": 192,
+            "28": 192,
+            "29": 168,
+            "30": 24,
+            "31": 48,
+            "32": 192,
+            "33": 192,
+            "34": 24,
+            "36": 24,
+            "37": 24,
+            "38": 24
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 20,
+              "Offset": 55,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 24
+            },
+            {
+              "Line": 25,
+              "Offset": 115,
+              "EndOffset": 117,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 25,
+              "Offset": 115,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 24
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine ProjectSanitizer.Base.Services.SolutionReader::TryParseProjectLine(System.String)": {
+          "Lines": {
+            "46": 1464,
+            "47": 1464,
+            "48": 1296,
+            "50": 168,
+            "51": 168,
+            "52": 0,
+            "54": 168,
+            "56": 168,
+            "57": 0,
+            "59": 168,
+            "60": 168,
+            "61": 1464
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1296
+            },
+            {
+              "Line": 47,
+              "Offset": 22,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 168
+            },
+            {
+              "Line": 51,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 63,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 168
+            },
+            {
+              "Line": 56,
+              "Offset": 100,
+              "EndOffset": 102,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 100,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 168
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Services.SolutionReader::.ctor(ProjectSanitizer.Base.Services.Interfaces.IProjectReader)": {
+          "Lines": {
+            "13": 3,
+            "14": 3,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Base.Services.SolutionReader/<>c__DisplayClass2_0": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Base.Services.SolutionReader/<>c__DisplayClass2_0::<ReadSolution>b__2(ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine)": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 144
+            },
+            {
+              "Line": 28,
+              "Offset": 28,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 24
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\DifferentNugetVersionsDetector.cs": {
+      "ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<>c": {
+        "System.Collections.Generic.IEnumerable`1<ProjectSanitizer.Base.Models.NugetReference> ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<>c::<DetectProblems>b__0_0(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode)": {
+          "Lines": {
+            "15": 42
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<>c::<DetectProblems>b__0_1(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {
+            "16": 30
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<>c::<DetectProblems>b__0_2(ProjectSanitizer.Base.Models.NugetReference)": {
+          "Lines": {
+            "18": 30
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Base.Services.ProblemDetectors.DifferentNugetVersionsDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "13": 6,
+            "14": 29,
+            "17": 6,
+            "19": 6,
+            "20": 5,
+            "21": 5,
+            "22": 5
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 64,
+              "EndOffset": 66,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 64,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 14,
+              "Offset": 100,
+              "EndOffset": 102,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 100,
+              "EndOffset": 125,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 6
+            },
+            {
+              "Line": 14,
+              "Offset": 333,
+              "EndOffset": 153,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 6
+            },
+            {
+              "Line": 18,
+              "Offset": 184,
+              "EndOffset": 186,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 18,
+              "Offset": 184,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 6
+            },
+            {
+              "Line": 19,
+              "Offset": 242,
+              "EndOffset": 244,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 5
+            },
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 299,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 19,
+              "Offset": 242,
+              "EndOffset": 307,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 5
+            },
+            {
+              "Line": 14,
+              "Offset": 333,
+              "EndOffset": 338,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 5
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\MissingProjectDetector.cs": {
+      "ProjectSanitizer.Base.Services.ProblemDetectors.MissingProjectDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Base.Services.ProblemDetectors.MissingProjectDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "13": 1,
+            "14": 8,
+            "15": 3,
+            "16": 3,
+            "17": 3,
+            "18": 1,
+            "19": 2,
+            "20": 0
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 218,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 17,
+              "Offset": 134,
+              "EndOffset": 136,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 13,
+              "Offset": 14,
+              "EndOffset": 168,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 134,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 14,
+              "Offset": 218,
+              "EndOffset": 223,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Services\\ProblemDetectors\\NugetVersionMismatchDetector.cs": {
+      "ProjectSanitizer.Base.Services.ProblemDetectors.NugetVersionMismatchDetector/<DetectProblems>d__0": {
+        "System.Boolean ProjectSanitizer.Base.Services.ProblemDetectors.NugetVersionMismatchDetector/<DetectProblems>d__0::MoveNext()": {
+          "Lines": {
+            "11": 21,
+            "12": 21,
+            "13": 5,
+            "14": 20
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 14,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 12,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 11,
+              "Offset": 14,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 12,
+              "Offset": 66,
+              "EndOffset": 101,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 20
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\DotNetXMLDoc.cs": {
+      "ProjectSanitizer.Base.Models.DotNetXMLDoc": {
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Base.Models.DotNetXMLDoc::get_File()": {
+          "Lines": {
+            "13": 403
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlElement ProjectSanitizer.Base.Models.DotNetXMLDoc::get_DocumentElement()": {
+          "Lines": {
+            "15": 453
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.DotNetXMLDoc::SaveChanges()": {
+          "Lines": {
+            "32": 18,
+            "33": 18,
+            "34": 18
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNodeList ProjectSanitizer.Base.Models.DotNetXMLDoc::SelectNodes(System.String)": {
+          "Lines": {
+            "37": 564,
+            "38": 564,
+            "39": 564
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.DotNetXMLDoc::SelectSingleNode(System.String)": {
+          "Lines": {
+            "42": 27,
+            "43": 27,
+            "44": 27
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNodeList ProjectSanitizer.Base.Models.DotNetXMLDoc::SelectNodes(System.Xml.XmlNode,System.String)": {
+          "Lines": {
+            "47": 3071,
+            "48": 3071,
+            "49": 122,
+            "51": 2949,
+            "52": 2949,
+            "54": 2949,
+            "55": 2027,
+            "56": 2949,
+            "58": 3071
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 122
+            },
+            {
+              "Line": 48,
+              "Offset": 12,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2949
+            },
+            {
+              "Line": 54,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2027
+            },
+            {
+              "Line": 54,
+              "Offset": 59,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2949
+            }
+          ]
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.DotNetXMLDoc::SelectSingleNode(System.Xml.XmlNode,System.String)": {
+          "Lines": {
+            "61": 2507,
+            "62": 2507,
+            "63": 2507,
+            "64": 705,
+            "66": 1802,
+            "67": 2507
+          },
+          "Branches": [
+            {
+              "Line": 63,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 705
+            },
+            {
+              "Line": 63,
+              "Offset": 21,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1802
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.DotNetXMLDoc::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "17": 354,
+            "18": 354,
+            "19": 354,
+            "20": 354,
+            "21": 354,
+            "23": 354,
+            "24": 354,
+            "25": 240,
+            "26": 240,
+            "27": 240,
+            "28": 240,
+            "29": 354
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 240
+            },
+            {
+              "Line": 24,
+              "Offset": 77,
+              "EndOffset": 121,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 354
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\NugetReference.cs": {
+      "ProjectSanitizer.Base.Models.NugetReference": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Package ProjectSanitizer.Base.Models.NugetReference::get_Package()": {
+          "Lines": {
+            "9": 142
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.NugetReference::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Base.Models.SolutionStructure.Package,ProjectSanitizer.Models.FileModels.RelativeFile,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "12": 85,
+            "13": 85,
+            "14": 85,
+            "15": 0,
+            "16": 85,
+            "17": 85
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 22,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 85
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\Problems\\Problem.cs": {
+      "ProjectSanitizer.Base.Models.Problem": {
+        "System.String ProjectSanitizer.Base.Models.Problem::ToString()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      },
+      "ProjectSanitizer.Base.Models.Problem`1": {
+        "T ProjectSanitizer.Base.Models.Problem`1::get_Item()": {
+          "Lines": {
+            "17": 17
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.Problem`1::.ctor(T)": {
+          "Lines": {
+            "19": 23,
+            "20": 23,
+            "21": 23,
+            "22": 23
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\ReferencedFile.cs": {
+      "ProjectSanitizer.Base.Models.ReferencedFile": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Base.Models.ReferencedFile::get_Project()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.FileModels.IFile ProjectSanitizer.Base.Models.ReferencedFile::get_File()": {
+          "Lines": {
+            "19": 170
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.ReferencedFile::get_Version()": {
+          "Lines": {
+            "20": 75
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.ReferencedFile::ToString()": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.ReferencedFile::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Models.FileModels.IFile,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "12": 127,
+            "13": 127,
+            "14": 127,
+            "15": 127,
+            "16": 127,
+            "17": 127
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\VersionWithSuffix.cs": {
+      "ProjectSanitizer.Base.Models.VersionWithSuffix": {
+        "System.Version ProjectSanitizer.Base.Models.VersionWithSuffix::get_Version()": {
+          "Lines": {
+            "10": 540
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.VersionWithSuffix::get_Suffix()": {
+          "Lines": {
+            "11": 713
+          },
+          "Branches": []
+        },
+        "System.Int32 ProjectSanitizer.Base.Models.VersionWithSuffix::get_SuffixNumber()": {
+          "Lines": {
+            "13": 108
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.VersionWithSuffix::get_HasSuffix()": {
+          "Lines": {
+            "15": 17
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.VersionWithSuffix::TryParseFromPath(System.String)": {
+          "Lines": {
+            "18": 391,
+            "19": 3362,
+            "20": 1177,
+            "21": 1177,
+            "22": 1177,
+            "23": 212,
+            "24": 212,
+            "25": 212,
+            "26": 48,
+            "28": 48,
+            "29": 48,
+            "30": 1,
+            "31": 48,
+            "32": 212,
+            "33": 165,
+            "34": 47,
+            "35": 1012,
+            "37": 226,
+            "38": 391
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 218,
+              "EndOffset": 27,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1177
+            },
+            {
+              "Line": 22,
+              "Offset": 54,
+              "EndOffset": 59,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 212
+            },
+            {
+              "Line": 25,
+              "Offset": 101,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 48
+            },
+            {
+              "Line": 29,
+              "Offset": 155,
+              "EndOffset": 157,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 155,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 48
+            },
+            {
+              "Line": 25,
+              "Offset": 101,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 212
+            },
+            {
+              "Line": 32,
+              "Offset": 200,
+              "EndOffset": 202,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 165
+            },
+            {
+              "Line": 32,
+              "Offset": 200,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 47
+            },
+            {
+              "Line": 22,
+              "Offset": 54,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1012
+            },
+            {
+              "Line": 19,
+              "Offset": 218,
+              "EndOffset": 223,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 226
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.VersionWithSuffix::TryParse(System.String)": {
+          "Lines": {
+            "41": 724,
+            "43": 724,
+            "45": 724,
+            "46": 181,
+            "48": 543,
+            "49": 543,
+            "50": 543,
+            "51": 48,
+            "53": 495,
+            "54": 92,
+            "55": 495,
+            "57": 495,
+            "58": 724
+          },
+          "Branches": [
+            {
+              "Line": 45,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 181
+            },
+            {
+              "Line": 45,
+              "Offset": 11,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 543
+            },
+            {
+              "Line": 50,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 48
+            },
+            {
+              "Line": 50,
+              "Offset": 55,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 495
+            },
+            {
+              "Line": 53,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 92
+            },
+            {
+              "Line": 53,
+              "Offset": 72,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 495
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.VersionWithSuffix::Empty()": {
+          "Lines": {
+            "61": 0,
+            "62": 0,
+            "63": 0
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.VersionWithSuffix::ToString()": {
+          "Lines": {
+            "74": 35,
+            "75": 35,
+            "76": 0,
+            "78": 35,
+            "79": 35
+          },
+          "Branches": [
+            {
+              "Line": 75,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 12,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 35
+            },
+            {
+              "Line": 75,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 33,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 35
+            }
+          ]
+        },
+        "System.Int32 ProjectSanitizer.Base.Models.VersionWithSuffix::System.IComparable<ProjectSanitizer.Base.Models.VersionWithSuffix>.CompareTo(ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "82": 11,
+            "83": 11,
+            "84": 11,
+            "85": 9,
+            "87": 2,
+            "88": 1,
+            "89": 1,
+            "90": 0,
+            "92": 1,
+            "93": 11
+          },
+          "Branches": [
+            {
+              "Line": 84,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 9
+            },
+            {
+              "Line": 84,
+              "Offset": 25,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 37,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 87,
+              "Offset": 53,
+              "EndOffset": 59,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 89,
+              "Offset": 65,
+              "EndOffset": 67,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 65,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 89,
+              "Offset": 80,
+              "EndOffset": 82,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 80,
+              "EndOffset": 86,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.VersionWithSuffix::Equals(System.Object)": {
+          "Lines": {
+            "96": 53,
+            "97": 53,
+            "98": 53,
+            "99": 53,
+            "100": 53,
+            "101": 609,
+            "102": 233,
+            "103": 233,
+            "104": 16,
+            "105": 217,
+            "107": 37,
+            "110": 0,
+            "111": 53
+          },
+          "Branches": [
+            {
+              "Line": 97,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 53
+            },
+            {
+              "Line": 101,
+              "Offset": 92,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 233
+            },
+            {
+              "Line": 103,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 16
+            },
+            {
+              "Line": 103,
+              "Offset": 77,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 217
+            },
+            {
+              "Line": 101,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 37
+            },
+            {
+              "Line": 97,
+              "Offset": 14,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32[] ProjectSanitizer.Base.Models.VersionWithSuffix::GetVersionNumbers()": {
+          "Lines": {
+            "114": 106,
+            "116": 106,
+            "117": 106,
+            "118": 106,
+            "119": 106,
+            "120": 106,
+            "121": 106
+          },
+          "Branches": []
+        },
+        "System.Int32 ProjectSanitizer.Base.Models.VersionWithSuffix::GetHashCode()": {
+          "Lines": {
+            "124": 24,
+            "125": 24,
+            "126": 24
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.VersionWithSuffix::op_Equality(ProjectSanitizer.Base.Models.VersionWithSuffix,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "129": 336,
+            "130": 336,
+            "131": 336,
+            "132": 336,
+            "133": 48,
+            "134": 288,
+            "135": 269,
+            "137": 19,
+            "138": 336
+          },
+          "Branches": [
+            {
+              "Line": 132,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 48
+            },
+            {
+              "Line": 132,
+              "Offset": 22,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 288
+            },
+            {
+              "Line": 134,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 269
+            },
+            {
+              "Line": 134,
+              "Offset": 39,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 19
+            }
+          ]
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.VersionWithSuffix::op_Inequality(ProjectSanitizer.Base.Models.VersionWithSuffix,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "141": 237,
+            "142": 237,
+            "143": 237,
+            "144": 237,
+            "145": 47,
+            "146": 190,
+            "147": 165,
+            "149": 25,
+            "150": 237
+          },
+          "Branches": [
+            {
+              "Line": 144,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 47
+            },
+            {
+              "Line": 144,
+              "Offset": 22,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 190
+            },
+            {
+              "Line": 146,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 165
+            },
+            {
+              "Line": 146,
+              "Offset": 39,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 25
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.VersionWithSuffix::.ctor(System.Version,System.String)": {
+          "Lines": {
+            "65": 495,
+            "66": 495,
+            "67": 495,
+            "68": 495,
+            "69": 495,
+            "70": 92,
+            "71": 495
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 38,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 92
+            },
+            {
+              "Line": 69,
+              "Offset": 38,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 495
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\Package.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.Package": {
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Package::get_ID()": {
+          "Lines": {
+            "7": 192
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.SolutionStructure.Package::get_Version()": {
+          "Lines": {
+            "9": 59
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Base.Models.SolutionStructure.Package::get_TargetFramework()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Package::ToString()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.Package::.ctor(System.String,ProjectSanitizer.Base.Models.VersionWithSuffix,ProjectSanitizer.Models.SolutionStructure.DotNetVersion)": {
+          "Lines": {
+            "13": 113,
+            "14": 113,
+            "15": 113,
+            "16": 113,
+            "17": 113,
+            "18": 113
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\PackagesConfig.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig": {
+        "ProjectSanitizer.Base.Models.SolutionStructure.Package[] ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::get_Packages()": {
+          "Lines": {
+            "13": 128
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::GetPackageNode(System.String)": {
+          "Lines": {
+            "24": 7,
+            "25": 7,
+            "26": 7
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::GetPackagesNodes()": {
+          "Lines": {
+            "29": 1,
+            "30": 1,
+            "31": 1
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::SaveChanges()": {
+          "Lines": {
+            "34": 7,
+            "35": 7,
+            "36": 7
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::ToString()": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Package ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::FindPackage(System.String)": {
+          "Lines": {
+            "44": 106,
+            "45": 212,
+            "46": 106
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.PackagesConfig::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFile,ProjectSanitizer.Base.Services.Interfaces.INugetReferenceReader)": {
+          "Lines": {
+            "15": 114,
+            "16": 114,
+            "17": 114,
+            "18": 114,
+            "20": 114,
+            "21": 114
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\Project.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.Project": {
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Project::get_AssemblyName()": {
+          "Lines": {
+            "15": 36
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.SolutionStructure.DotNetVersion ProjectSanitizer.Base.Models.SolutionStructure.Project::get_DotNetVersion()": {
+          "Lines": {
+            "17": 61
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ProjectReference[] ProjectSanitizer.Base.Models.SolutionStructure.Project::get_ProjectReferences()": {
+          "Lines": {
+            "18": 158
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Reference[] ProjectSanitizer.Base.Models.SolutionStructure.Project::get_FileReferences()": {
+          "Lines": {
+            "20": 161
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.Project::SaveChanges()": {
+          "Lines": {
+            "34": 11,
+            "35": 11,
+            "36": 11
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Project::get_FullPath()": {
+          "Lines": {
+            "38": 356
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Project::get_Name()": {
+          "Lines": {
+            "39": 30
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.SolutionStructure.Project::get_ProjectDirectory()": {
+          "Lines": {
+            "41": 171
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Project::ToString()": {
+          "Lines": {
+            "44": 19,
+            "45": 19,
+            "46": 19
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.SolutionStructure.Project::GetReferenceNode(System.String)": {
+          "Lines": {
+            "49": 12,
+            "50": 12,
+            "51": 12
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.SolutionStructure.Project::GetReferenceHintPathNode(System.String)": {
+          "Lines": {
+            "54": 6,
+            "55": 6,
+            "56": 6
+          },
+          "Branches": []
+        },
+        "System.Xml.XmlNode ProjectSanitizer.Base.Models.SolutionStructure.Project::GetReferenceItemGroupNode()": {
+          "Lines": {
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 1
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 24,
+              "EndOffset": 36,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 61,
+              "EndOffset": 68,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.Project::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFile,ProjectSanitizer.Base.Services.Interfaces.IProjectReader)": {
+          "Lines": {
+            "22": 237,
+            "23": 237,
+            "24": 237,
+            "25": 237,
+            "27": 237,
+            "28": 237,
+            "29": 237,
+            "30": 237,
+            "31": 237
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\ProjectLine.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine": {
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine::get_Name()": {
+          "Lines": {
+            "11": 1
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine::get_RelativePath()": {
+          "Lines": {
+            "12": 171
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine::.ctor(System.String,System.String)": {
+          "Lines": {
+            "5": 168,
+            "6": 168,
+            "7": 168,
+            "8": 168,
+            "9": 168
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\ProjectReference.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.ProjectReference": {
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.ProjectReference::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude,System.String)": {
+          "Lines": {
+            "8": 158,
+            "9": 158,
+            "10": 158
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\Reference.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.Reference": {
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Reference::ToString()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.SolutionStructure.Reference::get_BaseDirectory()": {
+          "Lines": {
+            "12": 214
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude ProjectSanitizer.Base.Models.SolutionStructure.Reference::get_Include()": {
+          "Lines": {
+            "14": 150
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.SolutionStructure.Reference::get_VersionFromPath()": {
+          "Lines": {
+            "16": 87
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.SolutionStructure.Reference::get_Version()": {
+          "Lines": {
+            "18": 2
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 7,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Reference::get_RelativePath()": {
+          "Lines": {
+            "28": 217
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Models.FileModels.RelativeFile ProjectSanitizer.Base.Models.SolutionStructure.Reference::GetFile()": {
+          "Lines": {
+            "31": 214,
+            "32": 214,
+            "33": 214
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.Reference::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFolder,ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude,System.String)": {
+          "Lines": {
+            "20": 385,
+            "21": 385,
+            "22": 385,
+            "23": 385,
+            "24": 385,
+            "25": 385,
+            "26": 385
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\ReferenceInclude.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude": {
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude::get_ID()": {
+          "Lines": {
+            "11": 108
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.VersionWithSuffix ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude::get_Version()": {
+          "Lines": {
+            "12": 42
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.ReferenceInclude::.ctor(System.String,ProjectSanitizer.Base.Models.VersionWithSuffix)": {
+          "Lines": {
+            "5": 385,
+            "6": 385,
+            "7": 385,
+            "8": 385,
+            "9": 385
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\SolutionStructure\\Solution.cs": {
+      "ProjectSanitizer.Base.Models.SolutionStructure.Solution": {
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.SolutionStructure.Solution::get_SolutionDirectory()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.SolutionStructure.Solution::get_PackagesDirectory()": {
+          "Lines": {
+            "12": 36
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project[] ProjectSanitizer.Base.Models.SolutionStructure.Solution::get_Projects()": {
+          "Lines": {
+            "23": 28
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine[] ProjectSanitizer.Base.Models.SolutionStructure.Solution::get_ProjectLines()": {
+          "Lines": {
+            "25": 1
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.SolutionStructure.Solution::ToString()": {
+          "Lines": {
+            "28": 2,
+            "29": 2,
+            "30": 2
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.SolutionStructure.Solution::.ctor(ProjectSanitizer.Base.Models.FileModels.VerifiedFile,ProjectSanitizer.Base.Models.SolutionStructure.Project[],ProjectSanitizer.Base.Models.SolutionStructure.ProjectLine[])": {
+          "Lines": {
+            "14": 24,
+            "15": 24,
+            "16": 24,
+            "17": 24,
+            "18": 24,
+            "20": 24,
+            "21": 24
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\ProjectGraph\\ProjectGraphNode.cs": {
+      "ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode": {
+        "ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_SolutionGraph()": {
+          "Lines": {
+            "10": 52
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Project ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_Project()": {
+          "Lines": {
+            "11": 808
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode> ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_ProjectRequirements()": {
+          "Lines": {
+            "13": 453
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<ProjectSanitizer.Base.Models.ReferencedFile> ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_FileRequirements()": {
+          "Lines": {
+            "14": 413
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<ProjectSanitizer.Base.Models.NugetReference> ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_NugetPackageRequirements()": {
+          "Lines": {
+            "15": 569
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::get_IsAlreadyExpanded()": {
+          "Lines": {
+            "17": 210
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 147
+            },
+            {
+              "Line": 17,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 147
+            },
+            {
+              "Line": 17,
+              "Offset": 11,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 63
+            },
+            {
+              "Line": 17,
+              "Offset": 24,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 63
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::ToString()": {
+          "Lines": {
+            "20": 126,
+            "21": 126,
+            "22": 126
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Project,ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph)": {
+          "Lines": {
+            "24": 126,
+            "25": 126,
+            "26": 126,
+            "27": 126,
+            "28": 126
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\ProjectGraph\\SolutionGraph.cs": {
+      "ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph": {
+        "System.Collections.Generic.Dictionary`2<System.String,ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode> ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::get_AllNodes()": {
+          "Lines": {
+            "11": 410
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode> ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::get_SolutionProjects()": {
+          "Lines": {
+            "13": 277
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.SolutionStructure.Solution ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::get_Solution()": {
+          "Lines": {
+            "15": 38
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode> ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::FindProject(System.Func`2<ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode,System.Boolean>)": {
+          "Lines": {
+            "24": 15,
+            "25": 15,
+            "26": 15
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::AddNode(ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode,System.Boolean)": {
+          "Lines": {
+            "29": 126,
+            "30": 126,
+            "31": 126,
+            "32": 105,
+            "34": 126,
+            "35": 126
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 105
+            },
+            {
+              "Line": 31,
+              "Offset": 23,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 126
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.ProjectGraph.ProjectGraphNode ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::GetOrAdd(ProjectSanitizer.Base.Models.SolutionStructure.Project,System.Boolean)": {
+          "Lines": {
+            "38": 210,
+            "39": 210,
+            "40": 210,
+            "42": 210,
+            "43": 21,
+            "45": 210,
+            "46": 210
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 126
+            },
+            {
+              "Line": 39,
+              "Offset": 19,
+              "EndOffset": 36,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 210
+            },
+            {
+              "Line": 42,
+              "Offset": 38,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 126
+            },
+            {
+              "Line": 42,
+              "Offset": 38,
+              "EndOffset": 57,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 84
+            },
+            {
+              "Line": 42,
+              "Offset": 60,
+              "EndOffset": 62,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 21
+            },
+            {
+              "Line": 42,
+              "Offset": 60,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 210
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.ProjectGraph.SolutionGraph::.ctor(ProjectSanitizer.Base.Models.SolutionStructure.Solution)": {
+          "Lines": {
+            "17": 21,
+            "18": 21,
+            "19": 21,
+            "20": 21
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 33,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\FileModels\\VerifiedFile.cs": {
+      "ProjectSanitizer.Base.Models.FileModels.VerifiedFile": {
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.FileModels.VerifiedFile::get_Directory()": {
+          "Lines": {
+            "10": 583
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFile::get_Exists()": {
+          "Lines": {
+            "12": 293
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Base.Models.FileModels.VerifiedFile::GetFileIfExisting(System.String)": {
+          "Lines": {
+            "15": 639,
+            "16": 639,
+            "17": 639,
+            "18": 504,
+            "20": 135,
+            "21": 639
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 504
+            },
+            {
+              "Line": 17,
+              "Offset": 16,
+              "EndOffset": 27,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 135
+            }
+          ]
+        },
+        "System.String ProjectSanitizer.Base.Models.FileModels.VerifiedFile::get_Name()": {
+          "Lines": {
+            "36": 51
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.FileModels.VerifiedFile::get_FullName()": {
+          "Lines": {
+            "37": 7058
+          },
+          "Branches": []
+        },
+        "System.String[] ProjectSanitizer.Base.Models.FileModels.VerifiedFile::ReadAllLines()": {
+          "Lines": {
+            "40": 24,
+            "41": 24,
+            "42": 24
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Base.Models.FileModels.VerifiedFile::GetRelativeFileOrDefault(System.String)": {
+          "Lines": {
+            "45": 168,
+            "46": 168,
+            "47": 168,
+            "48": 168
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Base.Models.FileModels.VerifiedFile::CopyTo(System.IO.FileInfo)": {
+          "Lines": {
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFile ProjectSanitizer.Base.Models.FileModels.VerifiedFile::CopyFrom(System.IO.FileInfo)": {
+          "Lines": {
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.FileModels.VerifiedFile::Delete()": {
+          "Lines": {
+            "63": 1,
+            "64": 1,
+            "65": 1
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.FileModels.VerifiedFile::ToString()": {
+          "Lines": {
+            "68": 0,
+            "69": 0,
+            "70": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFile::Equals(System.Object)": {
+          "Lines": {
+            "73": 6,
+            "74": 6,
+            "75": 6,
+            "77": 0,
+            "78": 6
+          },
+          "Branches": [
+            {
+              "Line": 74,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 6
+            },
+            {
+              "Line": 74,
+              "Offset": 14,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 ProjectSanitizer.Base.Models.FileModels.VerifiedFile::GetHashCode()": {
+          "Lines": {
+            "81": 0,
+            "82": 0,
+            "83": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFile::op_Equality(ProjectSanitizer.Base.Models.FileModels.VerifiedFile,ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "86": 473,
+            "87": 473,
+            "88": 473,
+            "89": 473,
+            "90": 111,
+            "91": 362,
+            "92": 360,
+            "94": 2,
+            "95": 473
+          },
+          "Branches": [
+            {
+              "Line": 89,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 111
+            },
+            {
+              "Line": 89,
+              "Offset": 22,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 362
+            },
+            {
+              "Line": 91,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 360
+            },
+            {
+              "Line": 91,
+              "Offset": 39,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFile::op_Inequality(ProjectSanitizer.Base.Models.FileModels.VerifiedFile,ProjectSanitizer.Base.Models.FileModels.VerifiedFile)": {
+          "Lines": {
+            "98": 3185,
+            "99": 3185,
+            "100": 3185,
+            "101": 3185,
+            "102": 2866,
+            "103": 319,
+            "104": 318,
+            "106": 1,
+            "107": 3185
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2866
+            },
+            {
+              "Line": 101,
+              "Offset": 22,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 319
+            },
+            {
+              "Line": 103,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 318
+            },
+            {
+              "Line": 103,
+              "Offset": 39,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.FileModels.VerifiedFile::.ctor(System.IO.FileInfo)": {
+          "Lines": {
+            "23": 5957,
+            "24": 5957,
+            "25": 5957,
+            "26": 5957,
+            "27": 0,
+            "29": 5957,
+            "30": 5957
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 31,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5957
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.FileModels.VerifiedFile::.ctor(System.String)": {
+          "Lines": {
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Models\\FileModels\\VerifiedFolder.cs": {
+      "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder": {
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::get_Parent()": {
+          "Lines": {
+            "10": 12
+          },
+          "Branches": []
+        },
+        "System.String ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::get_FullName()": {
+          "Lines": {
+            "12": 346
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::GetFirstAncestor(System.String)": {
+          "Lines": {
+            "27": 4,
+            "28": 4,
+            "29": 1,
+            "30": 3,
+            "31": 0,
+            "33": 3,
+            "34": 4
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 20,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 30,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 42,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        },
+        "ProjectSanitizer.Models.FileModels.IFile ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::GetRelativeFile(System.String)": {
+          "Lines": {
+            "37": 387,
+            "38": 387,
+            "39": 387,
+            "40": 387,
+            "41": 111,
+            "43": 276,
+            "44": 387
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 111
+            },
+            {
+              "Line": 40,
+              "Offset": 35,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 276
+            }
+          ]
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::GetRelativeFolder(System.String)": {
+          "Lines": {
+            "59": 56,
+            "60": 56,
+            "61": 56,
+            "62": 56
+          },
+          "Branches": []
+        },
+        "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::GetRelativeFolderOrDefault(System.String)": {
+          "Lines": {
+            "65": 16,
+            "66": 16,
+            "67": 16,
+            "68": 7,
+            "70": 9,
+            "71": 16
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            },
+            {
+              "Line": 67,
+              "Offset": 27,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 9
+            }
+          ]
+        },
+        "System.Void ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::.ctor(System.String)": {
+          "Lines": {
+            "14": 192
+          },
+          "Branches": []
+        },
+        "System.Void ProjectSanitizer.Base.Models.FileModels.VerifiedFolder::.ctor(System.IO.DirectoryInfo)": {
+          "Lines": {
+            "16": 99717,
+            "17": 99717,
+            "18": 99717,
+            "19": 99717,
+            "20": 0,
+            "22": 99717,
+            "23": 90709,
+            "24": 99717
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 99717
+            },
+            {
+              "Line": 22,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 90709
+            },
+            {
+              "Line": 22,
+              "Offset": 66,
+              "EndOffset": 90,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 99717
+            }
+          ]
+        }
+      },
+      "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder/<GetFiles>d__10": {
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFolder/<GetFiles>d__10::MoveNext()": {
+          "Lines": {
+            "47": 3016,
+            "48": 19780,
+            "49": 5453,
+            "50": 2842
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 14,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 151,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5453
+            },
+            {
+              "Line": 47,
+              "Offset": 14,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5279
+            },
+            {
+              "Line": 48,
+              "Offset": 151,
+              "EndOffset": 153,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2842
+            }
+          ]
+        }
+      },
+      "ProjectSanitizer.Base.Models.FileModels.VerifiedFolder/<GetDirectories>d__11": {
+        "System.Boolean ProjectSanitizer.Base.Models.FileModels.VerifiedFolder/<GetDirectories>d__11::MoveNext()": {
+          "Lines": {
+            "53": 3016,
+            "54": 15022,
+            "55": 2987,
+            "56": 3016
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 14,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 54,
+              "Offset": 151,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2987
+            },
+            {
+              "Line": 53,
+              "Offset": 14,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2987
+            },
+            {
+              "Line": 54,
+              "Offset": 151,
+              "EndOffset": 153,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3016
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Extensions\\DictionaryExtensions.cs": {
+      "ProjectSanitizer.Base.Extensions.DictionaryExtensions": {
+        "V ProjectSanitizer.Base.Extensions.DictionaryExtensions::TryGet(System.Collections.Generic.Dictionary`2<K,V>,K)": {
+          "Lines": {
+            "9": 631,
+            "11": 631,
+            "12": 319,
+            "14": 312,
+            "15": 631
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 319
+            },
+            {
+              "Line": 11,
+              "Offset": 15,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 312
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Miko\\Documents\\GitHub\\CSharpProjectSanitizer\\ProjectSanitizer.Base\\Extensions\\StringExtensions.cs": {
+      "ProjectSanitizer.Base.Extensions.StringExtensions": {
+        "System.Int32 ProjectSanitizer.Base.Extensions.StringExtensions::TryParseInt(System.String)": {
+          "Lines": {
+            "6": 92,
+            "8": 92,
+            "9": 92,
+            "11": 0,
+            "12": 92
+          },
+          "Branches": [
+            {
+              "Line": 8,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 92
+            },
+            {
+              "Line": 8,
+              "Offset": 11,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

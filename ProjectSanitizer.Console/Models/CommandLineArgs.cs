@@ -9,7 +9,8 @@
             OutputPath = outputPath;
         }
 
-        public bool WriteToConsole { get; }
+        public bool RenderToConsole => string.IsNullOrEmpty(OutputPath);
+
         public string Command { get; }
         public string SolutionFile { get; }
         public string OutputPath { get; }

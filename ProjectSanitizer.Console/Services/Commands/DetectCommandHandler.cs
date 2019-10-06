@@ -1,6 +1,7 @@
 ﻿using ProjectSanitizer.Base.Models.FileModels;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models;
 using ProjectSanitizer.Services;
 using ProjectSanitizerConsole.Models;
 using System;
@@ -28,7 +29,7 @@ namespace ProjectSanitizerConsole.Services.Commands
             var slnFile = VerifiedFile.GetFileIfExisting(arg.SolutionFile);
             if (slnFile == null)
             {
-                output.ErrorMessages.Add(new SmartStringBuilder()
+                output.Messages.Add(new SmartStringBuilder()
                                             .AppendFatal("Unable to find solution ")
                                             .AppendHighlighted(arg.SolutionFile));
                 return output;

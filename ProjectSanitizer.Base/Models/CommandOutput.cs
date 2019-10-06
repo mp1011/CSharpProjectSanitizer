@@ -2,12 +2,14 @@
 using ProjectSanitizer.Services;
 using System.Collections.Generic;
 
-namespace ProjectSanitizerConsole.Models
+namespace ProjectSanitizer.Models
 {
     public class CommandOutput
     {
         public List<Problem> DetectedProblems { get; } = new List<Problem>();
+        public List<Problem> CorrectedProblems { get; } = new List<Problem>();
 
-        public List<SmartStringBuilder> ErrorMessages { get; } = new List<SmartStringBuilder>();
+        public List<SmartStringBuilder> Messages { get; } = new List<SmartStringBuilder>();
+
     }
 }

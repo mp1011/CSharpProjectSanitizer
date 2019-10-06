@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Models.SolutionStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,15 @@ namespace ProjectSanitizer.Tests.ModelsTests
             Assert.AreEqual(shouldBeEqual, version1.Equals(version2));
             Assert.AreEqual(shouldBeEqual, version1 == version2);
             Assert.AreNotEqual(shouldBeEqual, version1 != version2);
+        }
+
+        [TestCase("net40-client", DotNetType.Client, "4.0")]
+        [TestCase("net451", DotNetType.Framework, "4.5.1")]
+        public void ParseDotnetVersion(string text, DotNetType expectedType, string expectedVersion)
+        {
+            var version = DotNetVersion.TryParse(text);
+            Assert.AreEqual(expectedType, version.DotNetType);
+            Assert.AreEqual(expectedVersion, version.Version.ToString());
         }
     }
 }

@@ -26,7 +26,7 @@ namespace ProjectSanitizer.Base.Services
             {
                 string id = packageNode.Attributes["id"].Value;
                 string version = packageNode.Attributes["version"].Value;
-                string dotNetVersion = packageNode.Attributes["targetFramework"].Value;
+                string dotNetVersion = packageNode.Attributes["targetFramework"]?.Value;
 
                 yield return new Package(id, VersionWithSuffix.TryParse(version), DotNetVersion.TryParse(dotNetVersion));
             }

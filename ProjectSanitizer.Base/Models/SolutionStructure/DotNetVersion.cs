@@ -7,6 +7,7 @@ namespace ProjectSanitizer.Models.SolutionStructure
     {
         Unknown,
         Framework,
+        Client,
         Core,
         Standard
     }
@@ -24,15 +25,28 @@ namespace ProjectSanitizer.Models.SolutionStructure
 
         public static DotNetVersion TryParse(string versionString)
         {
-            if(versionString.StartsWith("net"))
+            if(string.IsNullOrEmpty(versionString))
             {
-                var numbers = versionString
-                                .Substring(3)
-                                .Select(c => c.ToString())
-                                .ToArray();
+                return new DotNetVersion(DotNetType.Unknown, new Version(1, 0, 0));
+            }
+            else if(versionString.StartsWith("net"))
+            {
+                var leftRight = versionString.Split('-');
+                var numbers = leftRight[0]
+                                   .Substring(3)
+                                   .Select(c => c.ToString())
+                                   .ToArray();
 
-                return new DotNetVersion(DotNetType.Framework,
-                                            new Version(string.Join(".", numbers)));
+                if (leftRight.Length == 2 && leftRight[1] == "client")
+                {
+                    return new DotNetVersion(DotNetType.Client,
+                                                new Version(string.Join(".", numbers)));
+                }
+                else
+                {
+                    return new DotNetVersion(DotNetType.Framework,
+                                                new Version(string.Join(".", numbers)));
+                }
             }
             else 
                 throw new System.NotImplementedException("Package handling for common and core not available yet");

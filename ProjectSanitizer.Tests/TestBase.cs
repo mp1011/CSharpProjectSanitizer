@@ -10,5 +10,11 @@ namespace ProjectSanitizer.Tests
         {
             TestPaths.RevertAllCsProjAndPackagesConfigFiles();
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            TestPaths.RevertAllCsProjAndPackagesConfigFiles();
+        }
     }
 }

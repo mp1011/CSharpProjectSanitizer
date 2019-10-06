@@ -2,6 +2,8 @@
 using ProjectSanitizer.Base;
 using ProjectSanitizer.Base.Services;
 using ProjectSanitizer.Base.Services.Interfaces;
+using ProjectSanitizer.Models;
+using ProjectSanitizer.Services;
 using ProjectSanitizer.Services.ProblemRenderers;
 using System;
 using System.IO;
@@ -25,10 +27,13 @@ namespace ProjectSanitizer.Tests.ServicesTests
 
             var stringBuilder = new StringBuilder();
 
+            var output = new CommandOutput();
+            output.DetectedProblems.AddRange(problems);
+
             using (var writer = new StringWriter(stringBuilder))
             {
                 Console.SetOut(writer);
-                renderer.RenderProblems(problems);
+                renderer.RenderOutput(output);
 
                 Assert.That(stringBuilder.ToString().Contains("Multiple versions of Newtonsoft.Json exist"));
             }
@@ -47,14 +52,11 @@ namespace ProjectSanitizer.Tests.ServicesTests
             if (outFile.Exists)
                 outFile.Delete();
 
-            using(var fileStream = outFile.OpenWrite())
-            {
-                using (var writer = new StreamWriter(fileStream))
-                {
-                    var renderer = new HTMLProblemRenderer(writer);
-                    renderer.RenderProblems(problems);
-                }
-            }
+            var renderer = new HTMLProblemRenderer(outFile);
+            var output = new CommandOutput();
+            output.DetectedProblems.AddRange(problems);
+
+            renderer.RenderOutput(output);
 
             var fileText = File.ReadAllText(outFile.FullName);
             Assert.That(fileText.Contains(@"<span class='Highlighted'>Newtonsoft.Json</span>"));

@@ -1,66 +1,76 @@
 ﻿using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Models.Renderer;
 using ProjectSanitizer.Models.SmartString;
 using System.IO;
 using System.Text;
 
 namespace ProjectSanitizer.Services.ProblemRenderers
 {
-    public class HTMLProblemRenderer : ProblemRenderer
+    public class HTMLProblemRenderer : FileProblemRenderer
     {
-        private TextWriter _writer;
+        public HTMLProblemRenderer(FileInfo outputFile) : base(outputFile) { }
 
-        public HTMLProblemRenderer(TextWriter writer)
+    
+        protected override void Render(FileRenderContext context, StringSection stringSection)
         {
-            _writer = writer;
-        }
+            var writer = context.Writer;
 
-        protected override void Render(StringSection stringSection)
-        {
             if (stringSection.IsMultiLine)
             {
-                _writer.Write($"<ul class='{stringSection.SectionType}'>");
+                writer.Write($"<ul class='{stringSection.SectionType}'>");
                 foreach (var item in stringSection.Lines)
                 {
-                    _writer.Write("<li>");
-                    _writer.Write(item.ToString());
-                    _writer.Write("</li>");
+                    writer.Write("<li>");
+                    writer.Write(item.ToString());
+                    writer.Write("</li>");
                 }
-                _writer.Write("</ul>");
+                writer.Write("</ul>");
             }
             else
             {
-                _writer.Write($"<span class='{stringSection.SectionType}'>{stringSection.Text}</span>");
+                writer.Write($"<span class='{stringSection.SectionType}'>{stringSection.Text}</span>");
             }
         }
 
-        protected override void BeginRenderProblems()
+        protected override void BeginReport(FileRenderContext context)
         {
-            _writer.Write("<html><head>");
-            WriteCSSRules();
-            _writer.Write("</head><body><ul>");
+            var writer = context.Writer;
+            writer.Write("<html><head>");
+            writer.Write("<style type='text/css'>");
+            writer.Write("span.Highlighted { font-weight:bold; color:red } ");
+            writer.Write("</style>");
+            writer.Write("</head><body>");
         }
 
-        protected override void EndRenderProblems()
+        protected override void EndReport(FileRenderContext context)
         {
-            _writer.Write("</ul></body></html>");
+            var writer = context.Writer;
+            writer.Write("</body></html>");
         }
 
-        protected override void BeginRenderProblem(Problem problem)
+        protected override void BeginRenderProblems(FileRenderContext context, string sectionTitle)
         {
-            _writer.Write("<li>");
+            var writer = context.Writer;
+            writer.Write("<h1>");
+            writer.Write(sectionTitle);
+            writer.Write("</h1><ul>");
         }
-        protected override void EndRenderProblem(Problem problem)
+
+        protected override void EndRenderProblems(FileRenderContext context)
         {
-            _writer.Write("</li>");
+            var writer = context.Writer;
+            writer.Write("</ul>");
         }
 
-        private void WriteCSSRules()
+        protected override void BeginRenderProblem(FileRenderContext context, Problem problem)
         {
-            _writer.Write("<style type='text/css'>");
-            _writer.Write("span.Highlighted { font-weight:bold; color:red } ");
-            _writer.Write("</style>");
-
-
+            var writer = context.Writer;
+            writer.Write("<li>");
+        }
+        protected override void EndRenderProblem(FileRenderContext context, Problem problem)
+        {
+            var writer = context.Writer;
+            writer.Write("</li>");
         }
     }
 }

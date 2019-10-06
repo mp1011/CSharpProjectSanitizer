@@ -1,56 +1,83 @@
 ﻿using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Models;
+using ProjectSanitizer.Models.Renderer;
 using ProjectSanitizer.Models.SmartString;
 using ProjectSanitizer.Services.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectSanitizer.Services.ProblemRenderers
 {
-    public abstract class ProblemRenderer : IProblemRenderer
+    public abstract class ProblemRenderer<TContext> : IProblemRenderer
+        where TContext: IRenderContext
     {
-        public void Render(Problem problem)
+        public void RenderOutput(CommandOutput output)
         {
-            BeginRenderProblem(problem);
+            RenderOutput(output, (o, c) => RenderOutput(o, c));
+        }
+
+        private void RenderOutput(CommandOutput output, TContext context)
+        {
+            BeginReport(context);
+            RenderMessages(context, output.Messages);
+            if (output.CorrectedProblems.Any())
+                RenderProblems(context, "Corrected Problems", output.CorrectedProblems);
+            RenderProblems(context, "Detected Problems", output.DetectedProblems);
+            EndReport(context);
+        }
+
+        protected abstract void RenderOutput(CommandOutput output, Action<CommandOutput,TContext> renderOutput);
+
+        private void Render(TContext context, Problem problem)
+        {
+            BeginRenderProblem(context, problem);
 
             foreach (var textPart in problem.Description)
-                Render(textPart);
+                Render(context, textPart);
 
-            EndRenderProblem(problem);
+            EndRenderProblem(context, problem);
         }
 
-        protected abstract void Render(StringSection stringSection);
+        protected abstract void Render(TContext context, StringSection stringSection);
 
-        public void RenderProblems(IEnumerable<Problem> problems)
+        protected void RenderProblems(TContext context, string sectionTitle, IEnumerable<Problem> problems)
         {
-            BeginRenderProblems();
+            BeginRenderProblems(context, sectionTitle);
 
             foreach (var problem in problems)
-                Render(problem);
+                Render(context, problem);
 
-            EndRenderProblems();
+            EndRenderProblems(context);
         }
 
-        protected virtual void EndRenderProblems()
+        protected virtual void BeginReport(TContext context) { }
+        protected virtual void EndReport(TContext context) { }
+
+        protected virtual void EndRenderProblems(TContext context)
         {
         }
 
-        protected virtual void BeginRenderProblems()
+        protected virtual void BeginRenderProblems(TContext context, string sectionTitle)
         {
         }
 
-        protected virtual void EndRenderProblem(Problem problem)
-        {
-        }
-        protected virtual void BeginRenderProblem(Problem problem)
+        protected virtual void EndRenderProblem(TContext context, Problem problem)
         {
         }
 
-        public void RenderErrors(IEnumerable<SmartStringBuilder> errorMessages)
+        protected virtual void BeginRenderProblem(TContext context, Problem problem)
+        {
+        }
+
+        public void RenderMessages(TContext context, IEnumerable<SmartStringBuilder> errorMessages)
         {
             foreach (var message in errorMessages)
             {
                 foreach (var textPart in message)
-                    Render(textPart);
+                    Render(context, textPart);
             }
         }
-    }
+
+      }
 }

@@ -1,4 +1,5 @@
-﻿using ProjectSanitizerConsole.Models;
+﻿using ProjectSanitizer.Models;
+using ProjectSanitizerConsole.Models;
 using ProjectSanitizerConsole.Services.Commands;
 using System;
 using System.IO;
@@ -6,7 +7,7 @@ using System.Linq;
 
 namespace ProjectSanitizerConsole.Services
 {
-    class CommandLineHandler
+    public class CommandLineHandler
     {
         private ICommandHandler[] _handlers;
         private ProblemRendererService _problemRendererService;
@@ -17,14 +18,13 @@ namespace ProjectSanitizerConsole.Services
             _problemRendererService = problemRendererFactory;
         }
 
-        public void ExecuteCommand(CommandLineArgs args)
+        public CommandOutput ExecuteCommand(CommandLineArgs args)
         {
-            var handler = _handlers.SingleOrDefault(h => h.CommandName == args.Command);
-            if (handler == null)
-                throw new Exception("Invalid command");
+            var handler = _handlers.SingleOrDefault(h => h.CommandName == args.Command) ??
+                new HelpCommandHandler();
 
             var result = handler.Execute(args);
-            _problemRendererService.RenderResults(result, args);
+            return result;
         }
     }
 }

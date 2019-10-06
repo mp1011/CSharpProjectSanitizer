@@ -17,7 +17,10 @@ namespace ProjectSanitizerConsole
 
             var consoleArgs = new CommandLineParser().Parse(args);
             var handler = DIRegistrar.GetInstance<CommandLineHandler>();
-            handler.ExecuteCommand(consoleArgs);
+            var result = handler.ExecuteCommand(consoleArgs);
+
+            var renderService = DIRegistrar.GetInstance<ProblemRendererService>();
+            renderService.RenderResults(result, consoleArgs);
         }
     }
 }

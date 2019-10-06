@@ -9,12 +9,22 @@ namespace ProjectSanitizer.Tests
 {
     public static class TestPaths
     {
-        public static VerifiedFolder ProjectDirectory { get; }
+        public static VerifiedFolder TestProjectDirectory { get; }
 
         static TestPaths()
         {
-            ProjectDirectory = new VerifiedFolder(TestContext.CurrentContext.TestDirectory)
-                .GetFirstAncestor("ProjectSanitizer.Tests");
+            var binFolder = new VerifiedFolder(TestContext.CurrentContext.TestDirectory);
+            if(binFolder.FullName.Contains("Console.Tests"))
+            {
+                TestProjectDirectory = binFolder
+                                        .GetFirstAncestor("ProjectSanitizer.Console.Tests")
+                                        .Parent
+                                        .GetRelativeFolder("ProjectSanitizer.Tests");
+            }
+            else
+            {
+                TestProjectDirectory = binFolder.GetFirstAncestor("ProjectSanitizer.Tests");
+            }  
         }
 
         public static void RevertAllCsProjAndPackagesConfigFiles()
@@ -23,7 +33,7 @@ namespace ProjectSanitizer.Tests
             RevertAllCsProjAndPackagesConfigFiles(folder);
         }
 
-        private static void RevertAllCsProjAndPackagesConfigFiles(VerifiedFolder directory)
+        public static void RevertAllCsProjAndPackagesConfigFiles(VerifiedFolder directory)
         {
             var csprojFile = directory.GetFiles()
                 .FirstOrDefault(f=>f.FullName.EndsWith("csproj"));
@@ -66,12 +76,12 @@ namespace ProjectSanitizer.Tests
 
         public static IFile GetFileRelativeToProjectDir(string relativePath)
         {
-            return ProjectDirectory.GetRelativeFile(relativePath);
+            return TestProjectDirectory.GetRelativeFile(relativePath);
         }
 
         public static VerifiedFile GetVerifiedFileRelativeToProjectDir(string relativePath)
         {
-            if (ProjectDirectory.GetRelativeFile(relativePath) is VerifiedFile v)
+            if (TestProjectDirectory.GetRelativeFile(relativePath) is VerifiedFile v)
                 return v;
             else
                 throw new Exception($"Expected file {relativePath} does not exist"); 
@@ -82,7 +92,7 @@ namespace ProjectSanitizer.Tests
             if (Directory.Exists(relativePath))
                 return new VerifiedFolder(relativePath);
             else
-                return ProjectDirectory.GetRelativeFolder(relativePath);
+                return TestProjectDirectory.GetRelativeFolder(relativePath);
         }
     }
 }

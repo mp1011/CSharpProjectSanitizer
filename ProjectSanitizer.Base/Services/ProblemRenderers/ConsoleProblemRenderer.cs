@@ -1,17 +1,33 @@
 ﻿using ProjectSanitizer.Base.Models;
+using ProjectSanitizer.Models;
+using ProjectSanitizer.Models.Renderer;
 using ProjectSanitizer.Models.SmartString;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectSanitizer.Services.ProblemRenderers
 {
-    public class ConsoleProblemRenderer : ProblemRenderer
+    public class ConsoleProblemRenderer : ProblemRenderer<ConsoleRenderContext>
     {
-        protected override void EndRenderProblem(Problem problem)
+        protected override void RenderOutput(CommandOutput output, Action<CommandOutput, ConsoleRenderContext> renderOutput)
+        {
+            var ctx = new ConsoleRenderContext();
+            renderOutput(output, ctx);
+        }
+
+        protected override void EndRenderProblem(ConsoleRenderContext context, Problem problem)
         {
             Console.WriteLine();
         }
 
-        protected override void Render(StringSection text)
+        protected override void BeginRenderProblems(ConsoleRenderContext context, string sectionTitle)
+        {
+            Console.WriteLine();
+            Console.WriteLine(sectionTitle);
+        }
+
+        protected override void Render(ConsoleRenderContext context, StringSection text)
         {
             switch (text.SectionType)
             {
